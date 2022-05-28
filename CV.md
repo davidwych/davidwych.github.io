@@ -3,25 +3,32 @@ title: "CV"
 layout: page 
 ---
 
-# CV
-
 ## SUMMARY
 
 David C. Wych is a computational chemist and structural biologist working as a post- doctoral researcher in the Computer, Computational, and Statistical Sciences Division (CCS-3) and the Center for Non-Linear Studies (CNLS) at Los Alamos National Laboratory (LANL). His research focus involves using crystalline molecular-dynamics (MD) simulations to study X-ray crystallographic structural and dynamical modeling, and using QM-MM simulations to probe protein structure and dynamics beyond what is possible with classical MD.
 
 ## RESEARCH EXPERIENCE
 
-### POST-DOCTORAL RESEARCHER — LANL — JULY 2021-PRESENT
+### Post-doctoral Researcher -- LANL -- 2021-present
+**Research Areas**: crystalline molecular-dynamics (MD) simulations for the study of protein X-ray crystallographic modeling and refinement, structural heterogeneity, and diffuse scattering; software development for QM-MM simulation of whole proteins; high performance computing (HPC) methods for the processing and modeling of serial femtosecond X-ray crystallographic data from X-ray Free Electron Lasers (XFELs).
 
-**Research areas**: crystalline molecular-dynamics (MD) simulations for the study of protein X-ray crystallographic modeling and refinement, structural heterogeneity, and diffuse scattering; software development for QM-MM simulation of whole proteins; high performance computing (HPC) methods for the processing and modeling of serial femtosecond X-ray crystallographic data from X-ray Free Electron Lasers (XFELs).
+### Graduate Student Researcher -- UCI -- 2016-2021
 
-### GRADUATE STUDENT RESEARCHER — UCI — 2016-2021
+**Research Areas**: crystalline molecular dynamics (MD) simulations to study protein crytallographic diffuse scattering and the modelling and refinement of structure and disorder.
 
-### CNLS VIRTUAL SUMMER INTERN — LANL — SUMMER 2020
+**Instruction**: Physical Biochemistry (lead instructor: 2020; instructor: 2019; teaching assistant: 2017-2018) 
 
-### GRADUATE STUDENT ASSISTANT — LANL — WINTER-FALL 2019
+### CNLS Virtual Summer Intern -- LANL -- Summer 2020
 
-### APPLIED MACHINE LEARNING SUMMER FELLOW — LANL — SUMMER 2018
+**Research Areas**: Crystalline molecular-dynamics (MD) simulations for the study of diffuse scattering, structure, and dynamics; construction of MD simulations using ensemble models; investigation of ordered water structure.
+
+### Graduate Student Assistant — LANL — Winter-Fall 2019
+
+**Research Areas**: Crystalline molecular-dynamics (MD) simulations for the study of diffuse scattering; analysis of the covariance of atom pairs for comparison with the assumptions of phenomenological models of diffuse scattering.
+
+### Applied Machine Learning Summer Fellow — LANL — Summer 2018
+
+**Research Areas**: crystalline molecular-dynamics (MD) simulations for the study of diffuse scattering; non-negative matrix factorization (NMF) factorization for the clustering and analysis of electron density trajectories computed from MD trajectories.
 
 ## EDUCATION
 
