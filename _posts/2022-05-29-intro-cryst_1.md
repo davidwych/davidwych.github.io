@@ -18,7 +18,7 @@ Let's start with the math of how crystallography *really* works.
 
 X-rays (wavelength λ=10⁻¹¹-10⁻⁸ m) scatter, elastically, off of electrons bound to atoms, producing spherical waves of the same wavelength. 
 
-We can describe the direction of traveling wave using a "wavevector" $\mathbf{k}$, with the magnitude of the vector equal to the "wavenumber", $\frac{2\pi}{\lambda}$, and the direction pointing in the direction of propagation.
+We can describe the direction of traveling wave using a "wavevector" $$\mathbf{k}$$, with the magnitude of the vector equal to the "wavenumber", $$\frac{2\pi}{\lambda}$$, and the direction pointing in the direction of propagation.
 
 The difference in direction between the incident ($\mathbf{k}$) and scattered ($\mathbf{k'}$) wavevectors is given by the "scattering vector", $\mathbf{q} = \mathbf{k'} - \mathbf{k}$.
 
