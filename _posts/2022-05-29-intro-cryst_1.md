@@ -58,7 +58,7 @@ $$ F(\mathbf{q}) = \sum_{n} f_{n}(\mathbf{q}) e^{i\mathbf{q}\cdot\mathbf{r}_{n}}
 
 We can extend the molecular form factor to a continuous distribution of electron density for the whole system ($$\rho(\mathbf{q})$$) by switching to an integral over the entire scattering volume:
 
-$$ F(\mathbf{q}) = \int \rho(\mathbf{r}) e^{i\mathbf{q}\cdot\mathbf{r}} d^{3}\mathbf{r} $$
+$$ F(\mathbf{q}) = \int \rho(\mathbf{r}) e^{i\mathbf{q}\cdot\mathbf{r}} \mathrm{d}^{3}\mathbf{r} $$
 
 Look familiar?
 
