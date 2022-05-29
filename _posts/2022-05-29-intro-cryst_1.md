@@ -22,7 +22,7 @@ We can describe the direction of traveling wave using a "wavevector" $\mathbf{k}
 
 The difference in direction between the incident ($\mathbf{k}$) and scattered ($\mathbf{k'}$) wavevectors is given by the "scattering vector", $\mathbf{q} = \mathbf{k'} - \mathbf{k}$.
 
-Its magnitude is given by $|\mathbf{q}| = \frac{4 \pi \sin( \theta )}{ \lambda } $, where $ 2 \theta $ is the scattering angle. 
+Its magnitude is given by $\lvert \mathbf{q} \rvert = \frac{4 \pi \sin( \theta )}{ \lambda } $, where $ 2 \theta $ is the scattering angle. 
 
 If there are multiple electrons scattering the incident wave, separated by a vector $\mathbf{r}$, the scattered waves will differ by a phase shift given by the dot product of $\mathbf{q}$ and $\mathbf{r}$: $ \Delta \phi = \mathbf{q} \cdot \mathbf{r} $ 
 
