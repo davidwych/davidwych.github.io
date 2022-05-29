@@ -6,13 +6,13 @@ layout: post
 
 # How electrons perform the Fourier Transform
 
-*Warning: this is going to require a good bit of physics and math.* 
+> *Warning: this is going to require a good bit of physics and math.* 
 
-*If that's not your thing, fair enough, feel free to bail.*
+> *If that's not your thing, fair enough, feel free to bail.*
 
-*But I'm going to try to make this as palatable as I can.* 
+> *But I'm going to try to make this as palatable as I can.* 
 
-*So give it a go, if you're feeling up to it.*
+> *So give it a go, if you're feeling up to it.*
 
 Let's start with the math of how crystallography *really* works.
 
