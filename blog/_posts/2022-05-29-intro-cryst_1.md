@@ -50,6 +50,8 @@ If $$\Delta\phi = \mathbf{q}\cdot\mathbf{r}$$ is such that the path length diffe
 
 $$ l = n \lambda \rightarrow e^{i \mathbf{q} \cdot \mathbf{r} } = e^{i 2 \pi n} = 1 $$
 
+![fair field](/blog/assets/images/far_field.jpeg){: width="50%"}
+
 Now, electrons bound to atoms scattering differently from isolated electrons, depending on the atom's distribution of electron density.
 
 This difference is represented with the "atomic scattering factor" $$f_{n}(\mathbf{q})$$ for each atom $$n$$. 
