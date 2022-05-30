@@ -38,6 +38,8 @@ This is just the difference in path length, $$l$$, converted to radians:
 
 $$ \Delta \phi = \mathbf{q} \cdot \mathbf{r} = |\mathbf{q}||\mathbf{r}|\cos(\theta) = \frac{4 \pi \sin(\theta)}{\lambda} |\mathbf{r}| \cos(\theta) = \frac{2 \pi}{\lambda} |\mathbf{r}| 2\sin(\theta)\cos(\theta) = \frac{2 \pi}{\lambda} |\mathbf{r}| sin(2\theta) = \frac{2 \pi}{\lambda} l $$
 
+![two scatterers geometry](/blog/assets/images/two_scatterers_geometry.jpeg){: width="50%"}
+
 The effect of this phase shift can be expressed by way of of a complex exponential, called the "phase factor": 
 
 $$ e^{i \Delta \phi} = e^{i \mathbf{q} \cdot \mathbf{r}} $$ 
