@@ -66,7 +66,7 @@ We can extend the molecular form factor to a continuous distribution of electron
 
 $$ F(\mathbf{q}) = \int \rho(\mathbf{r}) e^{i\mathbf{q}\cdot\mathbf{r}} \mathrm{d}^{3}\mathbf{r} $$
 
-Look familiar?
+[Look familiar?](https://en.wikipedia.org/wiki/Fourier_transform#Definition)
 
 ### The Molecular Form Factor is just the Fourier Transform of the electron density!
 
