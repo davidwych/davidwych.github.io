@@ -57,7 +57,7 @@ The intensity, $I$ (energy/time) of a light wave is proportional to the amplitud
 
 So if the amplitude, after scattering, at different angles is given by $F(\mathbf{q})$, what we actually *measure* is given by:
 
-$|F(\mathbf{q})|^{2}$
+$\|F(\mathbf{q})\|^{2}$
 
 (Not really, but sorta -- stick around at the end if you care¹)
 
@@ -69,7 +69,7 @@ Something interesting, as [pointed out by Feynman](https://www.feynmanlectures.c
 
 If we take our def. of $F(\mathbf{q})$ and square it, we get another Fourier transform!:
 
-$|F(\mathbf{q})|^{2} = \int \int \rho(\mathbf{r})\rho(\mathbf{r}') e^{i\mathbf{q}\cdot(\mathbf{r}'-\mathbf{r})} \mathrm{d}^{3}\mathbf{r} \mathrm{d}^{3}\mathbf{r}'$
+$\|F(\mathbf{q})\|^{2} = \int \int \rho(\mathbf{r})\rho(\mathbf{r}') e^{i\mathbf{q}\cdot(\mathbf{r}'-\mathbf{r})} \mathrm{d}^{3}\mathbf{r} \mathrm{d}^{3}\mathbf{r}'$
 
 $ = \int \[ \int \rho(\mathbf{u})\rho(\mathbf{r}+\mathbf{u}) \mathrm{d}^{3}\mathbf{u} \] e^{i\mathbf{q}\cdot\mathbf{r}} \mathrm{d}^{3}\mathbf{r}$
 
@@ -115,9 +115,9 @@ $z = Ae^{i\phi}$
 
 ![complex number](/blog/assets/images/complex.jpeg){: width="50%" }
 
-When you square a complex number you multiply by the "complex conjugate" (the complex number w/ the same amplitude, but opposite phase):
+When you want to get the magnitude of a complex number you take the "modulus", which means multiplying by the "complex conjugate" (the complex number w/ the same amplitude, but opposite phase) -- this gives you the magnitude of the complex number squared ($\|z\|^{2}$):
 
-$|z|^{2} = z z^{\ast} = Ae^{i\phi} * e^{-i\phi} = A^{2}$
+$\|z\|^{2} = z z^{\ast} = Ae^{i\phi} * e^{-i\phi} = A^{2}$
 
 You lose all information about the *phase* ($\phi$). You only get information about the *amplitude* ($A$).
 
