@@ -69,7 +69,7 @@ Something interesting, as [pointed out by Feynman](https://www.feynmanlectures.c
 
 If we take our def. of $$F(\mathbf{q})$$ and square it, we get another Fourier transform!:
 
-$$\|F(\mathbf{q})\|^{2} = \int \int \rho(\mathbf{r})\rho(\mathbf{r}') e^{i\mathbf{q}\cdot(\mathbf{r}'-\mathbf{r})} \mathrm{d}^{3}\mathbf{r} \mathrm{d}^{3}\mathbf{r}' = \int \[ \int \rho(\mathbf{u})\rho(\mathbf{r}+\mathbf{u}) \mathrm{d}^{3}\mathbf{u} \] e^{i\mathbf{q}\cdot\mathbf{r}} \mathrm{d}^{3}\mathbf{r} $$
+$$\|F(\mathbf{q})\|^{2} = \int \int \rho(\mathbf{r})\rho(\mathbf{r}') e^{i\mathbf{q}\cdot(\mathbf{r}'-\mathbf{r})} \mathrm{d}^{3}\mathbf{r} \mathrm{d}^{3}\mathbf{r}' = \int [ \int \rho(\mathbf{u})\rho(\mathbf{r}+\mathbf{u}) \mathrm{d}^{3}\mathbf{u} ] e^{i\mathbf{q}\cdot\mathbf{r}} \mathrm{d}^{3}\mathbf{r} $$
 
 where $$\mathbf{u} = \mathbf{r}'-\mathbf{r}$$ is the relative distance between scatterers at $$\mathbf{r}$$ and $$\mathbf{r}'$$.
 
