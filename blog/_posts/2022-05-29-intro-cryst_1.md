@@ -4,7 +4,7 @@ mathjax: true
 layout: post
 ---
 
-# How electrons perform the Fourier Transform
+# "How electrons perform the Fourier Transform"
 
 > *Warning: this is going to require a good bit of physics and math.* 
 >
@@ -52,7 +52,7 @@ $$ l = n \lambda \rightarrow e^{i \mathbf{q} \cdot \mathbf{r} } = e^{i 2 \pi n} 
 
 ![fair field](/blog/assets/images/far_field.jpeg){: width="50%"}
 
-Now, electrons bound to atoms scattering differently from isolated electrons, depending on the atom's distribution of electron density.
+Now, electrons bound to atoms scatter differently from isolated electrons, depending on the atom's distribution of electron density.
 
 This difference is represented with the "atomic scattering factor" $$f_{n}(\mathbf{q})$$ for each atom $$n$$. 
 
