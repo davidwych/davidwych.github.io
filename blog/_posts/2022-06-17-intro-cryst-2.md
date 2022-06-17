@@ -6,7 +6,7 @@ layout: post
 
 # "The Phase Problem", or, "You didn't think Mother Nature was gonna let us off that easy, did you?"
 
-[Last time]({% 2022-05-29-intro-cryst_1 %}) we talked about how an incident X-ray beam is scattered by the electrons around atoms, and why the cumulative effect of the scattering is such that the electrons perform the Fourier Transform!
+[Last time](https://davidwych.github.io/intro-cryst_1/) we talked about how an incident X-ray beam is scattered by the electrons around atoms, and why the cumulative effect of the scattering is such that the electrons perform the Fourier Transform!
 
 Let's discuss what this means in practice.
 
