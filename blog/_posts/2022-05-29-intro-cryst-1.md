@@ -34,7 +34,7 @@ If there are multiple electrons scattering the incident wave, separated by a vec
 
 #### *Why?*
 
-This is just the difference in path length, $$l$$, converted to radians:
+This is just the difference in path length, $$ l=|r|\sin(2\theta) $$ (the orange line in the image below, showing the difference in path length between the incident and scattered rays), converted to radians by a factor of $$\frac{2\pi}{\lambda}$$:
 
 $$ \Delta \phi = \mathbf{q} \cdot \mathbf{r} = |\mathbf{q}||\mathbf{r}|\cos(\theta) = \frac{4 \pi \sin(\theta)}{\lambda} |\mathbf{r}| \cos(\theta) = \frac{2 \pi}{\lambda} |\mathbf{r}| 2\sin(\theta)\cos(\theta) = \frac{2 \pi}{\lambda} |\mathbf{r}| sin(2\theta) = \frac{2 \pi}{\lambda} l $$
 
@@ -56,9 +56,9 @@ Now, electrons bound to atoms scatter differently from isolated electrons, depen
 
 This difference is represented with the "atomic scattering factor" $$f_{n}(\mathbf{q})$$ for each atom $$n$$. 
 
-We can calculate the scattering factor from an electron around an atom by integrating over the whole atom, weighting the electron density for the atom ($$\rho_{n}(\mathbf{q})$$) with the scattering factor:
+We can calculate the scattering factor from an electron around an atom by integrating over the whole atom, weighting the electron (number) density for the atom ($$\rho_{n}(\mathbf{r})$$) with the scattering factor:
 
-$$ f_{n}(\mathbf{q}) = \int \rho_{n}(\mathbf{q}) e^{i \mathbf{q} \cdot \mathbf{r}} \mathrm{d}^{3} \mathbf{r} $$
+$$ f_{n}(\mathbf{q}) = \int \rho_{n}(\mathbf{r}) e^{i \mathbf{q} \cdot \mathbf{r}} \mathrm{d}^{3} \mathbf{r} $$
 
 In a system of many atoms at positions $$\mathbf{r}_{n}$$, the scattered wave has an amplitude equal to the sum of the contributions from each atom. 
 
