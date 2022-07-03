@@ -10,7 +10,7 @@ layout: post
 
 Last time, we found that when an X-ray beam scatters through a volume of electron density, the intensity we measure in the far field is proportional to the squared magnitude of the form factor:
 
-$$ I(\mathbf{q}) = \| F(\mathbf{q}) \| $$
+$$ I(\mathbf{q}) \propto \| F(\mathbf{q}) \|^{2} $$
 
 Let's review a little...
 
