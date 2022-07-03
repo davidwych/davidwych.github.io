@@ -5,30 +5,32 @@ layout: page
 
 ## SUMMARY
 
-David C. Wych is a computational chemist and structural biologist working as a post- doctoral researcher in the Computer, Computational, and Statistical Sciences Division (CCS-3) and the Center for Non-Linear Studies (CNLS) at Los Alamos National Laboratory (LANL). His research focus involves using crystalline molecular-dynamics (MD) simulations to study X-ray crystallographic structural and dynamical modeling, and using QM-MM simulations to probe protein structure and dynamics beyond what is possible with classical MD.
+David C. Wych is a computational chemist and structural biologist working as a post- doctoral researcher in the Computer, Computational, and Statistical Sciences Division (CCS-3) and the Center for Non-Linear Studies (CNLS) at Los Alamos National Laboratory (LANL). 
+
+His research focus involves using molecular-dynamics (MD) simulations of protein crystal systems to better understand and improve the modeling of protein/solvent structure and disorder in X-ray crystallography, developing High-performance Computing methods for crystallographic modelling and refinement, and using QM-MM simulations to probe protein structure and dynamics beyond what is possible with classical MD.
 
 ## RESEARCH EXPERIENCE
 
 ### Post-doctoral Researcher -- LANL -- 2021-present
-**Research Areas**: crystalline molecular-dynamics (MD) simulations for the study of protein X-ray crystallographic modeling and refinement, structural heterogeneity, and diffuse scattering; software development for QM-MM simulation of whole proteins; high performance computing (HPC) methods for the processing and modeling of serial femtosecond X-ray crystallographic data from X-ray Free Electron Lasers (XFELs).
+**Research Areas**: MD simulations of protein crystals for the study of protein X-ray crystallographic modeling and refinement, structural heterogeneity, solvent structure, and diffuse scattering; software development for QM-MM simulation of whole proteins; high performance computing (HPC) methods for the processing and modeling of serial femtosecond X-ray crystallographic data from X-ray Free Electron Lasers (XFELs).
 
 ### Graduate Student Researcher -- UCI -- 2016-2021
 
-**Research Areas**: crystalline molecular dynamics (MD) simulations to study protein crytallographic diffuse scattering and the modelling and refinement of structure and disorder.
+**Research Areas**: MD simulations of protein crystals to study protein crytallographic diffuse scattering and the modelling and refinement of structure and disorder.
 
 **Instruction**: Physical Biochemistry (lead instructor: 2020; instructor: 2019; teaching assistant: 2017-2018) 
 
 ### CNLS Virtual Summer Intern -- LANL -- Summer 2020
 
-**Research Areas**: Crystalline molecular-dynamics (MD) simulations for the study of diffuse scattering, structure, and dynamics; construction of MD simulations using ensemble models; investigation of ordered water structure.
+**Research Areas**: MD simulations of protein crystals for the study of diffuse scattering, structure, and dynamics; construction of MD simulations using ensemble models; investigation of ordered water structure.
 
 ### Graduate Student Assistant — LANL — Winter-Fall 2019
 
-**Research Areas**: Crystalline molecular-dynamics (MD) simulations for the study of diffuse scattering; analysis of the covariance of atom pairs for comparison with the assumptions of phenomenological models of diffuse scattering.
+**Research Areas**: MD simulations of protein crystals for the study of diffuse scattering; analysis of the covariance of atom pairs for comparison with the assumptions of phenomenological models of diffuse scattering.
 
 ### Applied Machine Learning Summer Fellow — LANL — Summer 2018
 
-**Research Areas**: crystalline molecular-dynamics (MD) simulations for the study of diffuse scattering; non-negative matrix factorization (NMF) factorization for the clustering and analysis of electron density trajectories computed from MD trajectories.
+**Research Areas**: MD simulations of protein crystals for the study of diffuse scattering; non-negative matrix factorization (NMF) factorization for the clustering and analysis of electron density trajectories computed from MD trajectories.
 
 ## EDUCATION
 
@@ -38,7 +40,11 @@ David C. Wych is a computational chemist and structural biologist working as a p
 
 ## SKILLS
 
-Molecular-dynamics (MD) simulations; X-ray crystallographic modeling and refinement; software development for analysis of molecular-dynamics and crystallographic data using high-performance computing platforms; software development for QM-MM simulation of proteins.
+Molecular-dynamics (MD) simulations; protein crystalline MD; X-ray crystallographic modeling and refinement; software development for analysis of molecular-dynamics and crystallographic data on high-performance computing (HPC) platforms; software development for QM-MM simulation of proteins.
+
+**Expertise in**: GROMACS, AMBER, Python, NumPy, SciPy, cctbx, ccp4, phenix, bash/slurm scripting
+
+**Proficient in**: C(++), SciKit-Learn, Pandas, Matlab
 
 ## PUBLICATIONS
 
@@ -51,6 +57,12 @@ Molecular-dynamics (MD) simulations; X-ray crystallographic modeling and refinem
 - Wych, D. C., Fraser, J. S., Mobley, D. L., & Wall, M. E. (2019). "Liquid-like and rigid-body motions in molecular-dynamics simulations of a crystalline protein." *Structural Dynamics*, 6(6), 064704. [Selected as a Feature Article by the Editors of Structural Dynamics, and a SciLight by the AIP]
 
 ## INVITED PRESENTATIONS
+
+- 57th Course of the Erice International School of Crystallography — Diffuse Scattering: The Crystallography of Dynamics, Defects, and Disorder 
+
+    - **Lecture**: “Analysis of Molecular Dynamics Simulations of Protein Crystals”
+
+    - **Workshops**: Preparation of Crystalline Molecular Dynamics Simulations, Analysis of MD Simulations of Protein Crystals for the study of Diffuse Scattering
 
 - "Molecular Dynamics Simulation Methods for Macromolecular Crystallography”. OpenEye CUP XXI. March, 2022.
 
