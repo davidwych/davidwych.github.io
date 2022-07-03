@@ -48,7 +48,7 @@ We can represent this mathematically by specifying the vector pointing to the or
 
 $$ \mathbf{R}_{n} = n_{1}\mathbf{a}_{1} + n_{2}\mathbf{a}_{2} + n_{3}\mathbf{a}_{3} $$
 
-where $$\mathbf{a}_{1}$$, $$\mathbf{a}_{2}$$, and $$\mathbf{a}_{3}$$ are the "lattice vectors" and $$n_{1}$$, $$n_{2}$$, and $$n_{3}$$ are integers. (These are often notated as $$a$$, $$b$$, and $$c$$, as in the image below.) Because we can define these unit cell vectors to point in any direction we like, we can describe *all* of the different types of unit cells ("space groups") found in crystals using the same formalism.
+where $$\mathbf{a}_{1}$$, $$\mathbf{a}_{2}$$, and $$\mathbf{a}_{3}$$ are the "lattice vectors" and $$n_{1}$$, $$n_{2}$$, and $$n_{3}$$ are integers. (These are often notated as $$a$$, $$b$$, and $$c$$, as in the image below.) Because we can define these unit cell vectors to point in any direction we like, we can describe *all* of the different types of unit cells found in crystals using the same formalism.
 
 ![different unit cells](/blog/assets/images/different_unit_cells.jpeg){: width="50%" }
 
