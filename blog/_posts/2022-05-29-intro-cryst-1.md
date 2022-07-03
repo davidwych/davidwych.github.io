@@ -36,7 +36,7 @@ If there are multiple electrons scattering the incident wave, separated by a vec
 
 This is just the difference in path length, $$ l=|r|\sin(2\theta) $$ (the orange line in the image below, showing the difference in path length between the incident and scattered rays), converted to radians by a factor of $$\frac{2\pi}{\lambda}$$:
 
-$$ \Delta \phi = \mathbf{q} \cdot \mathbf{r} = |\mathbf{q}||\mathbf{r}|\cos(\theta) = \frac{4 \pi \sin(\theta)}{\lambda} |\mathbf{r}| \cos(\theta) = \frac{2 \pi}{\lambda} |\mathbf{r}| 2\sin(\theta)\cos(\theta) = \frac{2 \pi}{\lambda} |\mathbf{r}| sin(2\theta) = \frac{2 \pi}{\lambda} l $$
+$$ \Delta \phi = \mathbf{q} \cdot \mathbf{r} = |\mathbf{q}||\mathbf{r}|\cos(\theta) = \frac{4 \pi \sin(\theta)}{\lambda} |\mathbf{r}| \cos(\theta) = \frac{2 \pi}{\lambda} |\mathbf{r}| 2\sin(\theta)\cos(\theta) = \frac{2 \pi}{\lambda} |\mathbf{r}| \sin(2\theta) = \frac{2 \pi}{\lambda} l $$
 
 ![two scatterers geometry](/blog/assets/images/two_scatterers_geometry.jpeg){: width="50%"}
 
