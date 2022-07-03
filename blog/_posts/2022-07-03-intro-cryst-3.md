@@ -14,6 +14,8 @@ $$ I(\mathbf{q}) \propto \| F(\mathbf{q}) \|^{2} $$
 
 Let's review a little...
 
+<!--more-->
+
 This intensity is a function of the "scattering factor": $$\mathbf{q}$$, which is vector displacement between the incident ($$\mathbf{k}$$) and scattered ($$\mathbf{k}'$$) wavevectors: $$\mathbf{q} = \mathbf{k}' - \mathbf{k}$$.
 
 The collection of these $$\mathbf{q}$$s forms a sphere in "reciprocal space".
