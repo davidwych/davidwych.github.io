@@ -6,7 +6,7 @@ layout: post
 
 # "The Ewald Sphere"
 
-*If you need enticement to stick with this -- this is probably the most beautiful piece of theory I've ever come atimes ✨it's really something special.*
+*If you need enticement to stick with this -- this is probably the most beautiful piece of theory I've ever come across ✨it's really something special.*
 
 Last time, we found that when an X-ray beam scatters through a volume of electron density, the intensity we measure in the far field is proportional to the squared magnitude of the form factor:
 
