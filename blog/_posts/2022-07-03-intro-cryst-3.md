@@ -100,7 +100,7 @@ $$ I_{\text{Bragg}}(\mathbf{q}) = \| F_{\text{avg.}}(\mathbf{q})\|^{2} \| S_{n}(
 
 where:
 
-$$S_{n}(\mathbf{q}) = \sum_{n} e^{i\textbf{q}cdot\textbf{𝗥}_{n}} $$
+$$S_{n}(\mathbf{q}) = \sum_{n} e^{i\textbf{q}\cdot\textbf{𝗥}_{n}} $$
 
 is the "lattice structure factor" from the $$N$$ unit cells.
 
