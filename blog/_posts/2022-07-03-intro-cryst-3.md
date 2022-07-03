@@ -88,7 +88,7 @@ $$\| F_{\text{crystal}}(\mathbf{q}) \|^{2} = I_{\text{Bragg}}(\mathbf{q}) + I_{\
 
 where:
 
-$$ I_{\text{Bragg}}(\mathbf{q}) = \| F_{\text{avg.}}(\mathbf{q}) \|^{2} \| \sum_{n} e^{i \textbf{q} \cdot \textbf{\mathbf{R}_{n}}} \|^{2} $$
+$$ I_{\text{Bragg}}(\mathbf{q}) = \| F_{\text{avg.}}(\mathbf{q}) \|^{2} \| \sum_{n} e^{i \textbf{q} \cdot \mathbf{R}_{n}} \|^{2} $$
 
 This is the scattering from a perfect crystal, with our $$F(\mathbf{q})$$ from before replaced by the $$F_{\text{avg.}}(\mathbf{q})$$.
 
