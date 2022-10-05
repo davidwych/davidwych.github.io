@@ -23,7 +23,7 @@ His research focus involves using molecular-dynamics (MD) simulations of protein
 
 - **Advisor**: Scot Gould (Physics)
 
-- **Mentor**: Yun "Lyna" Luo (Pharmacy | Western University of Health Sciences)
+- **Mentor**: Yun "Lyna" Luo (Pharmacy; Western University of Health Sciences)
 
 ## PROFESSIONAL EXPERIENCE
 
