@@ -9,7 +9,7 @@ David C. Wych is a computational chemist and structural biologist working as a p
 
 His research focus involves using molecular-dynamics (MD) simulations of protein crystal systems to better understand and improve the modeling of protein/solvent structure and disorder in X-ray crystallography (specifically, the "diffuse scattering"), developing High-performance Computing methods for crystallographic modeling and refinement, and using QM-MD simulations to probe protein structure and dynamics beyond what is possible with classical MD.
 
-## Education
+## EDUCATION
 
 ### Ph.D. -- Pharmaceutical Sciences -- University of California, Irvine -- 2021
 
