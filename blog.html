@@ -7,7 +7,7 @@ mathjax: true
 {%- assign posts = paginator.posts | default: site.posts -%}
 {% for post in posts %}
   <article>
-    {% include meta.html post=post preview=false %}
+    {% include meta.html post=post show_excerpts=false %}
     {{ post.excerpt }}
     <div class="more"><a href="{{ post.url | relative_url }}">read more</a></div>
   </article>
