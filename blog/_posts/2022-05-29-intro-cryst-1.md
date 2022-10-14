@@ -34,13 +34,13 @@ If there are multiple electrons scattering the incident wave, separated by a vec
 
 #### *Why?*
 
-This is just the difference in path length, $$ l= \lvert r \rvert \sin(2\theta) $$ (the orange line in the image below, showing the difference in path length between the incident and scattered rays), converted to radians by a factor of $$\frac{2\pi}{\lambda}$$:
+This is just the difference in path length, $$l$$, converted to radians:
 
-$$ \Delta \phi = \mathbf{q} \cdot \mathbf{r} = |\mathbf{q}||\mathbf{r}|\cos(\theta) = \frac{4 \pi \sin(\theta)}{\lambda} |\mathbf{r}| \cos(\theta) = \frac{2 \pi}{\lambda} |\mathbf{r}| 2\sin(\theta)\cos(\theta) = \frac{2 \pi}{\lambda} |\mathbf{r}| \sin(2\theta) = \frac{2 \pi}{\lambda} l $$
+$$ \Delta \phi = \mathbf{q} \cdot \mathbf{r} = |\mathbf{q}||\mathbf{r}|\cos(\theta) = \frac{4 \pi \sin(\theta)}{\lambda} |\mathbf{r}| \cos(\theta) = \frac{2 \pi}{\lambda} |\mathbf{r}| 2\sin(\theta)\cos(\theta) = \frac{2 \pi}{\lambda} |\mathbf{r}| sin(2\theta) = \frac{2 \pi}{\lambda} l $$
 
 ![two scatterers geometry](/blog/assets/images/two_scatterers_geometry.jpeg){: width="50%"}
 
-The effect of this phase shift can be expressed by way of of a complex exponential, called the "phase factor": 
+The effect of this phase shift can be expressed by way of a complex exponential, called the "phase factor": 
 
 $$ e^{i \Delta \phi} = e^{i \mathbf{q} \cdot \mathbf{r}} $$ 
 
@@ -50,23 +50,27 @@ If $$\Delta\phi = \mathbf{q}\cdot\mathbf{r}$$ is such that the path length diffe
 
 $$ l = n \lambda \rightarrow e^{i \mathbf{q} \cdot \mathbf{r} } = e^{i 2 \pi n} = 1 $$
 
+So, given a set of atoms at positions $$\mathbf{r}_{i}$$ we can compute the effect of the interference in far field, at any scattering angle, by computing the phase factor $$ e^{i \mathbf{q} \cdot \mathbf{r}_{i} } $$. 
+
+(*The problem, as we will see, is that crystallographic experiments starts from the exact opposite state of affairs: we measure the diffraction pattern that results from the scattering of X-rays, and we don't know the positions of the atoms responsible for the scattering.*)
+
 ![fair field](/blog/assets/images/far_field.jpeg){: width="50%"}
 
 Now, electrons bound to atoms scatter differently from isolated electrons, depending on the atom's distribution of electron density.
 
-This difference is represented with the "atomic scattering factor" $$f_{n}(\mathbf{q})$$ for each atom $$n$$. 
+This difference is represented with the "atomic scattering factor" $$f_{n}(\mathbf{q})$$ for each atom (indexed by $$n$$). 
 
-We can calculate the scattering factor from an electron around an atom by integrating over the whole atom, weighting the electron (number) density for the atom ($$\rho_{n}(\mathbf{r})$$) with the scattering factor:
+We can calculate this atomic scattering factor by integrating over the whole atom's electron density, weighting the density for the atom ($$\rho_{n}(\mathbf{q})$$) by the scattering factor:
 
-$$ f_{n}(\mathbf{q}) = \int \rho_{n}(\mathbf{r}) e^{i \mathbf{q} \cdot \mathbf{r}} \mathrm{d}^{3} \mathbf{r} $$
+$$ f_{n}(\mathbf{q}) = \int \rho_{n}(\mathbf{q}) e^{i \mathbf{q} \cdot \mathbf{r}} \mathrm{d}^{3} \mathbf{r} $$
 
-In a system of many atoms at positions $$\mathbf{r}_{n}$$, the scattered wave has an amplitude equal to the sum of the contributions from each atom. 
+In a system of many atoms (say, a molecule) at positions $$\mathbf{r}_{n}$$, the scattered wave has an amplitude equal to the sum of the contributions from each atom. 
 
 This is called the "Molecular Form Factor" ($$F(\mathbf{q})$$):
 
 $$ F(\mathbf{q}) = \sum_{n} f_{n}(\mathbf{q}) e^{i\mathbf{q}\cdot\mathbf{r}_{n}} $$
 
-We can extend the molecular form factor to a continuous distribution of electron density for the whole system ($$\rho(\mathbf{q})$$) by switching to an integral over the entire scattering volume:
+Rather than working with atoms as though they are discrete pockets of electron density, we can instead extend the molecular form factor to a continuous distribution of electron density for the whole system ($$\rho(\mathbf{q})$$) by switching from a discrete sum to an integral over the entire scattering volume:
 
 $$ F(\mathbf{q}) = \int \rho(\mathbf{r}) e^{i\mathbf{q}\cdot\mathbf{r}} \mathrm{d}^{3}\mathbf{r} $$
 
@@ -76,7 +80,7 @@ $$ F(\mathbf{q}) = \int \rho(\mathbf{r}) e^{i\mathbf{q}\cdot\mathbf{r}} \mathrm{
 
 This, my friends, is magic.
 
-Elastic scattering converts plane waves to spherical waves. The interference of the scattered waves performs a mathematical operation.
+Elastic scattering converts plane waves to spherical waves. The interference of these scattered waves performs a mathematical operation.
 
 How cool is that?
 

@@ -11,7 +11,7 @@ His research focus involves using molecular-dynamics (MD) simulations of protein
 
 ## EDUCATION
 
-### Ph.D. -- Pharmaceutical Sciences -- University of California, Irvine -- 2021
+### Ph.D. -- Pharmacological Sciences -- University of California, Irvine -- 2021
 
 - **Dissertation**: _Insights into the Modeling of Crystallographic Structure and Disorder from Molecular Dynamics Simulations of Protein Crystals_
 

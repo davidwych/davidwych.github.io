@@ -63,7 +63,7 @@ $$\|F(\mathbf{q})\|^{2}$$
 
 ---
 
-Something interesting, as [pointed out by Feynman](https://www.feynmanlectures.caltech.edu/II_27.html#Ch27-S4): we don't actually *know* this is the correct expression the EM field energy in space. There are infinite possible expressions for the energy density, we just choose the simplest one that works...
+Something interesting, as [pointed out by Feynman](https://www.feynmanlectures.caltech.edu/II_27.html#Ch27-S4): we don't actually *know* this is the correct expression the EM energy density in space. There are actually *infinite* possible expressions for the energy density, we just choose the simplest one that works...
 
 ---
 
@@ -71,7 +71,7 @@ If we take our def. of $$F(\mathbf{q})$$ and square it, we get another Fourier t
 
 $$\|F(\mathbf{q})\|^{2} = \int \int \rho(\mathbf{r})\rho(\mathbf{r}') e^{i\mathbf{q}\cdot(\mathbf{r}'-\mathbf{r})} \mathrm{d}^{3}\mathbf{r} \mathrm{d}^{3}\mathbf{r}' = \int [ \int \rho(\mathbf{u})\rho(\mathbf{r}+\mathbf{u}) \mathrm{d}^{3}\mathbf{u} ] e^{i\mathbf{q}\cdot\mathbf{r}} \mathrm{d}^{3}\mathbf{r} $$
 
-where $$\mathbf{u} = \mathbf{r}'-\mathbf{r}$$ is the relative distance between scatterers at $$\mathbf{r}$$ and $$\mathbf{r}'$$.
+where $$\mathbf{u} = \mathbf{r}'-\mathbf{r}$$ is the relative distance between scatterers at $$\mathbf{r}$$ and $$\mathbf{r}'$$ (notice, we've also swapped the labels $$\mathbf{u}$$ and $${r}$$).
 
 That expression in brackets being Fourier Transformed is the *autocorrelation* of the electron density, $$\rho$$: 
 
@@ -89,9 +89,9 @@ For example (as we'll discuss in much greater detail) if the density is periodic
 
 Now we can understand why!
 
-A "crystal" is a collection of atoms that repeats. Repeating means it's a **copy** of itself, up to translation. This means it's very *autocorrelated* at well-defined distances.
+A "crystal" is a collection of atoms that repeats. Repeating means it's a **copy** of itself, up to translation. This means it's very *autocorrelated* at well-defined displacements.
 
-The Fourier Transform (intensity) can then give us info abut this!
+The Fourier Transform (intensity) can then give us information about this!
 
 Back when crystallography was first discovered, it was not obvious that atoms in crystals stayed still enough for crystallography to work as well as it does (if they jiggled around too much, the autocorrelation would be a mess, with no well-defined peaks)
 
@@ -103,7 +103,7 @@ The rest is history.
 
 :(
 
-That would be cool, but alas...
+That would be nice, but alas...
 
 The cheeky trick that Mother Nature pulls on us here comes from the *squaring* of the Molecular Form Factor ($$F(\mathbf{q})$$).
 
@@ -115,7 +115,7 @@ $$z = Ae^{i\phi}$$
 
 When you want to get the magnitude of a complex number you take the "modulus", which means multiplying by the "complex conjugate" (the complex number w/ the same amplitude, but opposite phase) -- this gives you the magnitude of the complex number squared ($$\|z\|^{2}$$):
 
-$$\|z\|^{2} = z z^{\ast} = Ae^{i\phi} * e^{-i\phi} = A^{2}$$
+$$\|z\|^{2} = z z^{\ast} = Ae^{i\phi} * Ae^{-i\phi} = A^{2}$$
 
 You lose all information about the *phase* ($$\phi$$). You only get information about the *amplitude* ($$A$$).
 
@@ -143,6 +143,6 @@ But for now, be well.
 
 ¹What we *actually* measure is the average autocorrelation of the *variation* of the density *about the mean*.
 
-The scattering form the average density comes out of the total scattering as a peak in the center of the beam.
+The scattering from the average density comes out of the total scattering as a peak in the center of the beam.
 
 ![footnote](/blog/assets/images/footnote.jpeg){: width="50%" }
