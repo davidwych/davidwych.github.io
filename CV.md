@@ -5,9 +5,9 @@ layout: page
 
 ## SUMMARY
 
-David C. Wych is a computational chemist and structural biologist working as a postdoctoral research associate in the Computer, Computational, and Statistical Sciences Division (CCS-3) and the Center for Non-Linear Studies (CNLS) at Los Alamos National Laboratory (LANL). 
+David C. Wych is a postdoctoral research associate in the Computer, Computational, and Statistical Sciences Division (CCS-3) and the Center for Non-Linear Studies (CNLS) at Los Alamos National Laboratory (LANL). 
 
-His research focus involves using molecular-dynamics (MD) simulations of protein crystal systems to better understand and improve the modeling of protein/solvent structure and disorder in X-ray crystallography (specifically, the "diffuse scattering"), developing High-performance Computing methods for crystallographic modeling and refinement, and using QM-MD simulations to probe protein structure and dynamics beyond what is possible with classical MD.
+His research focus involves using molecular-dynamics (MD) and quantum mechanics(QM) simulations of proteins, in both the crystalline and solution state, to better understand and improve the modeling of protein/solvent structure and disorder in X-ray crystallography (specifically, the "diffuse scattering"), developing High-performance Computing methods for crystallographic modeling and refinement, and using QM-MD simulations to probe protein structure and dynamics beyond what is possible with classical MD.
 
 ## EDUCATION
 
@@ -27,7 +27,7 @@ His research focus involves using molecular-dynamics (MD) simulations of protein
 
 ## PROFESSIONAL EXPERIENCE
 
-### Post-doctoral Researcher -- LANL -- Computer, Computational and Statistical Sciences Division (CCS-3) and the Center for Non-linear Studies (CNLS) -- 2021-present
+### Postdoctoral Research Associate -- LANL -- Computer, Computational and Statistical Sciences Division (CCS-3) and the Center for Non-linear Studies (CNLS) -- 2021-present
 - Created new advanced methods for X-ray crystallographic (XRC) modeling & refinement using structure factors calculated from molecular-dynamics (MD) simulations of protein crystals (in review; preprint: [bioRxiv](https://www.biorxiv.org/content/10.1101/2022.04.04.486986v1)).
 - [Developed software](https://github.com/cctbx/cctbx_project/pull/785) in C++ and Python for the modeling of serial femtosecond XRC data on next-generation supercomputers as part of the [DOE Exascale Computing Project](https://www.exascaleproject.org), allowing for fast refinement of parameters in the modeling of diffuse scattering.
 - Developed software in FORTRAN for quantum mechanical simulations of large protein-solvent systems (thousands of atoms) using cutting-edge fast quantum molecular dynamics (QM-MD) algorithms (SCC-DFTB in [LATTE](https://github.com/lanl/LATTE) & NAMD).
