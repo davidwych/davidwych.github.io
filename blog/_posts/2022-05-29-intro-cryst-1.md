@@ -16,11 +16,11 @@ layout: post
 
 Let's start with the math of how crystallography *really* works.
 
-X-rays (wavelength λ=10⁻¹¹-10⁻⁸ m) scatter, elastically, off of electrons bound to atoms, producing spherical waves of the same wavelength.
+X-rays (wavelength λ=10⁻¹¹-10⁻⁸ m; energy 0.02-20 keV) scatter, [elastically](https://en.wikipedia.org/wiki/Thomson_scattering), off of electrons bound to atoms, producing spherical waves of the *same wavelength*.
 
 ![spherical wave](/blog/assets/images/spherical_wave.jpeg){: width="50%" }
 
-We can describe the direction of traveling wave using a "wavevector" $$\mathbf{k}$$, with the magnitude of the vector equal to the "wavenumber", $$\frac{2\pi}{\lambda}$$, and the direction pointing in the direction of propagation.
+We can describe the direction of traveling wave using a "wavevector" $$\mathbf{k}$$, with the magnitude of the vector equal to the "wavenumber", $$\frac{2\pi}{\lambda}$$, and the direction pointing in the direction of propagation. For the incident X-ray plane wave, there is a single, definite wavevector ($$\mathbf{k}$$). For the scattered wave, there are many, equivalent wavevectors ($$\mathbf{k}'$$), one for each scattering angle.  
 
 ![spherical wave w vecs](/blog/assets/images/spherical_wave_w_vecs.jpeg){: width="50%" }
 
@@ -60,9 +60,9 @@ Now, electrons bound to atoms scatter differently from isolated electrons, depen
 
 This difference is represented with the "atomic scattering factor" $$f_{n}(\mathbf{q})$$ for each atom (indexed by $$n$$). 
 
-We can calculate this atomic scattering factor by integrating over the whole atom's electron density, weighting the density for the atom ($$\rho_{n}(\mathbf{q})$$) by the scattering factor:
+We can calculate this atomic scattering factor by integrating over the whole atom's electron density, weighting the density at each position around the atom ($$\rho_{n}(\mathbf{r})$$) by the scattering factor:
 
-$$ f_{n}(\mathbf{q}) = \int \rho_{n}(\mathbf{q}) e^{i \mathbf{q} \cdot \mathbf{r}} \mathrm{d}^{3} \mathbf{r} $$
+$$ f_{n}(\mathbf{q}) = \int \rho_{n}(\mathbf{r}) e^{i \mathbf{q} \cdot \mathbf{r}} \mathrm{d}^{3} \mathbf{r} $$
 
 In a system of many atoms (say, a molecule) at positions $$\mathbf{r}_{n}$$, the scattered wave has an amplitude equal to the sum of the contributions from each atom. 
 
