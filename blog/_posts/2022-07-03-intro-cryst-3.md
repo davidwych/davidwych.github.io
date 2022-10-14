@@ -221,8 +221,6 @@ Huge facilities have been constructed around the world, to spin electrons around
 
 (Above, NSLSII at Brookhaven National Laboratory in the US and Diamond Light Source in the UK)
 
-If you want more information on what we actually DO with all this data, once we've collected it, see [this thread](https://twitter.com/dcwych/status/1431668253466644483?s=20&t=t_RlupHS_wRSafB28TxvXw).
-
 I hope to follow up at some points with a similar thread about the diffuse scattering.
 
 For now, be well!

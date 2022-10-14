@@ -36,7 +36,7 @@ Remember: we *measure* in the $$\mathbf{k}'$$ direction, but the interference *d
 
 ![projection](/blog/assets/images/projection_on_detector.jpeg){: width="50%" }
 
-The degree of constructive/destructive interference depends on the dot product between the $$\mathbf{q}$$s and the positions of the other electrons ($$\mathbf{r}$$), expressed with the scattering factor $$e^{\mathbf{q}\cdot\mathbf{r}}$$.
+The degree of constructive/destructive interference depends on the dot product between the $$\mathbf{q}$$s and the positions of the other electrons ($$\mathbf{r}$$), expressed with the scattering factor $$e^{i \mathbf{q}\cdot\mathbf{r}}$$.
 
 Strong interference looks like a **bright spot** in the far field (right above; and below)
 
@@ -93,11 +93,15 @@ A "crystal" is a collection of atoms that repeats. Repeating means it's a **copy
 
 The Fourier Transform (intensity) can then give us information about this!
 
+---
+
 Back when crystallography was first discovered, it was not obvious that atoms in crystals stayed still enough for crystallography to work as well as it does (if they jiggled around too much, the autocorrelation would be a mess, with no well-defined peaks)
 
 Indeed, Peter Debye [purportedly warned](https://onlinelibrary.wiley.com/doi/abs/10.1002/qua.560350606) Max von Laue that thermal fluctuations would preclude the possibility for constructive interference in crystal diffraction, but von Laue went forward with his experiments anyway. 
 
 The rest is history.
+
+---
 
 2) Because we measure the Fourier Transform of the *autocorrelation* of the density -- not the  *density itself* -- we can't just perform an *inverse* Fourier Transform on the measured signal to easily recover the density.
 
