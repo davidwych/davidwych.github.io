@@ -70,7 +70,7 @@ This is called the "Molecular Form Factor" ($$F(\mathbf{q})$$):
 
 $$ F(\mathbf{q}) = \sum_{n} f_{n}(\mathbf{q}) e^{i\mathbf{q}\cdot\mathbf{r}_{n}} $$
 
-Rather than working with atoms as though they are discrete pockets of electron density, we can instead extend the molecular form factor to a continuous distribution of electron density for the whole system ($$\rho(\mathbf{q})$$) by switching from a discrete sum to an integral over the entire scattering volume:
+Rather than working with atoms as though they are discrete pockets of electron density, we can instead extend the molecular form factor to a continuous distribution of electron density for the whole system ($$\rho(\mathbf{r})$$) by switching from a discrete sum to an integral over the entire scattering volume:
 
 $$ F(\mathbf{q}) = \int \rho(\mathbf{r}) e^{i\mathbf{q}\cdot\mathbf{r}} \mathrm{d}^{3}\mathbf{r} $$
 
