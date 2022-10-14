@@ -11,5 +11,5 @@ I study protein crystallography, protein structure and disorder, and diffuse sca
 
 I also have a very handsome dog.
 
-![Evi 4x5](/assets/Evi_4x5_color.png)
+![Evi 4x5](/assets/images/Evi_4x5_color.png)
 
