@@ -61,9 +61,9 @@ His research focus involves using molecular-dynamics (MD) and quantum mechanics(
 
 ### Peer-reviewed Publications
 
-- [**Wych, D.C.** and Wall, M.E. (2023) "Dynamics Simulations of Macromolecular Diffraction, Part 1: Preparation of Protein Crystal Simulation." *Methods in Enzymology*. In Press, Corrected Proof.](https://www.sciencedirect.com/science/article/abs/pii/S0076687923002136)
+- [**Wych, D.C.** and Wall, M.E. (2023) "Molecular-Dynamics Simulations of Macromolecular Diffraction, Part 1: Preparation of Protein Crystal Simulations." *Methods in Enzymology*. In Press, Corrected Proof.](https://www.sciencedirect.com/science/article/abs/pii/S0076687923002136)
 
-- [**Wych, D.C.** and Wall, M.E. (2023) "Dynamics Simulations of Macromolecular Diffraction, Part 2: Analysis of Protein Crystal Simulation." *Methods in Enzymology*. In Press, Corrected Proof.](https://www.sciencedirect.com/science/article/abs/pii/S0076687923002173)
+- [**Wych, D.C.** and Wall, M.E. (2023) "Molecular-Dynamics Simulations of Macromolecular Diffraction, Part 2: Analysis of Protein Crystal Simulations." *Methods in Enzymology*. In Press, Corrected Proof.](https://www.sciencedirect.com/science/article/abs/pii/S0076687923002173)
 
 - [Doyle, M. D., Bhowmick, A., **Wych, D. C.**, Lassalle, L., Simon, P. S., Holton, J., ... & Wall, M. E. (2023). "Water Networks in Photosystem II Using Crystalline Molecular Dynamics Simulations and Room-Temperature XFEL Serial Crystallography." *Journal of the American Chemical Society*, 145(27), 14621-14635.](https://pubs.acs.org/doi/abs/10.1021/jacs.3c01412)
 
