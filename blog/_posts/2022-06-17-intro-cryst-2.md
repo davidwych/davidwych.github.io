@@ -6,7 +6,7 @@ layout: post
 
 # "The Phase Problem", or, "You didn't think Mother Nature was gonna let us off that easy, did you?"
 
-[Last time](https://davidwych.github.io/intro-cryst_1/) we talked about how an incident X-ray beam is scattered by the electrons around atoms, and why the cumulative effect of the scattering is such that the electrons perform the Fourier Transform!
+[Last time](https://davidwych.github.io/intro-cryst-1/) we talked about how an incident X-ray beam is scattered by the electrons around atoms, and why the cumulative effect of the scattering is such that the electrons perform the Fourier Transform!
 
 Let's discuss what this means in practice.
 
@@ -18,7 +18,7 @@ Electrons scatter that wave, so it radiates out spherically, at all angles defin
 
 We choose to express the scattering through the "scattering vector" $$\mathbf{q}$$, the vector that points from the tip of $$\mathbf{k}$$ to the tip of $$\mathbf{k}'$$.
 
-Sweeping through all angles, the collection of these $$\mathbf{k}$$s forms a sphere. 
+Sweeping through all angles, the collection of these $$\mathbf{k}'$$s forms a sphere. 
 
 <!--more-->
 

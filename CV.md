@@ -5,9 +5,10 @@ layout: page
 
 ## SUMMARY
 
-David C. Wych is a postdoctoral research associate in the Computer, Computational, and Statistical Sciences Division (CCS-3) and the Center for Non-Linear Studies (CNLS) at Los Alamos National Laboratory (LANL). 
+David C. Wych is a Scientific Developer II focusing on cryoEM modeling for pharmaceutical drug discovery in the Structural Biology group at OpenEye Scientific Software (Cadence Molecular Sciences). He was recently a postdoctoral research associate in the Computer, Computational, and Statistical Sciences Division (CCS-3) and the Center for Non-Linear Studies (CNLS) at Los Alamos National Laboratory (LANL). 
 
-His research focus involves using molecular-dynamics (MD) and quantum mechanics(QM) simulations of proteins, in both the crystalline and solution state, to better understand and improve the modeling of protein/solvent structure and disorder in X-ray crystallography (specifically, the "diffuse scattering"), developing High-performance Computing methods for crystallographic modeling and refinement, and using QM-MD simulations to probe protein structure and dynamics beyond what is possible with classical MD.
+His research focus involves using molecular-dynamics (MD) and quantum mechanics(QM) simulations of proteins, in both the crystalline and solution state, to better understand and improve the modeling of protein/solvent structure and disorder in X-ray crystallography (specifically, the "diffuse scattering") and cryo-electron microscopy, developing High-performance Computing methods for crystallographic modeling and refinement, and using QM-MD simulations to probe protein structure and dynamics beyond what is possible with classical MD.
+
 
 ## EDUCATION
 
@@ -25,10 +26,15 @@ His research focus involves using molecular-dynamics (MD) and quantum mechanics(
 
 - **Mentor**: Yun "Lyna" Luo (Pharmacy; Western University of Health Sciences)
 
+
 ## PROFESSIONAL EXPERIENCE
 
-### Postdoctoral Research Associate -- LANL -- Computer, Computational and Statistical Sciences Division (CCS-3) and the Center for Non-linear Studies (CNLS) -- 2021-present
-- Created new advanced methods for X-ray crystallographic (XRC) modeling & refinement using structure factors calculated from molecular-dynamics (MD) simulations of protein crystals (in review; preprint: [bioRxiv](https://www.biorxiv.org/content/10.1101/2022.04.04.486986v1)).
+### Scientific Developer II | CryoEM -- OpenEye Scientific | Cadence Molecular Sciences -- July 2023-present
+- Scientific software development in C++ and python
+- Developing methods for modeling cryoEM data for application to pharmaceutical drug discovery
+
+### Postdoctoral Research Associate -- LANL -- Computer, Computational and Statistical Sciences Division (CCS-3) and the Center for Non-linear Studies (CNLS) -- 2021-2023
+- Created new advanced methods for X-ray crystallographic (XRC) modeling & refinement using structure factors calculated from molecular-dynamics (MD) simulations of protein crystals (published in [Acta Cryst. D](https://journals.iucr.org/d/issues/2023/01/00/lp5065/index.html)).
 - [Developed software](https://github.com/cctbx/cctbx_project/pull/785) in C++ and Python for the modeling of serial femtosecond XRC data on next-generation supercomputers as part of the [DOE Exascale Computing Project](https://www.exascaleproject.org), allowing for fast refinement of parameters in the modeling of diffuse scattering.
 - Developed software in FORTRAN for quantum mechanical simulations of large protein-solvent systems (thousands of atoms) using cutting-edge fast quantum molecular dynamics (QM-MD) algorithms (SCC-DFTB in [LATTE](https://github.com/lanl/LATTE) & NAMD).
 
@@ -49,6 +55,27 @@ His research focus involves using molecular-dynamics (MD) and quantum mechanics(
 ### Professional Tutor -- Revolution Prep
 
 - One-on-one remote SAT/ACT, Physics, Chemistry, Mathematics, and Biology tutoring for high school and college students.
+
+
+## PUBLICATIONS
+
+### Peer-reviewed Publications
+
+- [**Wych, D.C.** and Wall, M.E. (2023) "Dynamics Simulations of Macromolecular Diffraction, Part 1: Preparation of Protein Crystal Simulation." *Methods in Enzymology*. In Press, Corrected Proof.](https://www.sciencedirect.com/science/article/abs/pii/S0076687923002136)
+
+- [**Wych, D.C.** and Wall, M.E. (2023) "Dynamics Simulations of Macromolecular Diffraction, Part 2: Analysis of Protein Crystal Simulation." *Methods in Enzymology*. In Press, Corrected Proof.](https://www.sciencedirect.com/science/article/abs/pii/S0076687923002173)
+
+- [Doyle, M. D., Bhowmick, A., **Wych, D. C.**, Lassalle, L., Simon, P. S., Holton, J., ... & Wall, M. E. (2023). "Water Networks in Photosystem II Using Crystalline Molecular Dynamics Simulations and Room-Temperature XFEL Serial Crystallography." *Journal of the American Chemical Society*, 145(27), 14621-14635.](https://pubs.acs.org/doi/abs/10.1021/jacs.3c01412)
+
+- [**Wych, D. C.**, Aoto, P. C., Vu, L., Wolff, A. M., Mobley, D. L., Fraser, J. S., Taylor, S. S. & Wall, M. E. (2023). "Molecular-dynamics simulation methods for macromolecular crystallography." *Acta Cryst.* D79, 50–65.](https://journals.iucr.org/d/issues/2023/01/00/lp5065/index.html)
+
+- [Ge, Y., **Wych, D. C.**, Samways, M. L., Wall, M. E., Essex, J. W., & Mobley, D. L. (2022). "Enhancing Sampling of Water Rehydration on Ligand Binding: A Comparison of Techniques." *Journal of Chemical Theory and Computation*, 18(3), 1359-1381.](https://pubs.acs.org/doi/10.1021/acs.jctc.1c00590)
+
+- [**Wych, D. C.**, Fraser, J. S., Mobley, D. L., & Wall, M. E. (2019). "Liquid-like and rigid-body motions in molecular-dynamics simulations of a crystalline protein." *Structural Dynamics*, 6(6), 064704. [Selected as a Feature Article by the Editors of Structural Dynamics, and a SciLight by the AIP]](https://aca.scitation.org/doi/10.1063/1.5132692)
+
+### Pre-print / In Review
+
+- [Smith, N., Dasgupta, M., **Wych, D. C.**, Dolamore, C., Sierra, R. G., Lisova, S., ... & Wilson, M. A. (2023). "Changes in an Enzyme Ensemble During Catalysis Observed by High Resolution XFEL Crystallography." bioRxiv, 2023-08.](https://www.biorxiv.org/content/10.1101/2023.08.15.553460.full.pdf)
 
 ## TEACHING EXPERIENCE
 
@@ -92,20 +119,6 @@ Course description and responsibilities:
 - Physics (all major-required courses)
 
 
-## PUBLICATIONS
-
-### Peer-reviewed Publications
-
-- [Ge, Y., **Wych, D. C.**, Samways, M. L., Wall, M. E., Essex, J. W., & Mobley, D. L. (2022). "Enhancing Sampling of Water Rehydration on Ligand Binding: A Comparison of Techniques." *Journal of Chemical Theory and Computation*, 18(3), 1359-1381.](https://pubs.acs.org/doi/10.1021/acs.jctc.1c00590)
-
-- [**Wych, D. C.**, Fraser, J. S., Mobley, D. L., & Wall, M. E. (2019). "Liquid-like and rigid-body motions in molecular-dynamics simulations of a crystalline protein." *Structural Dynamics*, 6(6), 064704. [Selected as a Feature Article by the Editors of Structural Dynamics, and a SciLight by the AIP]](https://aca.scitation.org/doi/10.1063/1.5132692)
-
-### Pre-print and in-review
-
-- Wych, D. C., Aoto, P. C., Vu, L., Wolff, A. M., Mobley, D. L., Fraser, J. S., Taylor, S.S., & Wall, M. E. (2022). "Molecular-Dynamics Simulation Methods for Macromolecular Crystallography". In review. [Preprint on the *bioRxiv*.](https://doi.org/10.1101/2022.04.04.486986)
-
-- Doyle, M., Bhowmick, A., Wych, D.C., Lassalle, L., Simon, P., Holton, J., Sauter, N.K., Yachandra, V.K., Kern, J.F., Yano, J., Wall, M.E. “Molecular dynamics simulations of Photosystem II crystals combined with time resolved XFEL serial crystallography.” *Preprint coming soon to the bioRxiv*.
-
 ## HONORS AND AWARDS
 
 ### CNLS Postdoctoral Fellowship -- LANL -- 2021
@@ -126,7 +139,8 @@ Course description and responsibilities:
 
 **Reviewer** for the Journal of Chemical Informatics and Modeling (JCIM) (2022)
 
-Member of the American Chemical Society (ACS), Biophysical Society (BPS), and American Crystallographic Association (ACA) (since 2019)
+Member of the American Chemical Society (ACS), Biophysical Society (BPS), and American Crystallographic Association (ACA)
+
 
 ## COMPUTATIONAL EXPERTISE
 
@@ -229,6 +243,7 @@ Member of the American Chemical Society (ACS), Biophysical Society (BPS), and Am
     </p></td>
   </tr></tbody>
 </table>
+
 
 ## PROFESSIONAL PRESENTATIONS
 
