@@ -22,7 +22,7 @@ While reading a recent [New Yorker piece](https://www.newyorker.com/culture/the-
 
 I like this definition of art. It has the benefit of being both easy to understand and no less effective in generalization. 
 
-Though this definition works nicely as a discrimination or classification heuristic, but it doesn’t map cleanly on to my experience of *making art*. What art I’ve made that’s felt even the slightest bit personal and transcendent was made in a flow state: not quite devoid of choice but certainly unconcerned with it; more akin to surrender than willful effort. But I guess there’s nothing necessarily active *or* passive about “making choices.” Maybe, in order to make good choices, it can be as useful to be willful and determined as it is to get out of your own way.
+Though this definition works nicely as a discrimination or classification heuristic, it doesn’t map cleanly on to my experience of *making art*. What art I’ve made that’s felt even the slightest bit personal and transcendent was made in a flow state: not quite devoid of choice but certainly unconcerned with it; more akin to surrender than willful effort. But I guess there’s nothing necessarily active *or* passive about “making choices.” Maybe, in order to make good choices, it can be as useful to be willful and determined as it is to get out of your own way.
 
 The artist and critic Taylor Morrison [recently gave this advice](https://www.instagram.com/reel/C-GzG1JMYBJ/?igsh=a2RtYjR6MWU1OTc5) to an artist who submitted their work for critique, a self-described beginner and autodidact whose drawings were undoubtedly impressive but stilted: 
 
