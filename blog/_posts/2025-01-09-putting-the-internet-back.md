@@ -4,8 +4,6 @@ mathjax: false
 layout: post
 ---
 
-# Putting the Internet Back on the Computer
-
 I’ve been trying to write more — mostly journaling, with a few little side projects here and there. It’s been a pleasant surprise to see just how much can come pouring out when I give myself the time and mental space. Memories that haven’t surfaced in years; opinions I didn’t know I had or (through writing) found I can’t actually justify; petty grievances and imagined slights that evaporate at the slightest introspection.
 
 I’m more than a little ashamed to admit that at this point in my life, “giving myself time and mental space” basically equates to taking a break from being on my phone. 
@@ -18,7 +16,7 @@ If the story I’m sketching here isn’t already clear enough: I wouldn’t be 
 
 As a consequence of using the platform so consistently, for so long, YouTube has the ability to re-serve me videos in its algorithmic feed that I watched 10 or even 15 years ago (before the algorithmic feed existed). Videos that (somehow) it knows had a big impact on me at the time. I've been surprised to notice just how little of these videos I actually remember — even videos that carved deep grooves in my brain at the time feel unnervingly new and alien on a re-watch. It doesn't feel the same with writing; re-reading things from long ago feels like seeing an old acquaintance again, but watching an old YouTube video feels like seeing someone again that I forgot I'd met before.  
 
-Currently, Instagram is probably a close second by mind-share. If YouTube is my dear long-time friend (and it is), Instagram is the member of the friend group I’m all of the sudden spending a lot more time around, though I’m still unsure if I really like them. Instagram Reels is the only product with a purely algorithmic feed that’s had success with me, and for that I guess Zuck can be proud. I have a perverse love for my Reels algorithm. Built it “brick by brick” as they say. Some of the weirdest, cleverest, funniest, most unsettling, horrific shit I’ve seen on the internet has been delivered to me through Reels.
+Currently, Instagram is probably a close second by mind-share. If YouTube is my dear long-time friend (and it is), Instagram is the member of the friend group I’m all of a sudden spending a lot more time around, though I’m still unsure if I really like them. Instagram Reels is the only product with a purely algorithmic feed that’s had success with me, and for that I guess Zuck can be proud. I have a perverse love for my Reels algorithm. Built it “brick by brick” as they say. Some of the weirdest, cleverest, funniest, most unsettling, horrific things I’ve seen on the internet has been delivered to me through Reels.
 
 (*I’m sure others feel the same about TikTok. I bounced off TikTok for reasons that aren’t totally clear to me. The best I can piece together is that it felt more adversarial to the user than any tech product I’d experienced before. Tristan Harris describes social media algorithms as supercomputers pointed at your brain, and nowhere has that description felt more viscerally true than in my short tryst with the TikTok algorithm.*)
 
