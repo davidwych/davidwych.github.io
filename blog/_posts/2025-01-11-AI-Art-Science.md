@@ -10,8 +10,9 @@ Artificial Intelligence (AI) and Machine Leaning (ML) have very publicly shaken 
 
 A lesser known but perhaps more insidious infiltration of AI/ML is happening in the world of science. Researchers have been caught [using Large Language Models (LLMs) to fill in parts of their scientific papers](https://arxiv.org/pdf/2404.01268) and AI/ML methods are being used to [fake scientific figures in ways that are hard to spot using standard fraud-detection techniques](https://scienceintegritydigest.com/). Despite getting more positive press, most insidious of all is the rise of AI/ML algorithms as earnest scientific modeling tools. Peruse the pages of scientific journals these days and you'll be hard pressed to find an issue that doesn’t include a paper using an AI/ML algorithm as a sort of ersatz scientific model. The popular science press is flooded with articles trumpeting the supposed success of AI/ML in fields like medicine, education, and nuclear fusion. These models are now so common that researchers and the broader scientifically-engaged public no longer bat an eye.
 
-I’d argue that we’re watching, across the board, is not just a technological hype cycle but a wholesale abandonment of principle: a deep philosophical battle that we’re all conscripted in. Artists, writers, scientists, the broader public — we're all due for a wake up call. We’re in the early stages of this fight, but the machines and their allies are winning.
+I’d argue that what we’re watching, across the board, is not just a technological hype cycle but a wholesale abandonment of principle: a deep philosophical battle that we’re all conscripted in. Artists, writers, scientists, the broader public — we're all due for a wake up call. We’re in the early stages of this fight, but the machines and their allies are winning.
 <!--more-->
+
 ---
 
 While reading a recent [New Yorker piece](https://www.newyorker.com/culture/the-weekend-essay/why-ai-isnt-going-to-make-art) about AI/ML and Art by Ted Chiang I was pleasantly surprised by this definition:
