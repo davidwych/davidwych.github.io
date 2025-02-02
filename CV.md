@@ -61,6 +61,9 @@ His research focus involves using molecular-dynamics (MD) and quantum mechanics(
 
 ### Peer-reviewed Publications
 
+- [Smith, N., Dasgupta, M., **Wych, D. C.**, Dolamore, C., Sierra, R. G., Lisova, S., ..
+. & Wilson, M. A. (2023). "Changes in an enzyme ensemble during catalysis observed by high-resolution XFEL crystallography." Science Advances, 2024-03.](https://www.science.org/doi/epdf/10.1126/sciadv.adk7201)
+
 - [**Wych, D.C.** and Wall, M.E. (2023) "Molecular-Dynamics Simulations of Macromolecular Diffraction, Part 1: Preparation of Protein Crystal Simulations." *Methods in Enzymology*. In Press, Corrected Proof.](https://www.sciencedirect.com/science/article/abs/pii/S0076687923002136)
 
 - [**Wych, D.C.** and Wall, M.E. (2023) "Molecular-Dynamics Simulations of Macromolecular Diffraction, Part 2: Analysis of Protein Crystal Simulations." *Methods in Enzymology*. In Press, Corrected Proof.](https://www.sciencedirect.com/science/article/abs/pii/S0076687923002173)
@@ -73,9 +76,6 @@ His research focus involves using molecular-dynamics (MD) and quantum mechanics(
 
 - [**Wych, D. C.**, Fraser, J. S., Mobley, D. L., & Wall, M. E. (2019). "Liquid-like and rigid-body motions in molecular-dynamics simulations of a crystalline protein." *Structural Dynamics*, 6(6), 064704. [Selected as a Feature Article by the Editors of Structural Dynamics, and a SciLight by the AIP]](https://aca.scitation.org/doi/10.1063/1.5132692)
 
-### Pre-print / In Review
-
-- [Smith, N., Dasgupta, M., **Wych, D. C.**, Dolamore, C., Sierra, R. G., Lisova, S., ... & Wilson, M. A. (2023). "Changes in an Enzyme Ensemble During Catalysis Observed by High Resolution XFEL Crystallography." bioRxiv, 2023-08.](https://www.biorxiv.org/content/10.1101/2023.08.15.553460.full.pdf)
 
 ## TEACHING EXPERIENCE
 
@@ -246,6 +246,9 @@ Member of the American Chemical Society (ACS), Biophysical Society (BPS), and Am
 
 
 ## PROFESSIONAL PRESENTATIONS
+
+["Modeling of protein structural heterogeneity in X-ray Crystallography and CryoEM"](https://www.youtube.com/watch?v=LtUCgHG2r-c)
+- Invited guest seminar at the Institute for Quantitative Biomedicine, Protein Data Bank, Rutgers, New Jersey
 
 “Analysis of Molecular Dynamics Simulations of Protein Crystals”
 - Invited lecture at the 57th Course of the Erice International School of Crystallography
