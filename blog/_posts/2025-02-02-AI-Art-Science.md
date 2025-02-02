@@ -12,6 +12,8 @@ A lesser known but perhaps more insidious infiltration of AI/ML is happening in 
 
 I’d argue that we’re watching, across the board, is not just a technological hype cycle but a wholesale abandonment of principle: a deep philosophical battle that we’re all conscripted in. Artists, writers, scientists, the broader public—we're all due for a wake up call. We’re in the early stages of this fight, but the machines and their allies are winning.
 
+<!--more-->
+
 ---
 
 While reading a recent [New Yorker piece](https://www.newyorker.com/culture/the-weekend-essay/why-ai-isnt-going-to-make-art) about AI/ML and Art by the science fiction writer Ted Chiang I was pleasantly surprised by his definition:
