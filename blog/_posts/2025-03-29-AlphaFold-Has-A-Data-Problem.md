@@ -66,7 +66,7 @@ It's a little like trying to make an exact copy of a clay figurine by looking at
 
 So, how good do our models do? Unfortunately not very well. The measure we use to tell if our models are getting better is called the "R-factor". It's essentially the average error between our predicted spots and the observed spots measured in the diffraction images we collect as we rotate the crystal around in the X-ray beam. We keep tweaking our models and comparing them to experimental data, hoping that the R-factor (the error) goes down. 
 
-The average R-factor between our models and the observed data [across the entire PDB]() is about 25%.
+The average R-factor between our models and the observed data [across the entire PDB](https://www.rcsb.org/statistics/distribution/r-free) is about 25%.
 
 Our models, on average, are 25% off.
 
