@@ -10,6 +10,8 @@ Some have argued that these pharmaceutical companies should open-source their tr
 
 But, unfortunately, I suspect that this data is not going to make that much of a difference. AlphaFold *does* have a data problem, but it's not that we need more of what we already have. We need something altogether *different*.
 
+<!--more-->
+
 ---
 ## You get out what you put in
 
