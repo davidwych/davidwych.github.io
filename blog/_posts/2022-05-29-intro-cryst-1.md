@@ -89,3 +89,5 @@ In the next part, we'll talk about how we actually *measure* these scattered wav
 Then, we'll move on to talking about how things change when we measure the scattering from a molecular *crystal* rather than just an arbitrary distribution of electrons.
 
 Until then, be well :)
+
+[Part 2 here](https://davidwych.github.io/intro-cryst-2/)
