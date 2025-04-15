@@ -145,6 +145,8 @@ Lots of fun stuff to come!
 
 But for now, be well.
 
+[Part 3 here](https://davidwych.github.io/intro-cryst-3/)
+
 ¹What we *actually* measure is the average autocorrelation of the *variation* of the density *about the mean*.
 
 The scattering from the average density comes out of the total scattering as a peak in the center of the beam.
