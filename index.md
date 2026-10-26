@@ -5,7 +5,7 @@ layout: page
 
 # Hi
 
-I'm a Scientific Software Developer at OpenEye Scientific Software -- Cadence Molecular Sciences in Santa Fe, NM and a former post-doctoral research fellow at Los Alamos National Laboratory. I have a Ph.D. in Pharmcological Sciences from UC Irvine. 
+I'm a Scientific Software Developer at OpenEye Scientific Software -- Cadence Molecular Sciences in Santa Fe, NM and a former post-doctoral research fellow at Los Alamos National Laboratory. I have a Ph.D. in Pharmacological Sciences from UC Irvine. 
 
 I'm currently writing software for modeling cryo-electron microscopy to enable faster, more informative, less expensive pharmaceutical drug discovery.
 
