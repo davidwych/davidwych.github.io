@@ -21,15 +21,17 @@ feed:
    generosity ramp — all type and ornament wears ink tokens. Every dot strip on
    the page is the same fifteen people in the same order, so it's learned once. */
 :root {
-  --bg:        #EDF0F2;
-  --surface:   #F8FAFB;
+  /* Backgrounds match the rest of davidwych.github.io: #fff light, #212228 dark.
+     Surfaces and rules sit in the same grey family as the blog's frame. */
+  --bg:        #FFFFFF;
+  --surface:   #F5F6F8;
   --panel:     #FFFFFF;
   --ink:       #141C26;
   --ink-2:     #495562;
   --ink-3:     #6A7682;
-  --rule:      #D6DDE2;
-  --rule-soft: #E4EAEE;
-  --dot-off:   #C0C9D1;
+  --rule:      #DCDDE3;
+  --rule-soft: #ECEDF1;
+  --dot-off:   #C3C5CD;
 
   /* One ordered ramp, not three camps: the only thing that separates
      respondents is how far up the ladder they go. Light end = strictest. */
@@ -47,15 +49,15 @@ feed:
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg:        #10161E;
-    --surface:   #18202B;
-    --panel:     #1E2733;
+    --bg:        #212228;
+    --surface:   #292A31;
+    --panel:     #2D2E36;
     --ink:       #E7ECF1;
     --ink-2:     #A9B5C1;
     --ink-3:     #7D8A98;
-    --rule:      #2B3542;
-    --rule-soft: #222B37;
-    --dot-off:   #38434F;
+    --rule:      #3A3C45;
+    --rule-soft: #2F3038;
+    --dot-off:   #4B4D57;
     --tier-gen:    #F0BE70;
     --tier-mid:    #C58226;
     --tier-strict: #8A5A14;
@@ -63,15 +65,15 @@ feed:
   }
 }
 :root[data-theme="dark"] {
-  --bg:        #10161E;
-  --surface:   #18202B;
-  --panel:     #1E2733;
+  --bg:        #212228;
+  --surface:   #292A31;
+  --panel:     #2D2E36;
   --ink:       #E7ECF1;
   --ink-2:     #A9B5C1;
   --ink-3:     #7D8A98;
-  --rule:      #2B3542;
-  --rule-soft: #222B37;
-  --dot-off:   #38434F;
+  --rule:      #3A3C45;
+  --rule-soft: #2F3038;
+  --dot-off:   #4B4D57;
   --tier-gen:    #F0BE70;
   --tier-mid:    #C58226;
   --tier-strict: #8A5A14;
