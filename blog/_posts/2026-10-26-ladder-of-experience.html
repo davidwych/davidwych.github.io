@@ -1,0 +1,1150 @@
+---
+title: "The Ladder of Experience"
+layout: null
+excerpt: "<p>A survey of 15 people, 50 things, and one very high-stakes bet.</p>"
+feed:
+  excerpt_only: true
+---
+{% raw %}<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="alternate" href="/feed.xml" type="application/atom+xml" title="David Wych">
+<title>The Ladder of Experience</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+/* Layout: a single vertical ladder as the spine of the page; analysis sections
+   hang off it in a narrow measure. Chroma is reserved entirely for the
+   generosity ramp — all type and ornament wears ink tokens. Every dot strip on
+   the page is the same fifteen people in the same order, so it's learned once. */
+:root {
+  --bg:        #EDF0F2;
+  --surface:   #F8FAFB;
+  --panel:     #FFFFFF;
+  --ink:       #141C26;
+  --ink-2:     #495562;
+  --ink-3:     #6A7682;
+  --rule:      #D6DDE2;
+  --rule-soft: #E4EAEE;
+  --dot-off:   #C0C9D1;
+
+  /* One ordered ramp, not three camps: the only thing that separates
+     respondents is how far up the ladder they go. Light end = strictest. */
+  --tier-gen:    #7A4A0E;
+  --tier-mid:    #C07818;
+  --tier-strict: #E3A857;
+
+  /* PT Sans to match the rest of davidwych.github.io (same fallback stack). */
+  --display: "PT Sans", -apple-system, "Helvetica Neue", "Segoe UI", Roboto, sans-serif;
+  --body:    "PT Sans", -apple-system, "Helvetica Neue", "Segoe UI", Roboto, sans-serif;
+  --mono:    "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --measure: 34rem;
+  --wide: 62rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:        #10161E;
+    --surface:   #18202B;
+    --panel:     #1E2733;
+    --ink:       #E7ECF1;
+    --ink-2:     #A9B5C1;
+    --ink-3:     #7D8A98;
+    --rule:      #2B3542;
+    --rule-soft: #222B37;
+    --dot-off:   #38434F;
+    --tier-gen:    #F0BE70;
+    --tier-mid:    #C58226;
+    --tier-strict: #8A5A14;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg:        #10161E;
+  --surface:   #18202B;
+  --panel:     #1E2733;
+  --ink:       #E7ECF1;
+  --ink-2:     #A9B5C1;
+  --ink-3:     #7D8A98;
+  --rule:      #2B3542;
+  --rule-soft: #222B37;
+  --dot-off:   #38434F;
+  --tier-gen:    #F0BE70;
+  --tier-mid:    #C58226;
+  --tier-strict: #8A5A14;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.measure { max-width: var(--measure); }
+
+h1, h2, h3 { font-family: var(--display); font-weight: 600; text-wrap: balance; margin: 0; line-height: 1.1; }
+h1 { font-size: clamp(2.2rem, 8vw, 4.4rem); letter-spacing: -0.015em; }
+h2 { font-size: clamp(1.6rem, 4vw, 2.3rem); letter-spacing: -0.01em; }
+h3 { font-size: 1.14rem; font-family: var(--body); font-weight: 600; letter-spacing: 0; }
+p { margin: 0 0 0.9em; }
+a { color: inherit; text-decoration-color: var(--ink-3); text-underline-offset: 2px; }
+strong { font-weight: 600; }
+em { font-style: italic; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 0.6rem;
+}
+.num { font-variant-numeric: tabular-nums; font-family: var(--mono); }
+.lede { font-size: 1.12rem; line-height: 1.62; color: var(--ink-2); }
+.lede em { color: var(--ink); font-style: italic; }
+
+/* ---------- site nav (blog post build only — see build.py) ---------- */
+.site-nav { padding-top: 1.4rem; }
+.site-nav .wrap {
+  display: flex; gap: 0.6rem;
+  font-family: var(--mono); font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3);
+}
+.site-nav a { text-decoration: none; }
+.site-nav a:hover { color: var(--ink); }
+
+/* ---------- masthead ---------- */
+header.mast { padding-block: clamp(3rem, 9vw, 6rem) clamp(2rem, 5vw, 3rem); }
+.site-nav + header.mast { padding-top: clamp(2rem, 6vw, 4.5rem); }
+.god {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(1.05rem, 2.6vw, 1.3rem);
+  line-height: 1.5;
+  color: var(--ink-2);
+  max-width: 30rem;
+  margin: 0 0 2rem;
+  padding-left: 1.1rem;
+  border-left: 2px solid var(--rule);
+}
+.god b { font-style: normal; font-weight: 600; color: var(--ink); }
+h1 .quiet { color: var(--ink-3); }
+.mast .lede { margin-top: 1.6rem; }
+
+.tally {
+  display: flex; flex-wrap: wrap; gap: 0 2.4rem;
+  margin: 2.4rem 0 0; padding-top: 1.4rem;
+  border-top: 1px solid var(--rule);
+  list-style: none;
+}
+.tally div { min-width: 0; }
+.tally dt { font-family: var(--mono); font-size: 0.67rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); }
+.tally dd { margin: 0.15rem 0 0; font-family: var(--display); font-size: 2rem; font-variant-numeric: tabular-nums; }
+
+/* ---------- sections ---------- */
+section { padding-block: clamp(2.6rem, 6vw, 4.2rem); border-top: 1px solid var(--rule); }
+section > .wrap > .eyebrow { margin-bottom: 0.5rem; }
+.sec-head { margin-bottom: 1.8rem; }
+.sec-head h2 { margin-bottom: 0.7rem; }
+
+/* ---------- headline finding ---------- */
+.finding {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: clamp(1.3rem, 3.5vw, 2rem);
+}
+.finding .big {
+  font-family: var(--display);
+  font-size: clamp(1.4rem, 3.6vw, 2rem);
+  line-height: 1.25;
+  margin: 0 0 0.9rem;
+  text-wrap: balance;
+}
+.finding p:last-child { margin-bottom: 0; }
+.finding .caveat { font-size: 0.93rem; color: var(--ink-3); }
+
+/* ---------- the staircase matrix: every answer at once ---------- */
+.matrix-wrap { max-width: 52rem; margin-top: 2.2rem; }
+.matrix {
+  display: grid;
+  grid-template-columns: 2.4rem repeat(var(--mx-n, 50), minmax(0, 1fr));
+  gap: 2px;
+  align-items: center;
+}
+.mx-who { font-family: var(--mono); font-size: 0.64rem; color: var(--ink-3); line-height: 1; }
+.mx { aspect-ratio: 1; border-radius: 2px; }
+.mx.p { background: var(--rule); }
+.mx.y[data-tier="gen"]    { background: var(--tier-gen); }
+.mx.y[data-tier="mid"]    { background: var(--tier-mid); }
+.mx.y[data-tier="strict"] { background: var(--tier-strict); }
+.mx-axis {
+  display: flex; justify-content: space-between; gap: 1rem;
+  margin: 0.45rem 0 0 2.4rem;
+  font-family: var(--mono); font-size: 0.66rem; color: var(--ink-3);
+}
+.mx-key { display: flex; flex-wrap: wrap; gap: 0.3rem 1.4rem; margin: 1rem 0 0.5rem; font-size: 0.9rem; color: var(--ink-2); }
+.mx-key i { display: inline-block; width: 11px; height: 11px; border-radius: 2px; margin-right: 0.45rem; vertical-align: -1px; }
+.mx-key i.y { background: var(--tier-mid); }
+.mx-key i.p { background: var(--rule); }
+.mx-cap { font-size: 0.9rem; color: var(--ink-3); max-width: var(--measure); }
+@media (max-width: 600px) {
+  .matrix { grid-template-columns: repeat(var(--mx-n, 50), minmax(0, 1fr)); gap: 1px; }
+  .mx-who { display: none; }
+  .mx-axis { margin-left: 0; }
+}
+
+/* ---------- the rungs: each criterion a step stricter than the last ---------- */
+.rungs { list-style: none; counter-reset: rung; padding: 0; margin: 0.2rem 0 1.2rem; }
+.rungs li {
+  counter-increment: rung;
+  position: relative;
+  margin-left: calc(var(--i, 0) * 0.7rem);
+  padding: 0.5rem 0 0.5rem 1.9rem;
+  border-top: 1px solid var(--rule-soft);
+  color: var(--ink-2);
+}
+.rungs li:last-child { border-bottom: 1px solid var(--rule-soft); }
+.rungs li::before {
+  content: counter(rung);
+  position: absolute; left: 0.2rem; top: 0.62rem;
+  font-family: var(--mono); font-size: 0.72rem; color: var(--ink-3);
+}
+.rungs b { color: var(--ink); font-weight: 600; }
+
+/* ---------- the dial ---------- */
+.swatch { width: 11px; height: 11px; border-radius: 50%; flex: none; }
+.swatch[data-tier="gen"]    { background: var(--tier-gen); }
+.swatch[data-tier="mid"]    { background: var(--tier-mid); }
+.swatch[data-tier="strict"] { background: var(--tier-strict); }
+
+.dial { border-top: 1px solid var(--rule); }
+.dial-row {
+  display: grid;
+  grid-template-columns: 4.6rem 9.5rem 1fr;
+  grid-template-areas: "who meter crit";
+  align-items: baseline;
+  gap: 0.3rem 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.dial-who { grid-area: who; display: flex; align-items: center; gap: 0.4rem; font-family: var(--mono); font-size: 0.8rem; font-weight: 500; }
+.dial-meter { grid-area: meter; display: flex; align-items: center; gap: 0.5rem; }
+.dial-track { flex: 1; min-width: 0; height: 6px; background: var(--rule-soft); border-radius: 3px; overflow: hidden; }
+.dial-track i { display: block; height: 100%; border-radius: 3px; }
+.dial-track i[data-tier="gen"]    { background: var(--tier-gen); }
+.dial-track i[data-tier="mid"]    { background: var(--tier-mid); }
+.dial-track i[data-tier="strict"] { background: var(--tier-strict); }
+.dial-pct { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.dial-crit { grid-area: crit; min-width: 0; font-size: 0.95rem; color: var(--ink-2); font-style: italic; }
+.dial-crit.blank { color: var(--ink-3); font-style: normal; font-family: var(--mono); font-size: 0.78rem; }
+@media (max-width: 640px) {
+  .dial-row {
+    grid-template-columns: 4.6rem 1fr;
+    grid-template-areas: "who meter" "crit crit";
+    gap: 0.45rem 0.8rem;
+  }
+}
+
+/* ---------- controls ---------- */
+.controls {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.45rem;
+  margin-bottom: 1rem;
+}
+.controls .label {
+  font-family: var(--mono); font-size: 0.67rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--ink-3); margin-right: 0.2rem;
+}
+button.chip {
+  font-family: var(--mono); font-size: 0.74rem;
+  padding: 0.3rem 0.62rem;
+  border: 1px solid var(--rule);
+  background: var(--panel);
+  color: var(--ink-2);
+  border-radius: 100px;
+  cursor: pointer;
+  line-height: 1.4;
+}
+button.chip:hover { border-color: var(--ink-3); color: var(--ink); }
+button.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+button.chip:focus-visible, .hd:focus-visible, .rung:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+/* ---------- dots, and the respondent numbers that label them ---------- */
+.dots { display: flex; gap: 5px; }
+.dot { width: 11px; height: 11px; border-radius: 50%; flex: none; box-sizing: border-box; }
+.dot.off { border: 1.5px solid var(--dot-off); background: transparent; }
+.dot.on[data-tier="gen"]    { background: var(--tier-gen); }
+.dot.on[data-tier="mid"]    { background: var(--tier-mid); }
+.dot.on[data-tier="strict"] { background: var(--tier-strict); }
+.dot.dim { opacity: 0.18; }
+
+.heads { align-items: flex-end; }
+.hd {
+  width: 11px; flex: none;
+  display: flex; justify-content: center;
+  padding: 0; border: 0; background: none;
+  font-family: var(--mono); font-size: 0.6rem; line-height: 1.3;
+  color: var(--ink-3); white-space: nowrap; font-variant-numeric: tabular-nums;
+}
+button.hd { cursor: pointer; }
+button.hd:hover { color: var(--ink); }
+button.hd[aria-pressed="true"], .hd.focus { color: var(--ink); font-weight: 600; }
+
+/* ---------- the ladder ---------- */
+.rung, .rung-head {
+  display: grid;
+  grid-template-columns: 2.1rem 1fr auto auto;
+  grid-template-areas: "rank name dots count";
+  align-items: center;
+  gap: 0 0.8rem;
+}
+.rung-head {
+  position: sticky; top: 0; z-index: 3;
+  background: var(--bg);
+  padding: 0.6rem 0 0.4rem;
+  border-bottom: 1px solid var(--rule);
+}
+.rung-head .rank { grid-area: rank; }
+.rung-head .name, .rung-head .count {
+  font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink-3);
+}
+.rung-head .name { grid-area: name; text-align: right; }
+.rung-head .count { grid-area: count; min-width: 2.6rem; text-align: right; }
+.rung-head .dots { grid-area: dots; }
+.rung-head.spotlit .hd:not([aria-pressed="true"]) { opacity: 0.4; }
+
+.zone {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 0.7rem;
+  padding: 1.5rem 0 0.7rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 0.2rem;
+}
+.zone:first-child { padding-top: 1rem; }
+.zone b { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
+.zone span { font-size: 0.88rem; color: var(--ink-3); flex: 1 1 14rem; min-width: 0; }
+.zone .n { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-3); font-variant-numeric: tabular-nums; margin-left: auto; white-space: nowrap; }
+
+.rung {
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+  width: 100%;
+  text-align: left;
+  background: none;
+  border-left: 0; border-right: 0; border-top: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+.rung:hover { background: var(--surface); }
+.rung .rank { grid-area: rank; font-family: var(--mono); font-size: 0.7rem; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.rung .name { grid-area: name; min-width: 0; font-size: 0.97rem; }
+.flag { font-family: var(--mono); font-size: 0.64rem; color: var(--ink-3); margin-left: 0.35rem; letter-spacing: 0.06em; white-space: nowrap; }
+.rung .dots { grid-area: dots; }
+.rung .count { grid-area: count; font-family: var(--mono); font-size: 0.76rem; color: var(--ink-2); font-variant-numeric: tabular-nums; min-width: 2.6rem; text-align: right; }
+
+.ladder.spotlit .dot { opacity: 0.17; }
+.ladder.spotlit .dot.lit { opacity: 1; }
+.ladder.spotlit .dot.lit.off { border-color: var(--ink-3); border-width: 2px; }
+
+.note {
+  font-size: 0.9rem; color: var(--ink-2);
+  padding: 0 0 0.75rem 2.9rem;
+  border-bottom: 1px solid var(--rule-soft);
+  margin: 0;
+}
+.note .verbatim { font-family: var(--mono); font-size: 0.78rem; color: var(--ink-3); display: block; margin-top: 0.4rem; line-height: 1.55; }
+.note .said { display: block; margin-top: 0.5rem; font-family: var(--mono); font-size: 0.74rem; color: var(--ink-3); }
+
+@media (max-width: 640px) {
+  .rung, .rung-head {
+    grid-template-columns: 1.8rem 1fr auto;
+    grid-template-areas: "rank name count" ". dots dots";
+    gap: 0.15rem 0.6rem;
+  }
+  .rung { padding: 0.45rem 0; }
+  .rung .dots { padding-bottom: 0.1rem; }
+  .rung-head .name { text-align: left; }
+  .note { padding-left: 2.4rem; }
+}
+
+/* ---------- mini-ladders: a few rungs pulled out to make a point ---------- */
+.mini { margin: 0.4rem 0 1.1rem; max-width: var(--measure); }
+.mini-row {
+  display: grid;
+  grid-template-columns: 1fr auto 2.6rem;
+  grid-template-areas: "name dots count";
+  align-items: center;
+  gap: 0 0.8rem;
+  padding: 0.32rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.mini-row .name { grid-area: name; min-width: 0; font-size: 0.93rem; }
+.mini-row .dots { grid-area: dots; }
+.mini-row .count { grid-area: count; font-family: var(--mono); font-size: 0.74rem; color: var(--ink-2); text-align: right; font-variant-numeric: tabular-nums; }
+.mini-head { padding: 0 0 0.25rem; border-bottom-color: var(--rule); }
+@media (max-width: 640px) {
+  .mini-row {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "name count" "dots dots";
+    gap: 0.2rem 0.6rem;
+  }
+  .mini-head .name, .mini-head .count { display: none; }
+}
+
+/* ---------- bar lists ---------- */
+.bars { display: grid; gap: 0.1rem; }
+.bar-row {
+  display: grid; grid-template-columns: 1fr 3.4rem;
+  align-items: center; gap: 0.7rem;
+  padding: 0.5rem 0; border-bottom: 1px solid var(--rule-soft);
+}
+.bar-row .bl { min-width: 0; font-size: 0.95rem; }
+.bar-row .bl .sub { display: block; font-family: var(--mono); font-size: 0.68rem; color: var(--ink-3); margin-top: 0.1rem; }
+.bar-row .bv { font-family: var(--mono); font-size: 0.8rem; text-align: right; font-variant-numeric: tabular-nums; }
+.track { grid-column: 1 / -1; height: 6px; background: var(--rule-soft); border-radius: 3px; overflow: hidden; }
+.track i { display: block; height: 100%; background: var(--ink-2); border-radius: 3px; }
+.track i.weak { background: var(--ink-3); opacity: 0.55; }
+
+/* ---------- callouts ---------- */
+.callouts { display: grid; gap: 2.2rem; }
+.callout { max-width: var(--measure); }
+.callout h3 { margin-bottom: 0.6rem; }
+.callout p { font-size: 0.97rem; color: var(--ink-2); }
+.callout p strong { color: var(--ink); }
+
+/* ---------- method ---------- */
+.method h3 { margin: 2rem 0 0.5rem; }
+.method h3:first-child { margin-top: 0; }
+.method .bars { margin: 1.2rem 0 1.4rem; }
+
+footer { padding-block: 2.6rem 3.5rem; border-top: 1px solid var(--rule); color: var(--ink-3); font-size: 0.88rem; }
+footer p { max-width: var(--measure); }
+footer .theme { margin-top: 1.2rem; }
+
+.tip {
+  position: fixed; z-index: 40; pointer-events: none;
+  background: var(--ink); color: var(--bg);
+  font-family: var(--mono); font-size: 0.72rem; line-height: 1.5;
+  padding: 0.35rem 0.55rem; border-radius: 3px;
+  max-width: 15rem; opacity: 0; transition: opacity 0.1s;
+}
+.tip.show { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+
+<nav class="site-nav" aria-label="Site">
+  <div class="wrap"><a href="/">David Wych</a><span aria-hidden="true">/</span><a href="/blog/">Blog</a></div>
+</nav>
+<header class="mast">
+  <div class="wrap">
+    <p class="eyebrow">A survey of <span data-fill="n_resp">&mdash;</span> people,
+      <span data-fill="n_items">&mdash;</span> things, and one very high-stakes bet</p>
+    <h1>The Ladder <span class="quiet">of Experience</span></h1>
+    <blockquote class="god">
+      <b>God appears in your living room.</b> &ldquo;I&rsquo;m going to list a number of things. Tell me:
+      if you traded places with that thing, would there be anything it&rsquo;s like to be it?
+      Or would it be the same as just not existing at all? Get one wrong and you get an eternity
+      of torment. Get them all right, an eternity of bliss.
+      So &mdash; no <em>I don&rsquo;t know</em>s, or cop-outs.&rdquo;
+    </blockquote>
+    <p class="lede measure">
+      <span data-fill="n_resp_word">&mdash;</span> people played along. Every one of them drew
+      their line in a different place &mdash; but they all drew it on <em>the same ladder</em>,
+      and they climbed it in the same order.
+    </p>
+    <dl class="tally">
+      <div><dt>Respondents</dt><dd class="num" data-fill="n_resp">&mdash;</dd></div>
+      <div><dt>Things judged</dt><dd class="num" data-fill="n_items">&mdash;</dd></div>
+      <div><dt>Bets placed</dt><dd class="num" data-fill="n_cells">&mdash;</dd></div>
+      <div><dt>&ldquo;Something there&rdquo;</dt><dd class="num" data-fill="yes_share">&mdash;</dd></div>
+    </dl>
+  </div>
+</header>
+
+<section id="finding">
+  <div class="wrap">
+    <p class="eyebrow">The headline</p>
+    <div class="finding measure">
+      <p class="big">Nobody disagreed about the order. They only disagreed about where to cut.</p>
+      <p>Line up the fifty things by how many people said yes, and the people by how many things
+      they said yes to. Then make the dumbest possible guess: everyone says yes to their top
+      <em>N</em> things and no to the rest, where <em>N</em> is just how many yeses they gave.</p>
+      <p>That guess gets <strong data-fill="repro">&mdash;</strong> of all
+      <span data-fill="n_cells">&mdash;</span> answers right.</p>
+      <p class="caveat">(That&rsquo;s less impressive than it sounds, but still impressive. The
+      math is at the end.)</p>
+    </div>
+
+    <div class="matrix-wrap">
+      <div class="matrix" id="matrix" role="img"
+        aria-label="Every answer in the survey, one row per person and one column per thing. The yes answers form a staircase."></div>
+      <div class="mx-axis"><span>&larr; most popular</span><span>least popular &rarr;</span></div>
+      <p class="mx-key"><span><i class="y"></i>Said yes</span><span><i class="p"></i>The staircase guess</span></p>
+      <p class="mx-cap">Every answer in the survey. Each row is a person, most generous at the top;
+      each column is one of the fifty things. A filled square outside the grey staircase, or a
+      gap inside it, is an answer the guess got wrong.</p>
+    </div>
+  </div>
+</section>
+
+<section id="dial-section">
+  <div class="wrap">
+    <div class="sec-head measure">
+      <p class="eyebrow">Not camps &mdash; a dial</p>
+      <h2>One knob, set fifteen different ways</h2>
+      <p class="lede">It&rsquo;s tempting to sort people into schools &mdash; the animists, the
+      biologists, the skeptics. The data won&rsquo;t support it. Once you know how far up the
+      ladder someone goes, the rest of their answers don&rsquo;t line up with anyone
+      else&rsquo;s. (How I checked is at the end.)</p>
+      <p class="lede">Below is everyone, most generous first, with what they said when I asked
+      where they drew the line. Read down the list and each person&rsquo;s rule asks a little
+      more of a thing than the one above it:</p>
+      <ol class="rungs">
+        <li style="--i:0"><b>It exists.</b> R13 (45 yeses): could it &ldquo;be touched by something
+        in any way&rdquo;?</li>
+        <li style="--i:1"><b>It has energy.</b> R1 (40) and R8 (35): it moves, generates energy,
+        interacts.</li>
+        <li style="--i:2"><b>It senses.</b> R2 (33): &ldquo;I sense therefore I am.&rdquo;</li>
+        <li style="--i:3"><b>It&rsquo;s alive.</b> R9, R14 and R7 (21&ndash;25).</li>
+        <li style="--i:4"><b>It&rsquo;s complex life.</b> R5 (19) wants multicellular life; R4 (15),
+        a brain.</li>
+        <li style="--i:5"><b>It knows.</b> R6 (15) wants &ldquo;some level of understanding that it
+        has been stimulated&rdquo;; R11 (6), &ldquo;awareness degree&rdquo;.</li>
+      </ol>
+      <p class="lede">Not everyone fits neatly &mdash; R10 draws the line between nature and
+      machines instead &mdash; but the drift is clear. Same ladder, different rungs.</p>
+      <p class="lede">The two ends: <strong>R11</strong> said yes to six things, and is the only
+      person whose answers form a perfect staircase. <strong>R13</strong> said yes to forty-five,
+      including the stuffing inside a couch cushion, and no to only five: the Aurora Borealis, a
+      fictional character, the United States, a sleeping person and a person under
+      anesthesia.</p>
+    </div>
+
+    <div class="dial" id="dial"></div>
+  </div>
+</section>
+
+<section id="ladder-section">
+  <div class="wrap">
+    <div class="sec-head measure">
+      <p class="eyebrow">The ladder</p>
+      <h2>All fifty things, most popular first</h2>
+      <p class="lede">One row per thing, one dot per person, in the same order as above. A filled
+      dot means that person bet there&rsquo;s something it&rsquo;s like to be that thing. Tap a
+      number along the top to follow one person down the ladder, or tap a row for the exact
+      wording. Things marked <span class="flag">off-ladder</span> don&rsquo;t follow the
+      staircase &mdash; more on those below.</p>
+    </div>
+
+    <div class="controls">
+      <span class="label">Filter</span>
+      <button class="chip" type="button" data-cat="all" aria-pressed="true">Everything</button>
+    </div>
+
+    <div class="rung-head" id="ladder-head"></div>
+    <div class="ladder" id="ladder"></div>
+  </div>
+</section>
+
+<section id="categories">
+  <div class="wrap">
+    <div class="sec-head measure">
+      <p class="eyebrow">By kind of thing</p>
+      <h2>Animals are in. Anything people made is out.</h2>
+    </div>
+    <div class="bars measure" id="category-bars"></div>
+  </div>
+</section>
+
+<section id="cutoff">
+  <div class="wrap">
+    <div class="sec-head measure">
+      <p class="eyebrow">Where the line falls</p>
+      <h2>The cutoff isn&rsquo;t a point. It&rsquo;s a band.</h2>
+      <p class="lede">Nine things got at most one no. Ten got at most two yeses. The other 31
+      &mdash; most of the survey &mdash; are where all the disagreement lives, and the edges of
+      that band aren&rsquo;t where I&rsquo;d have guessed.</p>
+    </div>
+    <div class="callouts">
+      <div class="callout">
+        <h3>The top edge is animals, not brains</h3>
+        <div class="mini" data-items="A starfish|A sea anemone|An oak tree|A single-celled organism"></div>
+        <p>A starfish has no brain. A sea anemone has a loose net of nerves and nothing else. Both
+        got fourteen votes. An oak tree &mdash; far more cells, and far more going on inside them
+        &mdash; got eleven, the same as a single cell.</p>
+        <p>Of the simple rules I tested, <strong>&ldquo;does it have a brain?&rdquo; does the
+        worst</strong>. People grant experience well below the point where there&rsquo;s a brain
+        to have it with.</p>
+      </div>
+      <div class="callout">
+        <h3>The bottom edge is anything people made</h3>
+        <div class="mini" data-items="A lightbulb (off)|A lightbulb (on)|A laptop (off, dead)|A laptop (on, running)|Your couch|A couch cushion|A clump of cushion stuffing|A glass of milk|The empty glass"></div>
+        <p>No human-made object, or part of one, got more than four votes. Switching it on helps a
+        little: a lit bulb gets twice the votes of an unlit one, a running laptop four times a dead
+        one.</p>
+        <p>Everything at the very bottom got exactly one vote, and <strong>it&rsquo;s the same
+        vote every time</strong>: R13, who said yes to 45 of the 50. Without R13, the floor is a
+        clean sweep of zeroes.</p>
+      </div>
+      <div class="callout">
+        <h3>The dead center</h3>
+        <div class="mini" data-items="A virus|Your right arm|A cell's nucleus|The ocean|The Moon|The Sun|A tablespoon of yogurt"></div>
+        <p>Right around half: a virus, your right arm, a cell&rsquo;s nucleus and the ocean. One
+        step down, the Moon, the Sun and a spoonful of yogurt. That&rsquo;s the frontier of this
+        group&rsquo;s intuition, and it&rsquo;s a wild collection.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="splits">
+  <div class="wrap">
+    <div class="sec-head measure">
+      <p class="eyebrow">The orthogonal splits</p>
+      <h2>Where people disagree about more than the cutoff</h2>
+      <p class="lede">The staircase explains most of the answers. The leftovers are the
+      interesting part: places where people seem to be using different rules, not just drawing
+      the line in different places.</p>
+    </div>
+
+    <div class="callouts">
+      <div class="callout">
+        <h3>The carrot is the cleanest finding in the survey</h3>
+        <div class="mini" data-items="A carrot, growing|A carrot, 2 weeks in the fridge"></div>
+        <p>Nothing about the carrot changed. Same cells, same DNA, mostly still alive and
+        metabolising (though some may not have granted this). Support halves on <strong>context
+        alone</strong>: whether it&rsquo;s still <em>part of</em> a living process, rather than
+        just made of one. More than anything else here, that looks like what people are actually
+        tracking.</p>
+      </div>
+
+      <div class="callout">
+        <h3>Aggregates inherit experience &mdash; until they don&rsquo;t</h3>
+        <div class="mini" data-items="An ant|A colony of ants|A tablespoon of yogurt|The United States"></div>
+        <p>A colony keeps nearly all of an ant&rsquo;s votes; adding more ants is almost free.
+        Yogurt is a colony of living things too, and loses more than half. The United States
+        &mdash; 340 million people everyone here agrees are conscious (plus legal abstractions,
+        history, and traditions) &mdash; sits at the bottom with the couch cushions.</p>
+        <p>The two who said yes, R14 and R15, both described composition rules. R14 asks whether a
+        thing has &ldquo;some connection to a larger more complex and complete organism&rdquo;;
+        R15, whether it &ldquo;contains what we might call a soul.&rdquo; For most people a whole
+        has to <em>do</em> something to count. For these two, it just has to <em>be</em> a
+        whole.</p>
+        <p>(<em>One oddity: R11, who said yes to only six things, counts the ant colony among
+        them.</em>)</p>
+      </div>
+
+      <div class="callout">
+        <h3>Carving up you costs surprisingly little</h3>
+        <div class="mini" data-items="A car|The left half of a car|A car's passenger seat|Half of your own brain|One neuron in your brain|Your right arm"></div>
+        <p>Carving up an object barely matters &mdash; there wasn&rsquo;t much there to begin with.
+        Carving up <em>you</em> is a different story. <strong>A single neuron outscores your
+        entire right arm, and both beat the Sun.</strong> Whatever people are tracking runs down
+        into the parts of a living thing in a way it never does for a car.</p>
+      </div>
+
+      <div class="callout">
+        <h3>Sherlock Holmes is measuring something else entirely</h3>
+        <div class="mini" data-items="A pebble|A fictional character"></div>
+        <p>A pebble and a fictional character got four votes each. The pebble&rsquo;s four are the
+        four most generous people, exactly as the staircase predicts. Sherlock&rsquo;s are
+        scattered, and both ends &mdash; the most generous person and the strictest &mdash; said
+        no. It&rsquo;s the one item that runs <em>against</em> the ladder, and two people brought
+        it up unprompted in their written answers.</p>
+        <p>This isn&rsquo;t a question about where your line is. It&rsquo;s a question about what
+        a fictional character <em>is</em>, and the survey accidentally asked that instead.</p>
+      </div>
+
+      <div class="callout">
+        <h3>Is an unconscious person still someone?</h3>
+        <div class="mini" data-items="A person blackout drunk|A person asleep, not dreaming|A person under anesthesia" data-focus="13,6,11"></div>
+        <p>The sleeping person and the person under anesthesia were refused by the same three
+        people, who could hardly be further apart: R13, the most generous person in the survey;
+        R6, one of the strictest; and R11, the strictest. They agree on something the ladder
+        can&rsquo;t express &mdash; whether anything is happening <em>right now</em>. R13 asks
+        whether a thing could &ldquo;theoretically feel something&rdquo;, R6 wants &ldquo;some
+        level of understanding that it has been stimulated&rdquo;, R11 says simply &ldquo;awareness
+        degree&rdquo;.</p>
+        <p>And memory isn&rsquo;t it. The blackout drunk (or valium user), who by the
+        question&rsquo;s own terms won&rsquo;t remember any of it, is unanimous &mdash; these
+        three included. <strong>Being alive gets you onto the ladder; being awake is a separate
+        question.</strong></p>
+      </div>
+
+      <div class="callout">
+        <h3>Real differences in criteria show up one item at a time</h3>
+        <div class="mini" data-items="A lightbulb (on)|A laptop (on, running)|A car|A pebble" data-focus="1,10,8,2"></div>
+        <p>Four people near the generous end split three ways on what kind of activity counts.
+        R1 and R8 count energy of any kind: switched-on machines qualify, and so does the pebble
+        (R8: &ldquo;Erosion MUST feel like something?&rdquo;). R10 counts nature and never
+        machines, just as their written answer says. R2 is the mirror image: a running laptop has
+        sensors, and a pebble senses nothing.</p>
+        <p>These are real differences in what people count. They just don&rsquo;t form factions;
+        each person&rsquo;s quirks are their own.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="method">
+  <div class="wrap">
+    <div class="sec-head measure">
+      <p class="eyebrow">For the curious</p>
+      <h2>How this was computed</h2>
+      <p class="lede">None of this needs more than counting. Here&rsquo;s the reasoning behind
+      the claims above.</p>
+    </div>
+    <div class="measure method">
+      <h3>The staircase guess</h3>
+      <p>If everyone really were reading the same ladder, you&rsquo;d only need one number per
+      person to reproduce all their answers: how many times they said yes. Someone with 23 yeses
+      would say yes to the 23 most popular things and no to everything else. That pattern is
+      called a <em>Guttman scale</em>, after the sociologist who came up with it, and it&rsquo;s
+      the grey staircase in the chart at the top.</p>
+      <p>Make that guess for everyone and check it against what they actually said: it&rsquo;s
+      right <strong data-fill="repro">&mdash;</strong> of the time.</p>
+
+      <h3>Why that&rsquo;s less impressive than it sounds</h3>
+      <p>Most of the fifty things aren&rsquo;t close calls. Nearly everyone said yes to the dog and
+      no to the couch, so you can get a lot right without knowing anything about anybody: just
+      guess the majority answer for every item. That gets <strong data-fill="mmr">&mdash;</strong>.</p>
+      <p>So the fair question is how much of the <em>remaining</em> room the staircase captures.
+      Of the gap between <span data-fill="mmr">&mdash;</span> and a perfect 100%, it closes
+      <strong data-fill="cs_pct">&mdash;</strong>. (This is the <em>coefficient of
+      scalability</em>, <span data-fill="cs">&mdash;</span>.) A little over half the room you
+      could improve on, from one number per person.</p>
+
+      <h3>Counting skipped steps</h3>
+      <p>Another way to check: look for skipped steps. When someone says yes to something lower
+      on the ladder but no to something higher &mdash; R4, for instance, said yes to a fictional
+      character (four votes) but no to a clam (thirteen) &mdash; they&rsquo;ve skipped a step.
+      Some of that happens by chance, and given how popular each item is, you can work out how
+      many skipped steps to expect if everyone were answering at random.</p>
+      <p>This survey has <strong data-fill="H_pct">&mdash;</strong> fewer skipped steps than
+      random answers would produce. That&rsquo;s <em>Loevinger&rsquo;s H</em>
+      = <span data-fill="H">&mdash;</span>, and anything above 0.5 is conventionally called a
+      strong scale.</p>
+      <p>Do the same count one item at a time and each item gets its own score. Items under 0.35
+      are marked <span class="flag">off-ladder</span>: they skip steps nearly as often as random
+      answers would (the sleeping and anesthetised person, the ant colony), or more often
+      (Sherlock, the United States).</p>
+
+      <h3>Could one simple rule do better?</h3>
+      <p>I also wrote down seven simple rules &mdash; is it alive? does it have a brain? &mdash;
+      and scored each one against every answer, as if everyone used that rule. None of them even
+      beats guessing the majority.</p>
+      <div class="bars" id="criteria-bars"></div>
+      <p>Look at the kinds of misses. &ldquo;Nervous system&rdquo; and &ldquo;animal&rdquo; almost
+      never say yes when people said no; they just miss an enormous number of yeses. People grant
+      experience to far more than those rules allow, not less.</p>
+
+      <h3>Are there camps?</h3>
+      <p>To check whether people fall into schools of thought, I looked at each person&rsquo;s
+      <em>surprises</em>: the answers where they broke from their own staircase guess. Mark a
+      surprise yes as +1, a surprise no as &minus;1 and everything else as 0, and each person gets
+      a fifty-item &ldquo;quirk profile&rdquo;.</p>
+      <p>If there were camps &mdash; say, a group who all count electricity &mdash; their quirk
+      profiles would line up: surprising on the same items, in the same direction. I measured that
+      with a correlation between every pair of profiles, where 1 means identical quirks, 0 means
+      unrelated and &minus;1 means opposite. Averaged over all <span data-fill="n_pairs">&mdash;</span>
+      pairs of people, it comes out at <strong data-fill="struct_mean">&mdash;</strong>.</p>
+      <p>To see what &ldquo;unrelated&rdquo; looks like with this little data, I shuffled each
+      person&rsquo;s quirks across the fifty items, <span data-fill="draws">&mdash;</span> times
+      over. That keeps how quirky each person is but destroys anything they share. The shuffled
+      average is <span data-fill="struct_null">&mdash;</span>, so the real quirks line up, if
+      anything, slightly <em>less</em> than chance.</p>
+      <p>And the most alike pair of people? Their correlation is
+      <span data-fill="struct_max">&mdash;</span>. But the most alike pair in shuffled data
+      averages <span data-fill="struct_null_max">&mdash;</span>, and beats
+      <span data-fill="struct_max">&mdash;</span> <span data-fill="struct_p_max">&mdash;</span> of
+      the time. Even the closest-looking pair is within what chance produces.</p>
+
+      <h3>Small print</h3>
+      <p><strong>The shading</strong> on the dots is just the generosity order cut into thirds
+      &mdash; a reading aid, not groups.</p>
+      <p><strong>One typo.</strong> The form asked about &ldquo;a single blade of
+      <em>glass</em>&rdquo;, which was meant to be <em>grass</em>, and it&rsquo;s read as grass
+      here. It got <span data-fill="grass">&mdash;</span>, right where grass should land, so
+      people almost certainly read it the same way.</p>
+      <p><strong>Fifteen people</strong> is not many. The staircase is far too strong to be
+      chance, but any single 7-versus-8 split is a coin toss. Trust the shape of the ladder, not
+      the individual rungs.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>God&rsquo;s actual answers remain unavailable. But if She grades on a curve, the safest bet
+    in the room is the ladder itself: everybody agreed a dog is in, all but one agreed the couch
+    is out, and thirteen of fifteen people independently concluded that the United States of
+    America is not the subject of any experience whatsoever. The other two are presumably
+    hedging against a patriotic God (or have read Eric Schwitzgebel&rsquo;s
+    <a href="https://link.springer.com/article/10.1007/s11098-014-0387-8"><em>If Materialism Is
+    True, the United States Is Probably Conscious</em></a>).</p>
+    <p class="theme"><button class="chip" type="button" id="theme-toggle">Switch theme</button></p>
+  </div>
+</footer>
+
+<div class="tip" id="tip" role="status" aria-live="polite"></div>
+
+<script>
+window.__QUIZ__ = {"meta":{"source":"The Big Test.csv","n_respondents":15,"n_items":50,"yes_share":0.516},"scale":{"reproducibility":0.904,"mmr":0.7973,"scalability":0.5263,"errors":72,"cells":750,"loevinger_H":0.6511},"categories":{"animal":{"label":"Animals","order":1},"human":{"label":"Humans, impaired","order":2},"yourpart":{"label":"Parts of you","order":3},"plant":{"label":"Plants & fungi","order":4},"microbe":{"label":"Microbes & sub-cellular","order":5},"collective":{"label":"Collectives","order":6},"nature":{"label":"Nature, non-living","order":7},"object":{"label":"Human-made objects","order":8},"objpart":{"label":"Parts of objects","order":9},"abstract":{"label":"Abstractions","order":10}},"category_rows":[{"cat":"animal","label":"Animals","order":1,"n_items":10,"mean":0.933,"lo":0.867,"hi":1.0},{"cat":"human","label":"Humans, impaired","order":2,"n_items":4,"mean":0.883,"lo":0.8,"hi":1.0},{"cat":"yourpart","label":"Parts of you","order":3,"n_items":3,"mean":0.667,"lo":0.467,"hi":0.867},{"cat":"plant","label":"Plants & fungi","order":4,"n_items":5,"mean":0.613,"lo":0.333,"hi":0.733},{"cat":"microbe","label":"Microbes & sub-cellular","order":5,"n_items":4,"mean":0.533,"lo":0.4,"hi":0.733},{"cat":"collective","label":"Collectives","order":6,"n_items":2,"mean":0.533,"lo":0.133,"hi":0.933},{"cat":"nature","label":"Nature, non-living","order":7,"n_items":8,"mean":0.325,"lo":0.2,"hi":0.467},{"cat":"abstract","label":"Abstractions","order":10,"n_items":1,"mean":0.267,"lo":0.267,"hi":0.267},{"cat":"object","label":"Human-made objects","order":8,"n_items":9,"mean":0.156,"lo":0.067,"hi":0.267},{"cat":"objpart","label":"Parts of objects","order":9,"n_items":4,"mean":0.1,"lo":0.067,"hi":0.133}],"items":[{"short":"A pebble","full":"A pebble","cat":"nature","part":false,"note":null,"yes":4,"rate":0.2667,"H":0.814,"rank":37},{"short":"A dog","full":"A dog","cat":"animal","part":false,"note":null,"yes":15,"rate":1.0,"H":null,"rank":2},{"short":"A pocket watch","full":"A pocket watch","cat":"object","part":false,"note":null,"yes":3,"rate":0.2,"H":0.788,"rank":39},{"short":"A mouse","full":"A mouse","cat":"animal","part":false,"note":null,"yes":15,"rate":1.0,"H":null,"rank":3},{"short":"A clam","full":"A clam","cat":"animal","part":false,"note":null,"yes":13,"rate":0.8667,"H":0.793,"rank":10},{"short":"A car","full":"A car","cat":"object","part":false,"note":null,"yes":4,"rate":0.2667,"H":0.751,"rank":32},{"short":"A car's passenger seat","full":"The passenger seat of a car","cat":"objpart","part":true,"note":null,"yes":2,"rate":0.1333,"H":0.662,"rank":41},{"short":"The left half of a car","full":"The left half of a car","cat":"objpart","part":true,"note":null,"yes":2,"rate":0.1333,"H":0.831,"rank":44},{"short":"A jellyfish","full":"A jellyfish","cat":"animal","part":false,"note":null,"yes":13,"rate":0.8667,"H":0.793,"rank":11},{"short":"A chicken","full":"A chicken","cat":"animal","part":false,"note":null,"yes":15,"rate":1.0,"H":null,"rank":1},{"short":"The Moon","full":"The Moon","cat":"nature","part":false,"note":null,"yes":6,"rate":0.4,"H":0.759,"rank":28},{"short":"The Sun","full":"The Sun","cat":"nature","part":false,"note":null,"yes":6,"rate":0.4,"H":0.759,"rank":29},{"short":"A worm","full":"A worm (...and would you still love me?)","cat":"animal","part":false,"note":null,"yes":13,"rate":0.8667,"H":0.793,"rank":13},{"short":"A laptop (off, dead)","full":"A laptop computer (turned off, dead battery)","cat":"object","part":false,"note":null,"yes":1,"rate":0.0667,"H":0.731,"rank":48},{"short":"A laptop (on, running)","full":"A laptop computer (turned on and running)","cat":"object","part":false,"note":null,"yes":4,"rate":0.2667,"H":0.751,"rank":35},{"short":"A lichen","full":"A lichen (a hybrid colony of algae or cyanobacteria living symbiotically among filaments of fungus)","cat":"plant","part":false,"note":"A symbiotic colony of algae/cyanobacteria living among fungal filaments.","yes":11,"rate":0.7333,"H":0.802,"rank":17},{"short":"Your couch","full":"Your couch","cat":"object","part":false,"note":null,"yes":1,"rate":0.0667,"H":0.731,"rank":50},{"short":"A couch cushion","full":"A cushion from your couch","cat":"objpart","part":true,"note":null,"yes":1,"rate":0.0667,"H":0.731,"rank":46},{"short":"A clump of cushion stuffing","full":"A clump of stuffing in a cushion of your couch","cat":"objpart","part":true,"note":null,"yes":1,"rate":0.0667,"H":0.731,"rank":45},{"short":"A single-celled organism","full":"A single-celled organism (yeast, bacteria, amoeba)","cat":"microbe","part":false,"note":"Yeast, bacteria, amoeba.","yes":11,"rate":0.7333,"H":0.802,"rank":18},{"short":"A cell's nucleus","full":"The nucleus of a single-celled organism","cat":"microbe","part":true,"note":null,"yes":7,"rate":0.4667,"H":0.622,"rank":24},{"short":"A carrot, growing","full":"A carrot, growing in the ground","cat":"plant","part":false,"note":null,"yes":10,"rate":0.6667,"H":0.781,"rank":20},{"short":"A carrot, 2 weeks in the fridge","full":"A carrot, harvested two weeks ago, in your fridge","cat":"plant","part":false,"note":null,"yes":5,"rate":0.3333,"H":0.45,"rank":30},{"short":"A virus","full":"A virus (a piece of DNA/RNA in an infectious vehicle made of protein that, after infection, forces another organism to make copies of the DNA/RNA and the vehicle)","cat":"microbe","part":false,"note":"DNA/RNA in a protein vehicle that hijacks a host to copy itself.","yes":8,"rate":0.5333,"H":0.732,"rank":23},{"short":"An oak tree","full":"An oak tree","cat":"plant","part":false,"note":null,"yes":11,"rate":0.7333,"H":0.663,"rank":19},{"short":"An ant","full":"An ant","cat":"animal","part":false,"note":null,"yes":15,"rate":1.0,"H":null,"rank":5},{"short":"A colony of ants","full":"A colony of ants","cat":"collective","part":false,"note":null,"yes":14,"rate":0.9333,"H":0.238,"rank":6},{"short":"A tablespoon of yogurt","full":"A tablespoon of yogurt","cat":"microbe","part":false,"note":null,"yes":6,"rate":0.4,"H":0.744,"rank":27},{"short":"The United States","full":"The United States","cat":"collective","part":false,"note":null,"yes":2,"rate":0.1333,"H":-0.156,"rank":43},{"short":"The ocean","full":"The ocean","cat":"nature","part":false,"note":null,"yes":7,"rate":0.4667,"H":0.517,"rank":25},{"short":"A lightbulb (off)","full":"A lightbulb when it's off","cat":"object","part":false,"note":null,"yes":2,"rate":0.1333,"H":0.831,"rank":42},{"short":"A lightbulb (on)","full":"A lightbulb when it's on","cat":"object","part":false,"note":null,"yes":4,"rate":0.2667,"H":0.751,"rank":36},{"short":"A sea anemone","full":"A sea anemone","cat":"animal","part":false,"note":"No brain — a decentralised nerve net.","yes":14,"rate":0.9333,"H":1.0,"rank":8},{"short":"A sea urchin","full":"A sea urchin","cat":"animal","part":false,"note":null,"yes":13,"rate":0.8667,"H":0.793,"rank":12},{"short":"A starfish","full":"A starfish","cat":"animal","part":false,"note":"No brain, no central nervous system.","yes":14,"rate":0.9333,"H":1.0,"rank":9},{"short":"The Aurora Borealis","full":"The Aurora Borealis","cat":"nature","part":false,"note":null,"yes":3,"rate":0.2,"H":0.595,"rank":40},{"short":"A raindrop","full":"A raindrop","cat":"nature","part":false,"note":null,"yes":4,"rate":0.2667,"H":0.814,"rank":38},{"short":"A cloud","full":"A cloud","cat":"nature","part":false,"note":null,"yes":4,"rate":0.2667,"H":0.814,"rank":33},{"short":"One neuron in your brain","full":"A single neuron in your own brain","cat":"yourpart","part":true,"note":null,"yes":10,"rate":0.6667,"H":0.713,"rank":21},{"short":"A glass of milk","full":"A glass of milk","cat":"object","part":false,"note":null,"yes":1,"rate":0.0667,"H":0.731,"rank":47},{"short":"The empty glass","full":"The glass the milk is poured in to","cat":"object","part":false,"note":null,"yes":1,"rate":0.0667,"H":0.731,"rank":49},{"short":"A single blade of grass","full":"A single blade of glass","cat":"plant","part":false,"note":"The form said “glass” — a typo for “grass”. Answers are read as grass.","yes":9,"rate":0.6,"H":0.747,"rank":22},{"short":"Your right arm","full":"Your right arm","cat":"yourpart","part":true,"note":null,"yes":7,"rate":0.4667,"H":0.441,"rank":26},{"short":"One molecule of water","full":"A single molecule of water (H2O)","cat":"nature","part":false,"note":null,"yes":5,"rate":0.3333,"H":0.733,"rank":31},{"short":"A fictional character","full":"A fictional character (e.g. Sherlock Holmes)","cat":"abstract","part":false,"note":"e.g. Sherlock Holmes.","yes":4,"rate":0.2667,"H":-0.222,"rank":34},{"short":"A person in a coma","full":"A person in a coma","cat":"human","part":false,"note":null,"yes":14,"rate":0.9333,"H":1.0,"rank":7},{"short":"A person asleep, not dreaming","full":"A person asleep but not dreaming","cat":"human","part":false,"note":null,"yes":12,"rate":0.8,"H":0.148,"rank":15},{"short":"A person under anesthesia","full":"A person under anesthesia","cat":"human","part":false,"note":null,"yes":12,"rate":0.8,"H":0.148,"rank":16},{"short":"A person blackout drunk","full":"A person blackout drunk or on valium who, a day later, won't remember what's currently happening","cat":"human","part":false,"note":"Won’t remember any of it tomorrow.","yes":15,"rate":1.0,"H":null,"rank":4},{"short":"Half of your own brain","full":"The left hemisphere of your brain, and all its connections.\n\n(n.b. there are split-brain patients — patients who have the two hemispheres of their brain separated, usually to treat epilepsy. After the right and left brain are separated, each hemisphere will have its own separate perception, concepts, and impulses to act. Having two \"brains\" in one body inspire self-contradictory actions. There was a case in which, when one split-brain patient would dress himself, sometimes he pulled his pants up with one hand (the side of his brain that wanted to get dressed) and down with the other (the side that did not).\n\n(It's also possible to live perfectly fine with only one half of your brain.)\n\nSo, is it like something to be just one half of your brain, and all its connections, independent of the right half?","cat":"yourpart","part":true,"note":"One hemisphere and all its connections — as in split-brain patients.","yes":13,"rate":0.8667,"H":0.551,"rank":14}],"ranked":[9,1,3,48,25,26,45,32,34,4,8,33,12,49,46,47,15,19,24,21,38,41,23,20,29,42,27,10,11,22,43,5,37,44,14,31,0,36,2,35,6,30,28,7,18,17,39,13,40,16],"respondents":[{"id":1,"timestamp":"2026/10/24 3:33:43 PM CST","total":40,"rate":0.8,"tier":"gen","freetext":"Anything that moves or generates energy feels capable of experience to me; side note the most difficult one for me was Sherlock Holmes","guttman_errors":4,"answers":[1,1,1,1,1,1,0,1,1,1,1,1,1,0,1,1,0,0,0,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,0,1,1,1,1,1],"generous":[{"i":7,"short":"The left half of a car","rate":0.133},{"i":30,"short":"A lightbulb (off)","rate":0.133}],"strict":[{"i":22,"short":"A carrot, 2 weeks in the fridge","rate":0.333},{"i":44,"short":"A fictional character","rate":0.267}]},{"id":2,"timestamp":"2026/10/24 4:24:28 PM CST","total":33,"rate":0.66,"tier":"gen","freetext":"Having some way to receive sensory input. Not fully “I think therefore I am” but more “I sense therefore I am”","guttman_errors":6,"answers":[0,1,0,1,1,1,1,0,1,1,1,1,1,0,1,1,0,0,0,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1,0,0,0,1,0,0,1,1,0,0,1,1,1,1,1],"generous":[{"i":6,"short":"A car's passenger seat","rate":0.133},{"i":14,"short":"A laptop (on, running)","rate":0.267},{"i":31,"short":"A lightbulb (on)","rate":0.267}],"strict":[{"i":29,"short":"The ocean","rate":0.467},{"i":43,"short":"One molecule of water","rate":0.333},{"i":0,"short":"A pebble","rate":0.267}]},{"id":3,"timestamp":"2026/10/25 3:07:58 AM CST","total":26,"rate":0.52,"tier":"mid","freetext":"","guttman_errors":4,"answers":[0,1,0,1,1,0,0,0,1,1,0,0,1,0,0,1,0,0,0,1,1,1,1,0,1,1,1,0,0,0,0,0,1,1,1,0,0,0,1,0,0,1,1,1,0,1,1,1,1,1],"generous":[{"i":22,"short":"A carrot, 2 weeks in the fridge","rate":0.333},{"i":43,"short":"One molecule of water","rate":0.333}],"strict":[{"i":23,"short":"A virus","rate":0.533},{"i":29,"short":"The ocean","rate":0.467}]},{"id":4,"timestamp":"2026/10/25 3:47:44 AM CST","total":15,"rate":0.3,"tier":"strict","freetext":"Alive, brain, some level of complexity of function","guttman_errors":8,"answers":[0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1],"generous":[{"i":44,"short":"A fictional character","rate":0.267},{"i":29,"short":"The ocean","rate":0.467},{"i":24,"short":"An oak tree","rate":0.733},{"i":47,"short":"A person under anesthesia","rate":0.8}],"strict":[{"i":4,"short":"A clam","rate":0.867},{"i":8,"short":"A jellyfish","rate":0.867},{"i":12,"short":"A worm","rate":0.867},{"i":33,"short":"A sea urchin","rate":0.867}]},{"id":5,"timestamp":"2026/10/25 10:19:37 AM CST","total":19,"rate":0.38,"tier":"strict","freetext":"my answer is pretty obvious: it needs to be multi cellular life. The key is in the definition of the word “experience” which I consider to be distinct from simply being capable of having a response to a stimulus. A rock will melt with enough heat. That’s a response, but not an experience by my definition of that word. \n\nFurther, since we’re here, I take issue with the survey premise. You’re premise asks whether there would be an experience if I were transitioned to one of these things. That’s contradcitory. I subscribe to the idea of “I think therefore I am” -> meaning that the ability to have an experience is what makes me, me. It’s illogical to view it the other way and define something as “me” and then ask if it can experience something’s if taking your premise at precise face value, then I’m assuming by definition all things in this list can have an experience and all of them should be the first answer affirming there is an experience.\n\nSo, I like the idea of this question but actually would reframe it to “do you think the following thing has an experience, however foreign or primitive”? I answered as if that were the question.\n\nThis was fun (:","guttman_errors":6,"answers":[0,1,0,1,1,0,0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,1,0,1,1,1,1,1,1],"generous":[{"i":44,"short":"A fictional character","rate":0.267},{"i":42,"short":"Your right arm","rate":0.467},{"i":38,"short":"One neuron in your brain","rate":0.667}],"strict":[{"i":15,"short":"A lichen","rate":0.733},{"i":19,"short":"A single-celled organism","rate":0.733},{"i":24,"short":"An oak tree","rate":0.733}]},{"id":6,"timestamp":"2026/10/25 4:46:37 PM CST","total":15,"rate":0.3,"tier":"strict","freetext":"Alive - cellular functions, requires energy, metabolizes it, etc.; capable of responding to stimuli, and then some level of understanding that it has been stimulated (not sure how to best articulate that level of understanding)","guttman_errors":2,"answers":[0,1,0,1,1,0,0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,1,0,0,1,0,0,1,1],"generous":[{"i":42,"short":"Your right arm","rate":0.467}],"strict":[{"i":46,"short":"A person asleep, not dreaming","rate":0.8}]},{"id":7,"timestamp":"2026/10/25 7:56:16 PM CST","total":21,"rate":0.42,"tier":"strict","freetext":"Essentially life - whether plant or animal. The one contradiction in my answer was a fictional character. What does it mean to be a character or swap places with one? Took the stance that if I was Sherlock I would have some life experience however weird or primitive - am I controlled by author? Life of my own? Idk","guttman_errors":4,"answers":[0,1,0,1,1,0,0,0,1,1,0,0,1,0,0,1,0,0,0,1,0,1,0,0,1,1,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,1,0,0,1,1,1,1,1,1],"generous":[{"i":44,"short":"A fictional character","rate":0.267},{"i":41,"short":"A single blade of grass","rate":0.6}],"strict":[{"i":26,"short":"A colony of ants","rate":0.933},{"i":38,"short":"One neuron in your brain","rate":0.667}]},{"id":8,"timestamp":"2026/10/25 8:15:28 PM CST","total":35,"rate":0.7,"tier":"gen","freetext":"I think it mostly boiled down to interactivity as that thing and most commonly I leaned towards interactivity as defined by either communication or movement. Not to whip out my tea leaves, but some things have \"energy\" and some just don't. \n\nMy most controversial response (IMO) is that a rock would have an experience. That rock sitting on the beach \"experienced\" years of energy exchange with its surroundings. Erosion MUST feel like something? Being dropped / cracked open? \n\nAnyways, I'll leave you with that. What's really unfortunate is we're not IRL to actively debate these <3","guttman_errors":6,"answers":[1,1,0,1,1,1,0,0,1,1,1,1,1,0,1,1,0,0,0,1,0,1,0,1,1,1,1,1,0,1,0,1,1,1,1,1,1,1,1,0,0,1,0,1,0,1,1,1,1,1],"generous":[{"i":35,"short":"The Aurora Borealis","rate":0.2},{"i":36,"short":"A raindrop","rate":0.267},{"i":37,"short":"A cloud","rate":0.267}],"strict":[{"i":20,"short":"A cell's nucleus","rate":0.467},{"i":42,"short":"Your right arm","rate":0.467},{"i":22,"short":"A carrot, 2 weeks in the fridge","rate":0.333}]},{"id":9,"timestamp":"2026/10/25 8:22:34 PM CST","total":25,"rate":0.5,"tier":"mid","freetext":"Living vs not, whole vs only part","guttman_errors":4,"answers":[0,1,0,1,1,0,0,0,1,1,1,1,1,0,0,1,0,0,0,1,1,1,0,1,1,1,1,0,0,1,0,0,1,1,1,0,0,0,0,0,0,1,0,0,0,1,1,1,1,0],"generous":[{"i":10,"short":"The Moon","rate":0.4},{"i":11,"short":"The Sun","rate":0.4}],"strict":[{"i":49,"short":"Half of your own brain","rate":0.867},{"i":38,"short":"One neuron in your brain","rate":0.667}]},{"id":10,"timestamp":"2026/10/26 1:47:29 AM CST","total":37,"rate":0.74,"tier":"gen","freetext":"If it is connected to a regenerative cycle of life, so most nature things vs mechanical technological things we’ve developed with no regeneration inherent in their design","guttman_errors":6,"answers":[1,1,1,1,1,0,0,0,1,1,1,1,1,0,0,1,0,0,0,1,1,1,1,1,1,1,1,1,0,1,0,0,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1,1],"generous":[{"i":2,"short":"A pocket watch","rate":0.2},{"i":35,"short":"The Aurora Borealis","rate":0.2},{"i":44,"short":"A fictional character","rate":0.267}],"strict":[{"i":5,"short":"A car","rate":0.267},{"i":14,"short":"A laptop (on, running)","rate":0.267},{"i":31,"short":"A lightbulb (on)","rate":0.267}]},{"id":11,"timestamp":"2026/10/26 9:53:36 AM CST","total":6,"rate":0.12,"tier":"strict","freetext":"Awareness degree","guttman_errors":0,"answers":[0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0],"generous":[],"strict":[]},{"id":12,"timestamp":"2026/10/26 10:28:25 AM CST","total":23,"rate":0.46,"tier":"mid","freetext":"There needs to be a feedback loop of some kind. Experience leading to a reaction.","guttman_errors":4,"answers":[0,1,0,1,1,0,0,0,1,1,0,0,1,0,0,1,0,0,0,1,0,1,1,0,1,1,1,1,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,0,0,1,1,1,1,1],"generous":[{"i":22,"short":"A carrot, 2 weeks in the fridge","rate":0.333},{"i":27,"short":"A tablespoon of yogurt","rate":0.4}],"strict":[{"i":41,"short":"A single blade of grass","rate":0.6},{"i":23,"short":"A virus","rate":0.533}]},{"id":13,"timestamp":"2026/10/26 2:26:23 PM CST","total":45,"rate":0.9,"tier":"gen","freetext":"Was it an actual thing, could it be touched by something in any way and this theoretically feel something","guttman_errors":10,"answers":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,0,1,0,0,1,1],"generous":[{"i":16,"short":"Your couch","rate":0.067},{"i":17,"short":"A couch cushion","rate":0.067},{"i":18,"short":"A clump of cushion stuffing","rate":0.067},{"i":39,"short":"A glass of milk","rate":0.067},{"i":40,"short":"The empty glass","rate":0.067}],"strict":[{"i":46,"short":"A person asleep, not dreaming","rate":0.8},{"i":47,"short":"A person under anesthesia","rate":0.8},{"i":44,"short":"A fictional character","rate":0.267},{"i":35,"short":"The Aurora Borealis","rate":0.2},{"i":28,"short":"The United States","rate":0.133}]},{"id":14,"timestamp":"2026/10/26 3:43:01 PM CST","total":24,"rate":0.48,"tier":"mid","freetext":"That something is \"alive\" - e.g. able to experience feeling and/or react to stimuli, and be capable of self-perpetuation and/or growth... also have some connection to a larger more complex and complete organism","guttman_errors":2,"answers":[0,1,0,1,1,0,0,0,1,1,0,0,1,0,0,1,0,0,0,1,0,1,0,1,1,1,1,0,1,0,0,0,1,1,1,0,0,0,1,0,0,1,0,0,0,1,1,1,1,1],"generous":[{"i":28,"short":"The United States","rate":0.133}],"strict":[{"i":20,"short":"A cell's nucleus","rate":0.467}]},{"id":15,"timestamp":"2026/10/26 3:58:58 PM CST","total":23,"rate":0.46,"tier":"mid","freetext":"If the object can experience pain or emotion, or the building blocks thereof or contains what we might call…a soul. A sense of existence and being","guttman_errors":6,"answers":[0,1,0,1,1,0,0,0,1,1,0,0,1,0,0,1,0,0,0,1,1,0,0,1,0,1,1,0,1,1,0,0,1,1,1,0,0,0,1,0,0,0,0,0,0,1,1,1,1,1],"generous":[{"i":28,"short":"The United States","rate":0.133},{"i":20,"short":"A cell's nucleus","rate":0.467},{"i":29,"short":"The ocean","rate":0.467}],"strict":[{"i":24,"short":"An oak tree","rate":0.733},{"i":21,"short":"A carrot, growing","rate":0.667},{"i":41,"short":"A single blade of grass","rate":0.6}]}],"tiers":[{"slug":"gen","label":"The generous third","members":[13,1,10,8,2],"lo":66,"hi":90},{"slug":"mid","label":"The middle third","members":[3,9,14,12,15],"lo":46,"hi":52},{"slug":"strict","label":"The strict third","members":[7,5,4,6,11],"lo":12,"hi":42}],"dot_order":[12,0,9,7,1,2,8,13,11,14,6,4,3,5,10],"zones":[{"slug":"yes","label":"Near-unanimous: there’s something there","lo":0.9,"hi":1.01,"note":"Animals that visibly move about, two brainless sea creatures, and the unconscious humans — at most one dissenting vote apiece.","count":9},{"slug":"contested","label":"The contested frontier","lo":0.15,"hi":0.9,"note":"Two thirds of the survey. Where all the disagreement lives.","count":31},{"slug":"no","label":"Near-unanimous: the lights are out","lo":-0.01,"hi":0.15,"note":"Inert household objects, parts of a car — and the United States, which finally picked up two votes.","count":10}],"criteria":[{"rule":"Is it alive?","accuracy":0.7893,"over":73,"under":85},{"rule":"Is it multicellular?","accuracy":0.7787,"over":47,"under":119},{"rule":"Does it have a nervous system?","accuracy":0.7573,"over":25,"under":157},{"rule":"Is it an animal?","accuracy":0.736,"over":18,"under":180},{"rule":"Is energy flowing through it?","accuracy":0.7307,"over":155,"under":47},{"rule":"Is it not human-made?","accuracy":0.7133,"over":184,"under":31},{"rule":"Does it have a brain?","accuracy":0.6547,"over":11,"under":248}],"structure":{"real_mean":-0.0205,"null_mean":-0.0,"null_sd":0.0133,"z":-1.54,"p_mean":0.955,"real_max":0.5,"null_max":0.405,"p_max":0.177,"draws":2000},"clustering":{"merges":[{"height":0.1638,"members":[4,5]},{"height":0.1936,"members":[2,11]},{"height":0.1954,"members":[6,13]},{"height":0.2353,"members":[2,6,11,13]},{"height":0.2362,"members":[0,7]},{"height":0.3178,"members":[8,14]},{"height":0.3285,"members":[2,6,8,11,13,14]},{"height":0.3877,"members":[2,4,5,6,8,11,13,14]},{"height":0.3888,"members":[0,7,9]},{"height":0.4342,"members":[1,2,4,5,6,8,11,13,14]},{"height":0.4359,"members":[3,10]},{"height":0.5508,"members":[1,2,3,4,5,6,8,10,11,13,14]},{"height":0.5857,"members":[0,1,2,3,4,5,6,7,8,9,10,11,13,14]},{"height":0.9828,"members":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]}],"pairwise":[[1.0,0.486,0.42,0.218,0.288,0.327,0.324,0.764,0.5,0.616,0.185,0.361,0.167,0.38,0.361],[0.486,1.0,0.663,0.286,0.475,0.47,0.525,0.544,0.633,0.441,0.265,0.662,0.183,0.605,0.493],[0.42,0.663,1.0,0.454,0.67,0.629,0.736,0.419,0.641,0.617,0.355,0.806,0.08,0.763,0.646],[0.218,0.286,0.454,1.0,0.656,0.524,0.592,0.333,0.48,0.388,0.564,0.534,-0.218,0.507,0.534],[0.288,0.475,0.67,0.656,1.0,0.836,0.67,0.333,0.453,0.464,0.472,0.683,-0.151,0.65,0.683],[0.327,0.47,0.629,0.524,0.836,1.0,0.592,0.333,0.48,0.388,0.564,0.622,0.218,0.594,0.622],[0.324,0.525,0.736,0.592,0.67,0.592,1.0,0.469,0.689,0.504,0.309,0.759,-0.122,0.805,0.597],[0.764,0.544,0.419,0.333,0.333,0.333,0.469,1.0,0.567,0.607,0.242,0.517,0.073,0.542,0.429],[0.5,0.633,0.641,0.48,0.453,0.48,0.689,0.567,1.0,0.593,0.369,0.602,0.067,0.721,0.682],[0.616,0.441,0.617,0.388,0.464,0.388,0.504,0.607,0.593,1.0,0.219,0.547,-0.046,0.478,0.456],[0.185,0.265,0.355,0.564,0.472,0.564,0.309,0.242,0.369,0.219,1.0,0.4,0.123,0.384,0.4],[0.361,0.662,0.806,0.534,0.683,0.622,0.759,0.517,0.602,0.547,0.4,1.0,0.04,0.8,0.678],[0.167,0.183,0.08,-0.218,-0.151,0.218,-0.122,0.073,0.067,-0.046,0.123,0.04,1.0,-0.08,-0.094],[0.38,0.605,0.763,0.507,0.65,0.594,0.805,0.542,0.721,0.478,0.384,0.8,-0.08,1.0,0.8],[0.361,0.493,0.646,0.534,0.683,0.622,0.597,0.429,0.682,0.456,0.4,0.678,-0.094,0.8,1.0]]},"partition3":[[1,2,3,4,5,6,8,10,11,13,14],[0,7,9],[12]],"partition4":[[1,2,4,5,6,8,11,13,14],[0,7,9],[3,10],[12]],"contrasts":[{"title":"Whole vs. part: a car","blurb":"Does carving up an object change anything? No — it was already nothing.","legs":[{"short":"A car","yes":4,"rate":0.2667},{"short":"A car's passenger seat","yes":2,"rate":0.1333},{"short":"The left half of a car","yes":2,"rate":0.1333}]},{"title":"Whole vs. part: your couch","blurb":"The one place every single respondent agreed, all the way down.","legs":[{"short":"Your couch","yes":1,"rate":0.0667},{"short":"A couch cushion","yes":1,"rate":0.0667},{"short":"A clump of cushion stuffing","yes":1,"rate":0.0667}]},{"title":"Whole vs. part: a cell","blurb":"Zoom inside a living thing and support drops, but doesn’t vanish.","legs":[{"short":"A single-celled organism","yes":11,"rate":0.7333},{"short":"A cell's nucleus","yes":7,"rate":0.4667}]},{"title":"Whole vs. part: you","blurb":"Half a brain keeps almost everything. One neuron keeps more than you’d think.","legs":[{"short":"Half of your own brain","yes":13,"rate":0.8667},{"short":"One neuron in your brain","yes":10,"rate":0.6667},{"short":"Your right arm","yes":7,"rate":0.4667}]},{"title":"Running vs. not: a laptop","blurb":"Switching it on buys a little — but not much.","legs":[{"short":"A laptop (off, dead)","yes":1,"rate":0.0667},{"short":"A laptop (on, running)","yes":4,"rate":0.2667}]},{"title":"Running vs. not: a lightbulb","blurb":"Same shape as the laptop: electricity flowing counts for something.","legs":[{"short":"A lightbulb (off)","yes":2,"rate":0.1333},{"short":"A lightbulb (on)","yes":4,"rate":0.2667}]},{"title":"Alive vs. dying: a carrot","blurb":"The biggest drop caused by nothing but context. Same carrot.","legs":[{"short":"A carrot, growing","yes":10,"rate":0.6667},{"short":"A carrot, 2 weeks in the fridge","yes":5,"rate":0.3333}]},{"title":"One, many, and too many","blurb":"Aggregates inherit experience from their members — until they don’t.","legs":[{"short":"An ant","yes":15,"rate":1.0},{"short":"A colony of ants","yes":14,"rate":0.9333},{"short":"A tablespoon of yogurt","yes":6,"rate":0.4},{"short":"The United States","yes":2,"rate":0.1333}]},{"title":"Still a person?","blurb":"Nobody was willing to switch the lights off on a human being.","legs":[{"short":"A person in a coma","yes":14,"rate":0.9333},{"short":"A person asleep, not dreaming","yes":12,"rate":0.8},{"short":"A person under anesthesia","yes":12,"rate":0.8},{"short":"A person blackout drunk","yes":15,"rate":1.0}]}],"whole_part":[{"short":"A car's passenger seat","yes":2,"cat":"objpart"},{"short":"The left half of a car","yes":2,"cat":"objpart"},{"short":"A couch cushion","yes":1,"cat":"objpart"},{"short":"A clump of cushion stuffing","yes":1,"cat":"objpart"},{"short":"A cell's nucleus","yes":7,"cat":"microbe"},{"short":"One neuron in your brain","yes":10,"cat":"yourpart"},{"short":"Your right arm","yes":7,"cat":"yourpart"},{"short":"Half of your own brain","yes":13,"cat":"yourpart"}],"gaps":[{"above":"An ant","below":"A colony of ants","above_n":15,"below_n":14,"drop":0.067,"rank":5},{"above":"A starfish","below":"A clam","above_n":14,"below_n":13,"drop":0.067,"rank":9},{"above":"Half of your own brain","below":"A person asleep, not dreaming","above_n":13,"below_n":12,"drop":0.067,"rank":14},{"above":"A person under anesthesia","below":"A lichen","above_n":12,"below_n":11,"drop":0.067,"rank":16},{"above":"An oak tree","below":"A carrot, growing","above_n":11,"below_n":10,"drop":0.067,"rank":19},{"above":"One neuron in your brain","below":"A single blade of grass","above_n":10,"below_n":9,"drop":0.067,"rank":21},{"above":"A single blade of grass","below":"A virus","above_n":9,"below_n":8,"drop":0.067,"rank":22},{"above":"A virus","below":"A cell's nucleus","above_n":8,"below_n":7,"drop":0.067,"rank":23},{"above":"Your right arm","below":"A tablespoon of yogurt","above_n":7,"below_n":6,"drop":0.067,"rank":26},{"above":"The Sun","below":"A carrot, 2 weeks in the fridge","above_n":6,"below_n":5,"drop":0.067,"rank":29},{"above":"One molecule of water","below":"A car","above_n":5,"below_n":4,"drop":0.067,"rank":31},{"above":"A raindrop","below":"A pocket watch","above_n":4,"below_n":3,"drop":0.067,"rank":38},{"above":"The Aurora Borealis","below":"A car's passenger seat","above_n":3,"below_n":2,"drop":0.067,"rank":40},{"above":"The left half of a car","below":"A clump of cushion stuffing","above_n":2,"below_n":1,"drop":0.067,"rank":44}]};
+
+(function () {
+  "use strict";
+  var D = window.__QUIZ__;
+  var N = D.meta.n_respondents, K = D.meta.n_items;
+  /* display order for dots: most generous first */
+  var order = D.dot_order.map(function (i) { return D.respondents[i]; });
+  var byShort = {};
+  D.items.forEach(function (it, j) { byShort[it.short] = j; });
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+  function pct(x) { return Math.round(x * 100) + "%"; }
+  function signed(x) { return (x < 0 ? "−" : "") + Math.abs(x).toFixed(2); }
+
+  /* ---------- fill the numbers quoted in the prose ---------- */
+  var S = D.structure;
+  var grassItem = D.items.filter(function (it) { return /blade of grass/i.test(it.short); })[0];
+  var WORDS = ["zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
+    "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen",
+    "Eighteen", "Nineteen", "Twenty"];
+  var fills = {
+    n_resp_word: WORDS[N] || N,
+    n_resp: N,
+    n_items: K,
+    n_cells: D.scale.cells,
+    yes_share: pct(D.meta.yes_share),
+    grass: grassItem ? grassItem.yes + "/" + N : "—",
+    repro: pct(D.scale.reproducibility),
+    mmr: pct(D.scale.mmr),
+    cs: D.scale.scalability.toFixed(2),
+    cs_pct: pct(D.scale.scalability),
+    H: D.scale.loevinger_H.toFixed(2),
+    H_pct: pct(D.scale.loevinger_H),
+    n_pairs: N * (N - 1) / 2,
+    struct_mean: signed(S.real_mean),
+    struct_null: signed(S.null_mean),
+    struct_max: S.real_max.toFixed(2),
+    struct_null_max: S.null_max.toFixed(2),
+    struct_p_max: pct(S.p_max),
+    draws: S.draws.toLocaleString("en-US")
+  };
+  Object.keys(fills).forEach(function (k) {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-fill="' + k + '"]'), function (n) {
+      n.textContent = fills[k];
+    });
+  });
+
+  /* ---------- tooltip ---------- */
+  var tip = document.getElementById("tip");
+  var tipTimer = null;
+  function showTip(text, x, y) {
+    tip.textContent = text;
+    tip.classList.add("show");
+    var w = tip.offsetWidth, h = tip.offsetHeight;
+    var left = Math.min(Math.max(8, x - w / 2), window.innerWidth - w - 8);
+    var top = y - h - 10;
+    if (top < 8) top = y + 16;
+    tip.style.left = left + "px";
+    tip.style.top = top + "px";
+    clearTimeout(tipTimer);
+    tipTimer = setTimeout(hideTip, 2600);
+  }
+  function hideTip() { tip.classList.remove("show"); }
+  function tipOn(node, msg) {
+    node.addEventListener("mouseenter", function () {
+      var b = node.getBoundingClientRect();
+      showTip(msg, b.left + b.width / 2, b.top);
+    });
+    node.addEventListener("mouseleave", hideTip);
+  }
+
+  /* ---------- shared pieces: a row of dots, and the numbers above it ---------- */
+  function dotStrip(j, focus) {
+    var strip = el("div", "dots");
+    order.forEach(function (r) {
+      var on = r.answers[j] === 1;
+      var d = el("span", "dot " + (on ? "on" : "off"));
+      if (focus && focus.indexOf(r.id) < 0) d.classList.add("dim");
+      d.setAttribute("data-tier", r.tier);
+      d.setAttribute("data-rid", r.id);
+      d.setAttribute("role", "img");
+      var msg = "R" + r.id + " · " + r.total + "/" + K + " — " +
+        (on ? "something it’s like" : "lights out");
+      d.setAttribute("aria-label", msg);
+      tipOn(d, msg);
+      strip.appendChild(d);
+    });
+    return strip;
+  }
+
+  function heads(tag, focus) {
+    var h = el("div", "dots heads");
+    order.forEach(function (r) {
+      var n = el(tag, "hd", String(r.id));
+      n.setAttribute("data-rid", r.id);
+      if (tag === "button") {
+        n.type = "button";
+        n.setAttribute("aria-pressed", "false");
+        n.setAttribute("aria-label", "Follow R" + r.id + " down the ladder");
+      }
+      if (focus && focus.indexOf(r.id) >= 0) n.classList.add("focus");
+      tipOn(n, "R" + r.id + " · said yes to " + r.total + " of " + K);
+      h.appendChild(n);
+    });
+    return h;
+  }
+
+  /* ---------- the staircase matrix ---------- */
+  var mx = document.getElementById("matrix");
+  mx.style.setProperty("--mx-n", K);
+  order.forEach(function (r) {
+    mx.appendChild(el("span", "mx-who", "R" + r.id));
+    D.ranked.forEach(function (j, pos) {
+      var yes = r.answers[j] === 1;
+      var c = el("span", "mx" + (pos < r.total ? " p" : "") + (yes ? " y" : ""));
+      if (yes) c.setAttribute("data-tier", r.tier);
+      c.setAttribute("data-tip", "R" + r.id + " · " + D.items[j].short + " — " + (yes ? "yes" : "no"));
+      mx.appendChild(c);
+    });
+  });
+  mx.addEventListener("mouseover", function (e) {
+    var c = e.target.closest(".mx");
+    if (!c) return;
+    var b = c.getBoundingClientRect();
+    showTip(c.getAttribute("data-tip"), b.left + b.width / 2, b.top);
+  });
+  mx.addEventListener("mouseleave", hideTip);
+
+  /* ---------- the dial: everyone in order, with what they said ---------- */
+  var dial = document.getElementById("dial");
+  order.forEach(function (r) {
+    var row = el("div", "dial-row");
+
+    var who = el("div", "dial-who");
+    var sw = el("span", "swatch");
+    sw.setAttribute("data-tier", r.tier);
+    who.appendChild(sw);
+    who.appendChild(el("span", null, "R" + r.id));
+    row.appendChild(who);
+
+    var meter = el("div", "dial-meter");
+    var track = el("div", "dial-track");
+    var fill = el("i");
+    fill.setAttribute("data-tier", r.tier);
+    fill.style.width = (100 * r.rate).toFixed(1) + "%";
+    track.appendChild(fill);
+    meter.appendChild(track);
+    meter.appendChild(el("span", "dial-pct", r.total + "/" + K));
+    row.appendChild(meter);
+
+    var crit = el("div", "dial-crit" + (r.freetext ? "" : " blank"),
+      r.freetext ? "“" + r.freetext + "”" : "left the last question blank");
+    row.appendChild(crit);
+
+    dial.appendChild(row);
+  });
+
+  /* ---------- the ladder ---------- */
+  var ladder = document.getElementById("ladder");
+  var head = document.getElementById("ladder-head");
+  var spotlight = null;
+
+  head.appendChild(el("span", "rank"));
+  head.appendChild(el("span", "name", "Respondent"));
+  var headNums = heads("button");
+  head.appendChild(headNums);
+  head.appendChild(el("span", "count", "Yes"));
+
+  var items = D.ranked.map(function (j) {
+    var it = Object.assign({}, D.items[j]);
+    it.idx = j;
+    return it;
+  });
+
+  function render(cat) {
+    ladder.textContent = "";
+    var shown = items.filter(function (it) { return cat === "all" || it.cat === cat; });
+    var zoneDrawn = {};
+    shown.forEach(function (it) {
+      var zone = D.zones.filter(function (z) { return it.rate >= z.lo && it.rate < z.hi; })[0];
+      if (zone && !zoneDrawn[zone.slug] && cat === "all") {
+        zoneDrawn[zone.slug] = true;
+        var zh = el("div", "zone");
+        zh.appendChild(el("b", null, zone.label));
+        zh.appendChild(el("span", null, zone.note));
+        zh.appendChild(el("span", "n", zone.count + " of " + K));
+        ladder.appendChild(zh);
+      }
+
+      var row = el("button", "rung");
+      row.type = "button";
+      row.setAttribute("aria-expanded", "false");
+      row.appendChild(el("span", "rank", it.rank));
+      var nm = el("span", "name");
+      nm.appendChild(document.createTextNode(it.short));
+      if (it.H !== null && it.H < 0.35) {
+        nm.appendChild(el("span", "flag", "off-ladder"));
+      }
+      row.appendChild(nm);
+      row.appendChild(dotStrip(it.idx));
+      row.appendChild(el("span", "count", it.yes + "/" + N));
+      ladder.appendChild(row);
+
+      var note = null;
+      row.addEventListener("click", function () {
+        if (note) {
+          note.remove(); note = null;
+          row.setAttribute("aria-expanded", "false");
+          return;
+        }
+        note = el("div", "note");
+        if (it.note) note.appendChild(el("span", null, it.note));
+        var saidYes = order.filter(function (r) { return r.answers[it.idx] === 1; });
+        var said = el("span", "said",
+          "Said yes: " + (saidYes.length ? saidYes.map(function (r) { return "R" + r.id; }).join(" ") : "nobody") +
+          (it.H !== null ? "   ·   scalability H = " + it.H.toFixed(2) : ""));
+        note.appendChild(said);
+        note.appendChild(el("span", "verbatim", "“" + it.full.split("\n")[0] + "”"));
+        row.insertAdjacentElement("afterend", note);
+        row.setAttribute("aria-expanded", "true");
+      });
+    });
+    applySpotlight();
+  }
+
+  function applySpotlight() {
+    ladder.classList.toggle("spotlit", spotlight != null);
+    head.classList.toggle("spotlit", spotlight != null);
+    Array.prototype.forEach.call(headNums.children, function (b) {
+      b.setAttribute("aria-pressed", b.getAttribute("data-rid") === String(spotlight) ? "true" : "false");
+    });
+    if (spotlight == null) return;
+    Array.prototype.forEach.call(ladder.querySelectorAll(".dot"), function (d) {
+      d.classList.toggle("lit", d.getAttribute("data-rid") === String(spotlight));
+    });
+  }
+
+  headNums.addEventListener("click", function (e) {
+    var b = e.target.closest(".hd");
+    if (!b) return;
+    var rid = Number(b.getAttribute("data-rid"));
+    spotlight = spotlight === rid ? null : rid;
+    applySpotlight();
+  });
+
+  /* category filter chips */
+  var controls = document.querySelector(".controls");
+  var cats = [];
+  items.forEach(function (it) { if (cats.indexOf(it.cat) < 0) cats.push(it.cat); });
+  cats.sort(function (a, b) { return D.categories[a].order - D.categories[b].order; });
+  cats.forEach(function (c) {
+    var b = el("button", "chip", D.categories[c].label);
+    b.type = "button";
+    b.setAttribute("data-cat", c);
+    b.setAttribute("aria-pressed", "false");
+    controls.appendChild(b);
+  });
+  controls.addEventListener("click", function (e) {
+    var b = e.target.closest(".chip");
+    if (!b) return;
+    Array.prototype.forEach.call(controls.querySelectorAll(".chip"), function (x) {
+      x.setAttribute("aria-pressed", x === b ? "true" : "false");
+    });
+    render(b.getAttribute("data-cat"));
+  });
+
+  render("all");
+
+  /* ---------- mini-ladders: <div class="mini" data-items="A|B" data-focus="13,6"> ---------- */
+  Array.prototype.forEach.call(document.querySelectorAll(".mini[data-items]"), function (box) {
+    var focus = (box.getAttribute("data-focus") || "").split(",").filter(Boolean).map(Number);
+    if (!focus.length) focus = null;
+    var hd = el("div", "mini-row mini-head");
+    hd.appendChild(el("span", "name"));
+    hd.appendChild(heads("span", focus));
+    hd.appendChild(el("span", "count"));
+    box.appendChild(hd);
+    box.getAttribute("data-items").split("|").forEach(function (s) {
+      var j = byShort[s.trim()];
+      if (j == null) { console.warn("mini-ladder: no item called", s); return; }
+      var it = D.items[j];
+      var row = el("div", "mini-row");
+      row.appendChild(el("span", "name", it.short));
+      row.appendChild(dotStrip(j, focus));
+      row.appendChild(el("span", "count", it.yes + "/" + N));
+      box.appendChild(row);
+    });
+  });
+
+  /* ---------- bar lists ---------- */
+  function barRow(label, sub, value, weak) {
+    var row = el("div", "bar-row");
+    var bl = el("div", "bl");
+    bl.appendChild(document.createTextNode(label));
+    bl.appendChild(el("span", "sub", sub));
+    row.appendChild(bl);
+    row.appendChild(el("div", "bv", pct(value)));
+    var track = el("div", "track");
+    var fill = el("i", weak ? "weak" : null);
+    fill.style.width = (value * 100).toFixed(1) + "%";
+    track.appendChild(fill);
+    row.appendChild(track);
+    return row;
+  }
+
+  var cb = document.getElementById("criteria-bars");
+  cb.appendChild(barRow("The staircase guess", "for comparison", D.scale.reproducibility));
+  cb.appendChild(barRow("Always guess the majority answer", "for comparison", D.scale.mmr));
+  D.criteria.forEach(function (c) {
+    cb.appendChild(barRow(c.rule, c.over + " wrong yeses · " + c.under + " wrong nos", c.accuracy, true));
+  });
+
+  var catb = document.getElementById("category-bars");
+  D.category_rows.forEach(function (r) {
+    catb.appendChild(barRow(r.label,
+      r.n_items + (r.n_items === 1 ? " item" : " items") +
+      " · range " + Math.round(r.lo * 100) + "–" + Math.round(r.hi * 100) + "%", r.mean));
+  });
+
+  /* ---------- theme toggle ---------- */
+  var root = document.documentElement;
+  function currentIsDark() {
+    var t = root.getAttribute("data-theme");
+    if (t) return t === "dark";
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  }
+  document.getElementById("theme-toggle").addEventListener("click", function () {
+    root.setAttribute("data-theme", currentIsDark() ? "light" : "dark");
+  });
+
+  window.addEventListener("scroll", hideTip, { passive: true });
+})();
+</script>
+
+</html>
+{% endraw %}
