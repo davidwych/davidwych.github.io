@@ -1,0 +1,204 @@
+// Styles for Tufte-style margin notes on posts with `sidenotes: true`.
+// Activation is opt-in: the `.with-sidenotes` class is added by post.html.
+
+$sidenote-breakpoint: 70rem
+$sidenote-pad: 3rem
+$sidenote-text: 38rem
+$sidenote-gap: 2rem
+$sidenote-width: 14rem
+$sidenote-clamp-lines: 4
+
+article.with-sidenotes aside.sidenote-group
+  display: none
+
+// ---- Footnote marker: a small raised "keycap" so it reads as tappable ----
+
+article.with-sidenotes sup[role="doc-noteref"]
+  font-size: .7em
+  line-height: 0
+  vertical-align: .5em
+
+article.with-sidenotes a.footnote
+  display: inline-block
+  box-sizing: border-box
+  min-width: 1.6em
+  height: 1.6em
+  line-height: calc(1.6em - 2px)
+  padding: 0 .3em
+  margin-left: .2em
+  font-weight: 700
+  text-align: center
+  text-decoration: none
+  color: var(--link)
+  background: $light
+  border: 1px solid color-mix(in srgb, var(--link) 50%, transparent)
+  border-radius: 4px
+  box-shadow: 0 2px 0 color-mix(in srgb, var(--link) 45%, transparent), 0 3px 5px rgba($dark, .12)
+  transform: translateY(-2px)
+  cursor: pointer
+  -webkit-tap-highlight-color: transparent
+  transition: transform .08s ease, box-shadow .08s ease, background .15s ease, color .15s ease
+
+  &:hover
+    background: color-mix(in srgb, var(--link) 10%, #{$light})
+
+  &:focus-visible
+    outline: 2px solid var(--link)
+    outline-offset: 2px
+
+  &:active,
+  &[aria-expanded="true"]
+    transform: translateY(0)
+    box-shadow: 0 0 0 color-mix(in srgb, var(--link) 45%, transparent), inset 0 1px 2px rgba($dark, .25)
+
+  &[aria-expanded="true"]
+    color: $light
+    background: var(--link)
+    border-color: var(--link)
+
+@media (prefers-color-scheme: dark)
+  article.with-sidenotes a.footnote
+    background: lighten($dark, 7%)
+    box-shadow: 0 2px 0 color-mix(in srgb, var(--link) 40%, transparent), 0 3px 6px rgba(#000, .45)
+
+    &:hover
+      background: lighten($dark, 13%)
+
+    &:active,
+    &[aria-expanded="true"]
+      box-shadow: 0 0 0 color-mix(in srgb, var(--link) 40%, transparent), inset 0 1px 3px rgba(#000, .5)
+
+    &[aria-expanded="true"]
+      color: $dark
+      background: var(--link)
+
+// ---- Narrow screens: tap a marker to open its note inline, below the paragraph ----
+
+article.with-sidenotes .sidenote-inline
+  display: none
+
+// Images in notes fill the note's width (overrides e.g. width="50%" from the post)
+article.with-sidenotes .sidenote img,
+article.with-sidenotes .sidenote-inline-card img
+  display: block
+  width: 100%
+  height: auto
+  margin: .5em 0 0
+
+@keyframes sidenote-reveal
+  from
+    opacity: 0
+    transform: translateY(-.4em)
+  to
+    opacity: 1
+    transform: none
+
+@media (max-width: #{$sidenote-breakpoint - 0.01rem})
+  article.with-sidenotes .footnotes
+    font-size: .9em
+
+  // Closed notes are display: none so they don't disturb paragraph spacing
+  article.with-sidenotes .sidenote-inline.open
+    display: block
+
+  article.with-sidenotes .sidenote-inline.open .sidenote-inline-card
+    animation: sidenote-reveal .2s ease-out
+
+  article.with-sidenotes .sidenote-inline-card
+    // negative top margin pulls the card snug under the paragraph it annotates
+    margin: -.4em 0 1.2em
+    padding: .65em .9em
+    font-size: .9em
+    line-height: 1.5
+    border-left: 3px solid var(--link)
+    border-radius: 0 4px 4px 0
+    background: color-mix(in srgb, var(--link) 8%, transparent)
+
+    p
+      margin: 0 0 .4em
+      text-align: left
+
+    p:last-child
+      margin-bottom: 0
+
+    .sidenote-num
+      font-weight: 700
+      color: var(--link)
+      margin-right: .35em
+
+@media (min-width: #{$sidenote-breakpoint})
+  body > article.with-sidenotes
+    position: relative
+    box-sizing: border-box
+    width: 100%
+    padding-left: $sidenote-pad
+    padding-right: $sidenote-pad
+    max-width: $sidenote-pad + $sidenote-text + $sidenote-gap + $sidenote-width + $sidenote-pad
+    align-self: center
+
+  body > article.with-sidenotes > p,
+  body > article.with-sidenotes > ul,
+  body > article.with-sidenotes > ol,
+  body > article.with-sidenotes > blockquote,
+  body > article.with-sidenotes > pre,
+  body > article.with-sidenotes > figure,
+  body > article.with-sidenotes > hr,
+  body > article.with-sidenotes > h2,
+  body > article.with-sidenotes > h3,
+  body > article.with-sidenotes > h4,
+  body > article.with-sidenotes > h5,
+  body > article.with-sidenotes > h6,
+  body > article.with-sidenotes > table
+    max-width: $sidenote-text
+
+  body > article.with-sidenotes .footnotes
+    display: none
+
+  body > article.with-sidenotes aside.sidenote-group
+    display: block
+    position: absolute
+    left: $sidenote-pad + $sidenote-text + $sidenote-gap
+    width: $sidenote-width
+    font-size: .78rem
+    line-height: 1.45
+    color: reduce(70)
+    cursor: pointer
+    max-height: calc(1.45rem * #{$sidenote-clamp-lines} * .78)
+    overflow: hidden
+    mask-image: linear-gradient(to bottom, black 55%, transparent 100%)
+    -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%)
+    transition: max-height .25s ease
+
+  body > article.with-sidenotes aside.sidenote-group.expanded
+    max-height: 60rem
+    mask-image: none
+    -webkit-mask-image: none
+    z-index: 2
+    background: $light
+    box-shadow: 0 0 .8em rgba($dark, 0.08)
+    border-radius: 3px
+    padding: .4em .6em
+    margin: -.4em -.6em
+
+  @media (prefers-color-scheme: dark)
+    body > article.with-sidenotes aside.sidenote-group.expanded
+      background: $dark
+      box-shadow: 0 0 .8em rgba(#000, 0.4)
+
+  body > article.with-sidenotes aside.sidenote-group .sidenote
+    margin-bottom: .7em
+
+  body > article.with-sidenotes aside.sidenote-group .sidenote:last-child
+    margin-bottom: 0
+
+  body > article.with-sidenotes aside.sidenote-group .sidenote p
+    margin: 0 0 .4em
+    text-align: left
+
+  body > article.with-sidenotes aside.sidenote-group .sidenote p:last-child
+    margin-bottom: 0
+
+  body > article.with-sidenotes aside.sidenote-group .sidenote-num
+    font-weight: 600
+    color: var(--link)
+    margin-right: .35em

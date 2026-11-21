@@ -2,6 +2,7 @@
 title: "Introduction to Crystallography: Part 2"
 mathjax: true
 layout: post
+sidenotes: true
 ---
 
 # "The Phase Problem", or, "You didn't think Mother Nature was gonna let us off that easy, did you?"
@@ -53,19 +54,13 @@ These waves are constructively/destructively interfering, i.e. their amplitudes 
 
 But, if you remember from E&M, we don't actually measure the amplitude of light waves, we measure the **energy** they carry, in the form of photons.
 
-The intensity, $$I$$ (energy/time) of a light wave is proportional to the amplitude *squared*.
+The intensity, $$I$$ (energy/time) of a light wave is proportional to the amplitude *squared*.[^feynman]
 
 So if the amplitude, after scattering, at different angles is given by $$F(\mathbf{q})$$, what we actually *measure* is given by:
 
 $$\|F(\mathbf{q})\|^{2}$$
 
-(Not really, but sorta -- stick around at the end if you care¹)
-
----
-
-Something interesting, as [pointed out by Feynman](https://www.feynmanlectures.caltech.edu/II_27.html#Ch27-S4): we don't actually *know* this is the correct expression the EM energy density in space. There are actually *infinite* possible expressions for the energy density, we just choose the simplest one that works...
-
----
+(Not really, but sorta.[^measure])
 
 If we take our def. of $$F(\mathbf{q})$$ and square it, we get another Fourier transform!:
 
@@ -89,19 +84,9 @@ For example (as we'll discuss in much greater detail) if the density is periodic
 
 Now we can understand why!
 
-A "crystal" is a collection of atoms that repeats. Repeating means it's a **copy** of itself, up to translation. This means it's very *autocorrelated* at well-defined displacements.
+A "crystal" is a collection of atoms that repeats. Repeating means it's a **copy** of itself, up to translation. This means it's very *autocorrelated* at well-defined displacements.[^debye]
 
 The Fourier Transform (intensity) can then give us information about this!
-
----
-
-Back when crystallography was first discovered, it was not obvious that atoms in crystals stayed still enough for crystallography to work as well as it does (if they jiggled around too much, the autocorrelation would be a mess, with no well-defined peaks)
-
-Indeed, Peter Debye [purportedly warned](https://onlinelibrary.wiley.com/doi/abs/10.1002/qua.560350606) Max von Laue that thermal fluctuations would preclude the possibility for constructive interference in crystal diffraction, but von Laue went forward with his experiments anyway. 
-
-The rest is history.
-
----
 
 2) Because we measure the Fourier Transform of the *autocorrelation* of the density -- not the  *density itself* -- we can't just perform an *inverse* Fourier Transform on the measured signal to easily recover the density.
 
@@ -147,8 +132,16 @@ But for now, be well.
 
 [Part 3 here](https://davidwych.github.io/intro-cryst-3/)
 
-¹What we *actually* measure is the average autocorrelation of the *variation* of the density *about the mean*.
+[^feynman]: Something interesting, as [pointed out by Feynman](https://www.feynmanlectures.caltech.edu/II_27.html#Ch27-S4): we don't actually *know* this is the correct expression for the EM energy density in space. There are actually *infinite* possible expressions for the energy density, we just choose the simplest one that works...
 
-The scattering from the average density comes out of the total scattering as a peak in the center of the beam.
+[^measure]: What we *actually* measure is the average autocorrelation of the *variation* of the density *about the mean*.
 
-![footnote](/blog/assets/images/footnote.jpeg){: width="50%" }
+    The scattering from the average density comes out of the total scattering as a peak in the center of the beam.
+
+    ![footnote](/blog/assets/images/footnote.jpeg){: width="50%" }
+
+[^debye]: Back when crystallography was first discovered, it was not obvious that atoms in crystals stayed still enough for crystallography to work as well as it does (if they jiggled around too much, the autocorrelation would be a mess, with no well-defined peaks).
+
+    Indeed, Peter Debye [purportedly warned](https://onlinelibrary.wiley.com/doi/abs/10.1002/qua.560350606) Max von Laue that thermal fluctuations would preclude the possibility for constructive interference in crystal diffraction, but von Laue went forward with his experiments anyway.
+
+    The rest is history.

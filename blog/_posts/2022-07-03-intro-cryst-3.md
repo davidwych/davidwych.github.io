@@ -2,6 +2,7 @@
 title: "Introduction to Crystallography: Part 3"
 mathjax: true
 layout: post
+sidenotes: true
 ---
 
 # "The Ewald Sphere"
@@ -90,9 +91,7 @@ where:
 
 $$ I_{\text{Bragg}}(\mathbf{q}) = \| F_{\text{avg.}}(\mathbf{q}) \|^{2} \| \sum_{n} e^{i \textbf{q} \cdot \mathbf{R}_{n}} \|^{2} $$
 
-This is the scattering from a perfect crystal, with our $$F(\mathbf{q})$$ from before replaced by the $$F_{\text{avg.}}(\mathbf{q})$$.
-
-(The second term, the "diffuse scattering", is what I study! It's the scattering due to *deviations* from the average, and so contains information about **dynamics** rather than just the average structure. It is much weaker, and harder to interpret, which is why I have a job.)
+This is the scattering from a perfect crystal, with our $$F(\mathbf{q})$$ from before replaced by the $$F_{\text{avg.}}(\mathbf{q})$$.[^diffuse]
 
 We can further simplify the equation for the Bragg intensity by writing things as:
 
@@ -120,11 +119,9 @@ Unlike a small collection of atoms, in a crystal, this constructive interference
 
 Because a crystal repeats in space, if $$\textbf{q}\cdot\textbf{R}_{n} = 1$$ so will $$\textbf{q}\cdot\textbf{R}_{2n}$$ and $$ \textbf{q}\cdot\textbf{R}_{3n} $$ etc.
 
-This repeated constructive interference leads to *strong peaks in the intensity* at certain angles! We call these the "Bragg peaks".
+This repeated constructive interference leads to *strong peaks in the intensity* at certain angles! We call these the "Bragg peaks".[^heisenberg]
 
 ![example diffraction](/blog/assets/images/example_diffraction_image.jpeg){: width="50%" }
-
-In fact -- side note for the physics nerds -- the X-ray beams we use are often basicaclly monochromatic, so the photons' momenta are very precise. This means the photons *positions* are known very imprecisely, due to the Hiesenberg Uncertainty Principle. So, you can think about the photons as scattering off of the *whole lattice plane at once*.
 
 It becomes advantageous, then, to define a "reciprocal basis":
 
@@ -136,9 +133,7 @@ where these vectors (by construction) have the property that
 
 $$ \textbf{a}_{i} \cdot \textbf{a}^{\ast}_{j} = 2\pi \delta_{ij} $$
 
-where $$\delta_{ij}$$ is the Kronecker delta, and v is the unit cell volume $$ v = \textbf{a}_{1}\cdot(\textbf{a}_{2}\times\textbf{a}_{3}) $$
-
-(For those unfamiliar, the Kronecker delta construction here just means that if $$ \delta_{ij} = 1 $$ if $$i$$ and $$j$$ are equal and $$ \delta_{ij} = 0 $$ if $$i$$ and $$j$$ are not equal -- this ensures $$ \textbf{q}\cdot\textbf{R}_{n} $$ at the nodes of our new "reciprocal lattice".)
+where $$\delta_{ij}$$ is the Kronecker delta, and v is the unit cell volume $$ v = \textbf{a}_{1}\cdot(\textbf{a}_{2}\times\textbf{a}_{3}) $$.[^kronecker]
 
 We can now define the "reciprocal lattice" we just mentioned, as:
 
@@ -224,3 +219,9 @@ Huge facilities have been constructed around the world, to spin electrons around
 I hope to follow up at some points with a similar thread about the diffuse scattering.
 
 For now, be well!
+
+[^diffuse]: The second term, the "diffuse scattering", is what I study! It's the scattering due to *deviations* from the average, and so contains information about **dynamics** rather than just the average structure. It is much weaker, and harder to interpret, which is why I have a job.
+
+[^heisenberg]: Side note for the physics nerds: the X-ray beams we use are often basically monochromatic, so the photons' momenta are very precise. This means the photons' *positions* are known very imprecisely, due to the Heisenberg Uncertainty Principle. So, you can think about the photons as scattering off of the *whole lattice plane at once*.
+
+[^kronecker]: For those unfamiliar, the Kronecker delta construction here just means that $$ \delta_{ij} = 1 $$ if $$i$$ and $$j$$ are equal and $$ \delta_{ij} = 0 $$ if $$i$$ and $$j$$ are not equal -- this ensures $$ \textbf{q}\cdot\textbf{R}_{n} $$ at the nodes of our new "reciprocal lattice".

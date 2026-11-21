@@ -2,6 +2,7 @@
 title: "Introduction to Crystallography: Part 1"
 mathjax: true
 layout: post
+sidenotes: true
 ---
 
 # "How electrons perform the Fourier Transform"
@@ -50,9 +51,7 @@ If $$\Delta\phi = \mathbf{q}\cdot\mathbf{r}$$ is such that the path length diffe
 
 $$ l = n \lambda \rightarrow e^{i \mathbf{q} \cdot \mathbf{r} } = e^{i 2 \pi n} = 1 $$
 
-So, given a set of atoms at positions $$\mathbf{r}_{i}$$ we can compute the effect of the interference in far field, at any scattering angle, by computing the phase factor $$ e^{i \mathbf{q} \cdot \mathbf{r}_{i} } $$. 
-
-(*The problem, as we will see, is that crystallographic experiments starts from the exact opposite state of affairs: we measure the diffraction pattern that results from the scattering of X-rays, and we don't know the positions of the atoms responsible for the scattering.*)
+So, given a set of atoms at positions $$\mathbf{r}_{i}$$ we can compute the effect of the interference in far field, at any scattering angle, by computing the phase factor $$ e^{i \mathbf{q} \cdot \mathbf{r}_{i} } $$.[^problem]
 
 ![fair field](/blog/assets/images/far_field.jpeg){: width="50%"}
 
@@ -91,3 +90,5 @@ Then, we'll move on to talking about how things change when we measure the scatt
 Until then, be well :)
 
 [Part 2 here](https://davidwych.github.io/intro-cryst-2/)
+
+[^problem]: *The problem, as we will see, is that crystallographic experiments starts from the exact opposite state of affairs: we measure the diffraction pattern that results from the scattering of X-rays, and we don't know the positions of the atoms responsible for the scattering.*

@@ -2,6 +2,7 @@
 title: "AI(,) Art(,) and Science"
 mathjax: false
 layout: post
+sidenotes: true
 ---
 
 I have no formal art education, but I’ve made art—most of it pretty bad, with some small flashes of beauty. How much good art I’ve made in my life depends on what “art” is. I’ve never had much of a felicity for visual art, but, some of the music I’ve made and composed certainly counts. What about meals I’ve cooked? Hack-y poems that nonetheless feel genuine—candid and personal—products of myself from a time and place? What about a conference seminar, or a lecture series on Physical Biochemistry?
@@ -28,9 +29,7 @@ The artist and critic Taylor Morrison [recently gave this advice](https://www.in
 
 > It’s time to be brave. You can draw. Now, *what* are you going to draw? You're bursting at the seams here. It's time make something that isn’t practice. It's time to make something that isn’t learning. ***Make something you can’t understand, and that you don’t wish to.***
 
-Now *this* I could identify with. It sits at the heart of the question above: how can an artist be both a conduit for *and* an agent of choice-making? You endeavor to *just do*—with your entire being *just make*—and in the doing, everything you are will leave the imprint of choice (of taste and proclivity) that amounts to something familiar because you made it but alien because no one, including yourself, has seen it before.
-
-*This picture of what art is, and how good art is made, may seem paradoxical. Art is comprised of choice-making, but is best made when those choices come from a place outside our comprehension? The paradox here is just an illusion: on careful inspection you’ll find that basically everything in your subjective experience is like this. What you do, what you think, who you are in each moment—everything flows from a place outside your comprehension. What we call “taste” is just an accumulation of influence and preference that none of us can really claim responsibility for. Why don’t I like death metal? I can conjure up reasons if I’m asked to, but the honest truth is I just don’t, and I never have. With this in mind, these definitions of art and artistic practice aren’t really contradictory, but illustrative of a deep underlying truth about conscious experience, and how it finds its truest lived expression.*
+Now *this* I could identify with. It sits at the heart of the question above: how can an artist be both a conduit for *and* an agent of choice-making? You endeavor to *just do*—with your entire being *just make*—and in the doing, everything you are will leave the imprint of choice (of taste and proclivity) that amounts to something familiar because you made it but alien because no one, including yourself, has seen it before.[^paradox]
 
 In his piece in the New Yorker, Chiang goes on to lay out how paradoxically, under his definition, AI/ML companies advertise their products: as both a boon to creatives and an instrument for the elimination of artistic tedium (i.e. choices):
 
@@ -48,7 +47,7 @@ The thing that feels cheap and disingenuous about the current crop of AI/ML tool
 
 ---
 
-The Philosopher of Science Karl Popper said (though the exact quotation is probably not his own), “a theory that explains everything explains nothing.” A variation is likely true of art: “an artist that makes anything makes nothing.”
+The Philosopher of Science Karl Popper said, “a theory that explains everything explains nothing.”[^popper] A variation is likely true of art: “an artist that makes anything makes nothing.”
 
 Science and art are often dichotomized—e.g., certain things are said to be “more of an art than a science”—though I’ve become more uncomfortable with this distinction the more time I spend as a working scientist. To make scientific progress feels, subjectively, a lot like making art. The same experience described above—that elusive mingling of will and surrender, the moderating influence of taste—can describe the feeling of discovering or inventing new science as much as discovering or inventing new means of personal expression.
 
@@ -124,7 +123,7 @@ What they fail to do is endeavor to *understand*. Understanding doesn’t consis
 
 This is the reason why “a theory of everything is a theory of nothing.” A model that captures everything captures nothing in particular. “That’s just the way it is,” is a good explanation for everything, but a terrible explanation for anything in particular.
 
-Artificial neural networks aren’t really all that different from the Oracle. They can require vast resources, have inexhaustible data requirements, and amount to a model that is so convoluted and inscrutable it’s unreasonable to even ask how it "knows" what it "knows". Seemingly without irony, major AI companies have adopted the technique of teasing apart the "concepts" stored in their Large Language Models' using—I kid you not—[more deep neural networks](https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html).
+Artificial neural networks aren’t really all that different from the Oracle. They can require vast resources, have inexhaustible data requirements, and amount to a model that is so convoluted and inscrutable it’s unreasonable to even ask how it "knows" what it "knows".[^irony]
 
 ---
 
@@ -185,3 +184,9 @@ Art is a means to understanding ourselves and each other more deeply. But do we 
 Science is a means to understanding the world around us more deeply. But do we care? Or will it be enough to collect as much data as we can, feed it to our devices, and let them take care of figuring it out? Many people already seem content to conduct science in this way.
 
 I'm begging us to care more.
+
+[^paradox]: *This picture of what art is, and how good art is made, may seem paradoxical. Art is comprised of choice-making, but is best made when those choices come from a place outside our comprehension? The paradox here is just an illusion: on careful inspection you’ll find that basically everything in your subjective experience is like this. What you do, what you think, who you are in each moment—everything flows from a place outside your comprehension. What we call “taste” is just an accumulation of influence and preference that none of us can really claim responsibility for. Why don’t I like death metal? I can conjure up reasons if I’m asked to, but the honest truth is I just don’t, and I never have. With this in mind, these definitions of art and artistic practice aren’t really contradictory, but illustrative of a deep underlying truth about conscious experience, and how it finds its truest lived expression.*
+
+[^popper]: Though the exact quotation is probably not his own.
+
+[^irony]: Seemingly without irony, major AI companies have adopted the technique of teasing apart the "concepts" stored in their Large Language Models' using—I kid you not—[more deep neural networks](https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html).

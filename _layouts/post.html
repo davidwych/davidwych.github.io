@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<article>
+<article{% if page.sidenotes %} class="with-sidenotes"{% endif %}>
   {% include meta.html post=page %}
   {{ content }}
   {% if page.comments != false and site.comments.isso or site.comments.disqus %}
@@ -12,3 +12,6 @@ layout: default
     <noscript>Please enable JavaScript to view comments.</noscript>
   {% endif %}
 </article>
+{% if page.sidenotes %}
+<script defer src="{{ "/assets/js/sidenotes.js" | relative_url }}"></script>
+{% endif %}

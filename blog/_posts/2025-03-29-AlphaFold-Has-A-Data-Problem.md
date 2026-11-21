@@ -2,6 +2,7 @@
 title: "AlphaFold Has a Data Problem, It's Just Not The One We're Talking About"
 mathjax: false
 layout: post
+sidenotes: true
 ---
 
 There's a lot of hubbub lately over [AlphaFold (and other Machine Learning protein structure prediction methods) running out of data](https://www.nature.com/articles/d41586-025-00868-9?utm_campaign=9697067-2025%20Announcements&utm_content=328696841&utm_medium=social&utm_source=linkedin&hss_channel=lcp-10549601). We've exhausted the publicly available resources for protein structure data, so pharmaceutical companies are pooling up their vast collection of private data to get a leg up.
@@ -25,9 +26,7 @@ Now, consider a thought experiment:
 >
 >Now, finally, imagine that before the text is fed into the training process, some small but non-negligible fraction of the words in the text (say 5%) were corrupted—swapped out with other words from a dictionary chosen at random.
 
-(*Remember, machine learning models like this only learn from the data they see, and the patterns they uncover—the structure in that data—is only useful for predicting new data that looks like what they've seen.*)
-
-Imagine that you wanted to use one of the LLMs trained above to create a chatbot, like ChatGPT, that can talk naturally and demonstrates some level of understanding across a large range of topics. You want something useful, for generating natural language.
+Imagine that you wanted to use one of the LLMs trained above[^learn] to create a chatbot, like ChatGPT, that can talk naturally and demonstrates some level of understanding across a large range of topics. You want something useful, for generating natural language.
 
 First off, do you think you could even do it? Even though all it's ever seen is poetry and one in twenty words it's seen is just chosen at random, could the LLM still talk naturally and fluently? Do you think you could get the LLM to produce a normal sentence that sounds like you or your friend wrote it?
 
@@ -49,15 +48,13 @@ I would argue that the Protein Data Bank is one of the most successful, impactfu
 
 ### X-ray Crystallography
 
-The overwhelming majority (~82.5%) of this data comes from an experimental technique called **X-ray Crystallography** (XRC). In XRC, concentrated solutions of molecules are coaxed into forming crystals (think of a nice big chunk of sea salt you would find on a bagel, but made out of pure protein). Researchers take these crystals of protein to a facility where they can stick the crystal in the path of a very thin, very high-energy X-ray beam. When you do this, the X-ray beam scatters through the crystal, and if you stick a detector on the other side, you see a pattern of bright spots that changes as you rotate the crystal around. Collect enough of these images, at enough rotation angles, and you can use the information contained in all the bright spots across all the images to reconstruct the three-dimensional structure of the protein in atomic detail.
-
-It's magic, and I explain how it works in more detail [here](https://davidwych.github.io/intro-cryst-1/).
+The overwhelming majority (~82.5%) of this data comes from an experimental technique called **X-ray Crystallography** (XRC). In XRC, concentrated solutions of molecules are coaxed into forming crystals (think of a nice big chunk of sea salt you would find on a bagel, but made out of pure protein). Researchers take these crystals of protein to a facility where they can stick the crystal in the path of a very thin, very high-energy X-ray beam. When you do this, the X-ray beam scatters through the crystal, and if you stick a detector on the other side, you see a pattern of bright spots that changes as you rotate the crystal around. Collect enough of these images, at enough rotation angles, and you can use the information contained in all the bright spots across all the images to reconstruct the three-dimensional structure of the protein in atomic detail.[^magic]
 
 There's one big problem with this method: if you expose the crystal to the X-ray beam for too long, it explodes. "Too long" in this context is on the order of seconds. And I'm being a bit dramatic when I say it "explodes", but [not by much](https://en.wikipedia.org/wiki/Coulomb_explosion). What really happens is the crystal gets irradiated. Electrons get ripped off of atoms, which start to strongly repel each other, and the entire molecule gets damaged to a degree where the structure you're trying to measure in the first place gets eviscerated.
 
 To get around this pesky problem, the crystals are almost always *cryo-cooled*: flooded with a stream of liquid nitrogen, cooled to a temperature of 100 Kelvin (-175 C / -280 F). Cooling the crystal down to such a degree cuts down on the radiation damage, allowing researchers to collect more, higher quality data with the same crystals.
 
-I should say, radiation damage is not the *only* problem with X-ray Crystallography. For one, if you want to use the technique in the first place, you have to get the protein to crystallize. This can be maddeningly difficult to do. If you're studying a protein that usually lives in the cell membrane, you have to strip that membrane away with detergent if you want to get it to crystallize, and that process can destabilize the protein; or the large hydrophobic parts of the protein that cause it to be happy in the cell membrane can make the protein insoluble in water. Proteins can be too floppy or unwieldy to crystallize reliably. Even if you can get crystals to form, they can be extraordinarily delicate or brittle. I once heard a story from a crystallographer that the only way one of their colleagues could get a particular protein to crystallize was if they cut off a small piece of their cat's fur and put that in the solution to serve as a nucleation point. Protein crystallization is a dark art.
+I should say, radiation damage is not the *only* problem with X-ray Crystallography. For one, if you want to use the technique in the first place, you have to get the protein to crystallize. This can be maddeningly difficult to do. If you're studying a protein that usually lives in the cell membrane, you have to strip that membrane away with detergent if you want to get it to crystallize, and that process can destabilize the protein; or the large hydrophobic parts of the protein that cause it to be happy in the cell membrane can make the protein insoluble in water. Proteins can be too floppy or unwieldy to crystallize reliably. Even if you can get crystals to form, they can be extraordinarily delicate or brittle. Protein crystallization is a dark art.[^cat]
 
 But there's another problem that's harder to explain. What we measure in XRC is not the 3D structure of the molecule itself, but the *signature* of that structure in the scattering of the X-ray beam through a crystal. To get a 3D structure out of that mess, we need to *model* the structure, and then compare the expected X-ray scattering of our model with the scattering we observe. If the model gets better, the scattering we predict looks more like the scattering we observe, and we iteratively tweak the model until that agreement is as good as we can reasonably achieve. 
 
@@ -69,7 +66,7 @@ The average R-factor between our models and the observed data across the entire 
 
 Our models, on average, are 25% off.
 
-This is not very good, and this problem (called the "R-factor Gap") was the focus of a [great paper by James Holton and collaborators from 2014](https://pubmed.ncbi.nlm.nih.gov/25040949/). The "Gap" in "R-factor Gap" refers to the discrepancy between these errors in macro-molecular X-ray crystallography and the errors people tend to see in small-molecule crystallography (where researchers can routinely get R-factors of 5-10% or better). Importantly, they identify that this discrepancy is *not* due to experimental issues or noise—the problem is in the *models we use* in macro-molecular XRC. They identify a few ways we could make the models better: e.g. improving our modeling of the ordered water network and solvent around the protein, and changing the models entirely to capture not just the *structure* of the bio-molecules but also their *dynamics*.
+This is not very good, and this problem (called the "R-factor Gap") was the focus of a [great paper by James Holton and collaborators from 2014](https://pubmed.ncbi.nlm.nih.gov/25040949/).[^gap] Importantly, they identify that this discrepancy is *not* due to experimental issues or noise—the problem is in the *models we use* in macro-molecular XRC. They identify a few ways we could make the models better: e.g. improving our modeling of the ordered water network and solvent around the protein, and changing the models entirely to capture not just the *structure* of the bio-molecules but also their *dynamics*.
 
 However, it's worth stopping for a second to highlight what we just covered. Something like 80% of our collective knowledge about protein structure comes from a method in which the molecules have to be coaxed into forming a crystal, cooled down to minus 280 degrees Fahrenheit, and stuck in an X-ray beam—and even after we go through the trouble, we don't even measure the structure itself; we just get something we can use to *model* the structure. And most of the time, our models aren't even very great at doing that (at least, not as good as we might hope).
 
@@ -77,7 +74,7 @@ These models are the data that AlphaFold is trained on.
 
 ### Cryo-electron Microscopy
 
-Most of the rest of the structures (11%) in the Protein Data Bank were discovered through a different technique called **cryo-Electron Microscopy (cryoEM)**. In cryoEM, you also start with a concentrated solution of protein, but this time, you flood it over a very thin grid (often made of metal with a graphite coating), and dunk that grid in liquid nitrogen, before putting it in the path of an electron beam (you need the liquid nitrogen again because, like X-rays, electron beams irradiate your proteins; but also, if you didn't freeze it, the proteins would just jiggle around all over the place and you couldn't get a good image). As you scan the electron beam over the grid, you can collect images of all the proteins dotted across the grid. These images are two-dimensional projections of the protein in different orientations. Using all these projections, and a bunch of computer power, you can piece together a picture of what the protein looks like in 3D.
+Most of the rest of the structures (11%) in the Protein Data Bank were discovered through a different technique called **cryo-Electron Microscopy (cryoEM)**. In cryoEM, you also start with a concentrated solution of protein, but this time, you flood it over a very thin grid (often made of metal with a graphite coating), and dunk that grid in liquid nitrogen, before putting it in the path of an electron beam.[^nitrogen] As you scan the electron beam over the grid, you can collect images of all the proteins dotted across the grid. These images are two-dimensional projections of the protein in different orientations. Using all these projections, and a bunch of computer power, you can piece together a picture of what the protein looks like in 3D.
 
 This experimental technique is actually much closer, in principle, to our example with the clay figurine from before. Except you get tens- to hundreds-of-thousands of images and you use a computer to do the clay addition and subtraction and molding for you, as it gathers info from all the images of the figurine at different vantage points.
 
@@ -87,7 +84,7 @@ But, like crystallography, what you get out is not the protein structure. You ge
 
 Look at enough of these structural models, with the density superimposed, and you don't walk away with *tremendous* confidence. You might trust them generally, in some vague sense, but if someone asked you to bet your life that any one amino acid in any one cryoEM structure picked at random was modeled with unambiguous high confidence, I don't think any Structural Biologist would take the bet.
 
-## NMR
+### NMR
 
 There is another technique that accounts for the remaining 5% or so of the PDB called Nuclear Magnetic Resonance Spectroscopy. It's very cool, and unlike the other two techniques, you don't have to do it at cryo-temperature, and it doesn't produce a single atomic-structural model of the protein, but an *ensemble* of models that capture the protein's motions in solution. But, as I understand it, it only works for very small proteins, and (to be honest) I don't have a very good understanding of how it works. Something about atomic nuclei jiggling in strong magnetic field pulses...? 
 
@@ -140,3 +137,13 @@ There are also new *experimental techniques* that could help us, particularly in
 This is not meant to be a rant, or to inspire a kind of fatalism, but to serve as an entry in the Annals of What Machine Learning Can't Do For Us. It can't collect new experimental data to feed itself. It can't invent, or improve, or expand the use of new experimental techniques. It can't fill in gaps in experimental data that we don't yet know how to fill (especially if we don't even know where the gaps are). It can't magically make up for inadequacies in our models, if those models are all the algorithm ever sees.
 
 *We* need to do those things first and foremost, and then maybe the machines will have something insightful to tell us. Or, we could just do the hard work of understanding things for ourselves. [Sorry... now I actually am ranting, but I already wrote a whole thing on that.](https://davidwych.github.io/AI-Art-Science/)
+
+[^learn]: *Remember, machine learning models like this only learn from the data they see, and the patterns they uncover—the structure in that data—is only useful for predicting new data that looks like what they've seen.*
+
+[^magic]: It's magic, and I explain how it works in more detail [here](https://davidwych.github.io/intro-cryst-1/).
+
+[^cat]: I once heard a story from a crystallographer that the only way one of their colleagues could get a particular protein to crystallize was if they cut off a small piece of their cat's fur and put that in the solution to serve as a nucleation point.
+
+[^gap]: The "Gap" in "R-factor Gap" refers to the discrepancy between these errors in macro-molecular X-ray crystallography and the errors people tend to see in small-molecule crystallography (where researchers can routinely get R-factors of 5-10% or better).
+
+[^nitrogen]: You need the liquid nitrogen again because, like X-rays, electron beams irradiate your proteins; but also, if you didn't freeze it, the proteins would just jiggle around all over the place and you couldn't get a good image.
