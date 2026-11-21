@@ -1,0 +1,6 @@
+{%- if site.external -%}
+<footer class="site-footer">
+  <div>{{ site.description | default: site.title }}</div>
+  {% include menu.html menu=site.external %}
+</footer>
+{%- endif -%}

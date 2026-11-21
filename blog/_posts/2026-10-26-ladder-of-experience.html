@@ -10,10 +10,9 @@ feed:
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="David Wych">
+<link rel="stylesheet" href="/assets/css/chrome.css">
 <title>The Ladder of Experience</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 
 <style>
 /* Layout: a single vertical ladder as the spine of the page; analysis sections
@@ -24,14 +23,19 @@ feed:
   /* Backgrounds match the rest of davidwych.github.io: #fff light, #212228 dark.
      Surfaces and rules sit in the same grey family as the blog's frame. */
   --bg:        #FFFFFF;
-  --surface:   #F5F6F8;
+  --surface:   #F7F5F2;
   --panel:     #FFFFFF;
-  --ink:       #141C26;
-  --ink-2:     #495562;
-  --ink-3:     #6A7682;
-  --rule:      #DCDDE3;
-  --rule-soft: #ECEDF1;
-  --dot-off:   #C3C5CD;
+  --ink:       #1D1B1A;
+  --ink-2:     #4D4844;
+  --ink-3:     #736C66;
+  --rule:      #E2DDD7;
+  --rule-soft: #EFEBE6;
+  --dot-off:   #CBC5BE;
+
+  /* "Rust" palette, shared with the rest of the site */
+  --heading:    #1D1B1A;
+  --subheading: #8F3125;
+  --link:       #A4372A;
 
   /* One ordered ramp, not three camps: the only thing that separates
      respondents is how far up the ladder they go. Light end = strictest. */
@@ -39,9 +43,9 @@ feed:
   --tier-mid:    #C07818;
   --tier-strict: #E3A857;
 
-  /* PT Sans to match the rest of davidwych.github.io (same fallback stack). */
-  --display: "PT Sans", -apple-system, "Helvetica Neue", "Segoe UI", Roboto, sans-serif;
-  --body:    "PT Sans", -apple-system, "Helvetica Neue", "Segoe UI", Roboto, sans-serif;
+  /* Literata to match the rest of davidwych.github.io (same fallback stack). */
+  --display: "Literata", Georgia, "Times New Roman", serif;
+  --body:    "Literata", Georgia, "Times New Roman", serif;
   --mono:    "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 
   --measure: 34rem;
@@ -58,9 +62,12 @@ feed:
     --bg:        #212228;
     --surface:   #292A31;
     --panel:     #2D2E36;
-    --ink:       #E7ECF1;
-    --ink-2:     #A9B5C1;
-    --ink-3:     #7D8A98;
+    --ink:       #F1ECE4;
+    --ink-2:     #BDB5AB;
+    --ink-3:     #978F86;
+    --heading:    #F1ECE4;
+    --subheading: #E8A596;
+    --link:       #F08F7C;
     --rule:      #3A3C45;
     --rule-soft: #2F3038;
     --dot-off:   #4B4D57;
@@ -74,9 +81,12 @@ feed:
   --bg:        #212228;
   --surface:   #292A31;
   --panel:     #2D2E36;
-  --ink:       #E7ECF1;
-  --ink-2:     #A9B5C1;
-  --ink-3:     #7D8A98;
+  --ink:       #F1ECE4;
+  --ink-2:     #BDB5AB;
+  --ink-3:     #978F86;
+  --heading:    #F1ECE4;
+  --subheading: #E8A596;
+  --link:       #F08F7C;
   --rule:      #3A3C45;
   --rule-soft: #2F3038;
   --dot-off:   #4B4D57;
@@ -105,11 +115,12 @@ body {
 .measure { max-width: var(--measure); }
 
 h1, h2, h3 { font-family: var(--display); font-weight: 600; text-wrap: balance; margin: 0; line-height: 1.1; }
-h1 { font-size: clamp(2.2rem, 8vw, 4.4rem); letter-spacing: -0.015em; }
-h2 { font-size: clamp(1.6rem, 4vw, 2.3rem); letter-spacing: -0.01em; }
+h1 { font-size: clamp(2.2rem, 8vw, 4.4rem); letter-spacing: -0.015em; color: var(--heading); }
+h2 { font-size: clamp(1.6rem, 4vw, 2.3rem); letter-spacing: -0.01em; color: var(--subheading); }
 h3 { font-size: 1.14rem; font-family: var(--body); font-weight: 600; letter-spacing: 0; }
 p { margin: 0 0 0.9em; }
-a { color: inherit; text-decoration-color: var(--ink-3); text-underline-offset: 2px; }
+a { color: var(--link); text-decoration: none; text-underline-offset: 2px; }
+a:hover { text-decoration: underline; }
 strong { font-weight: 600; }
 em { font-style: italic; }
 
@@ -133,12 +144,13 @@ em { font-style: italic; }
   font-family: var(--mono); font-size: 0.68rem; font-weight: 500;
   letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3);
 }
-.site-nav a { text-decoration: none; }
+.site-nav a { color: inherit; text-decoration: none; }
 .site-nav a:hover { color: var(--ink); }
 
 /* ---------- masthead ---------- */
 header.mast { padding-block: clamp(3rem, 9vw, 6rem) clamp(2rem, 5vw, 3rem); }
 .site-nav + header.mast { padding-top: clamp(2rem, 6vw, 4.5rem); }
+.site-header + header.mast { padding-top: clamp(2.2rem, 6vw, 4.5rem); }
 .god {
   font-family: var(--display);
   font-style: italic;
@@ -146,7 +158,8 @@ header.mast { padding-block: clamp(3rem, 9vw, 6rem) clamp(2rem, 5vw, 3rem); }
   line-height: 1.5;
   color: var(--ink-2);
   max-width: 30rem;
-  margin: 0 0 2rem;
+  /* Literata's descenders run deeper than PT Sans's; give the title room */
+  margin: 1.4rem 0 2rem;
   padding-left: 1.1rem;
   border-left: 2px solid var(--rule);
 }
@@ -460,9 +473,7 @@ footer .theme { margin-top: 1.2rem; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 </style>
 
-<nav class="site-nav" aria-label="Site">
-  <div class="wrap"><a href="/">David Wych</a><span aria-hidden="true">/</span><a href="/blog/">Blog</a></div>
-</nav>
+{% endraw %}{% include site-header.html %}{% raw %}
 <header class="mast">
   <div class="wrap">
     <p class="eyebrow">A survey of <span data-fill="n_resp">&mdash;</span> people,
@@ -1202,5 +1213,5 @@ window.__QUIZ__ = {"meta":{"source":"The Big Test.csv","n_respondents":22,"n_ite
 })();
 </script>
 
+{% endraw %}{% include site-footer.html %}
 </html>
-{% endraw %}

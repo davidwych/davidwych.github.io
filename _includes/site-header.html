@@ -1,0 +1,9 @@
+{%- if site.navigation -%}
+  {%- assign pages = site.navigation -%}
+{%- else -%}
+  {%- assign pages = site.pages | where_exp: "item", "item.title and item.sitemap != false" | sort: "order" -%}
+{%- endif -%}
+<header class="site-header">
+  <a href="{{ "/" | relative_url }}" class="title">{{ site.title | escape }}</a>
+  {% include menu.html menu=pages %}
+</header>
